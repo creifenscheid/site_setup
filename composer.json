@@ -1,0 +1,20 @@
+{
+	"name" : "creifenscheid/site-setup",
+	"type" : "typo3-cms-extension",
+	"description" : "TYPO3 extension with basic setup",
+	"license" : "GPL-2.0-or-later",
+	"require" : {
+		"typo3/cms-core" : "^10.4"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"CReifenscheid\\SiteSetup\\" : "Classes/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"authors" : [{
+			"name" : "C. Reifenscheid",
+			"email" : "christian.reifenscheid.2112@gmail.com"
+		}
+	]
+}
