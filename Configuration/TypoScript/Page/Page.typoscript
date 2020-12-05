@@ -1,0 +1,3 @@
+page = PAGE
+
+@import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'
