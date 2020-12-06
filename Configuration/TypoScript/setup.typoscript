@@ -1,1 +1,2 @@
+@import 'EXT:site_setup/Configuration/TypoScript/Config/Config.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/Page.typoscript'

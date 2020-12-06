@@ -1,0 +1,4 @@
+plugin.tx_sitsetup {
+	# cat=Site setup; type=string; label=Path to favicon file
+   favicon = 
+}

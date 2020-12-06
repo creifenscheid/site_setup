@@ -1,3 +1,9 @@
 page = PAGE
 
+page {
+	10 = TEXT
+	10.value = BLA
+}
+
+@import 'EXT:site_setup/Configuration/TypoScript/Page/MetaData.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'

@@ -1,2 +1,6 @@
-config {
-    baseURL = 
+[applicationContext == "Development"]
+	config {
+		contentObjectExceptionHandler = 1
+		no_cache = 1
+	}
+[END]

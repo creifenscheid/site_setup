@@ -1,5 +1,20 @@
 page {
 	headerData {
 		
+		# BASE URL
+		10 = TEXT
+		10 {
+			data = site:base
+			dataWrap = <base href="|" />
+		}
+		
+		# FAVICON
+		20 = TEXT
+		20 {
+			if.isTrue = {$plugin.tx_sitsetup.favicon}
+			value (
+				<link rel="shortcut icon" href="{$plugin.tx_sitsetup.favicon}" type="image/x-icon">
+			)
+		}
 	}
 }
