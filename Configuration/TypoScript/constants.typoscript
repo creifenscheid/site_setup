@@ -11,5 +11,18 @@ plugin.tx_sitsetup {
        partialRootPath = EXT:site_setup/Resources/Private/Partials/
        # cat=Site setup; type=string; label=Name of the template to use
        templateName = Default
+       
+       # cat=Header setup; type=string; label=Name of the template to use for header rendering
+       headerTemplateName = Header
+       
+       # cat=Menu setup; type=string; label=Name of the template to use for menu rendering
+       menuTemplateName = Menu
+       # cat=Menu setup; type=int; label=Page uid of parent page of menu
+       menuParentPageId = 1
+       
+       # cat=Footer setup; type=string; label=Name of the template to use for footer rendering
+       footerTemplateName = Footer
+       # cat=Footer setup; type=int; label=Page uid of parent page of footer menu
+       footerMenuParentPageId = 
    }
 }

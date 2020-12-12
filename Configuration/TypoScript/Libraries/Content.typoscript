@@ -1,0 +1,4 @@
+lib.content < lib.boilerplates.fluidtemplate
+lib.content {
+    templateName = {$plugin.tx_sitsetup.view.templateName}
+}

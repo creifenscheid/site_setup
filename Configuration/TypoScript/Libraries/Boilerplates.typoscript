@@ -1,0 +1,16 @@
+lib.boilerplates.fluidtemplate  = FLUIDTEMPLATE
+lib.boilerplates.fluidtemplate {
+     layoutRootPaths < plugin.tx_sitsetup.view.layoutRootPaths
+     templateRootPaths < plugin.tx_sitsetup.view.templateRootPaths
+     partialRootPaths < plugin.tx_sitsetup.view.partialRootPaths
+}
+
+lib.boilerplates.menu = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+lib.boilerplates.menu {
+    special = directory
+    levels = 2
+    expandAll = 1
+    includeSpacer = 1
+    as = menu
+    titleField = nav_title // title
+}

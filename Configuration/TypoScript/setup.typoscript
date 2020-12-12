@@ -18,7 +18,5 @@ plugin.tx_sitsetup {
            10 = EXT:site_setup/Resources/Private/Partials/
            20 = {$plugin.tx_sitsetup.view.partialRootPath}
        }
-       
-       templateName = {$plugin.tx_sitsetup.view.templateName}
    }
 }
