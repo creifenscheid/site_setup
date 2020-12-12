@@ -1,9 +1,14 @@
 page = PAGE
 
-page {
-	10 = TEXT
-	10.value = BLA
-}
-
 @import 'EXT:site_setup/Configuration/TypoScript/Page/MetaData.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'
+
+page {
+	10 = FLUIDTEMPLATE
+	10 {
+	    templateName < plugin.tx_sitsetup.view.templateName
+	    layoutRootPaths < plugin.tx_sitsetup.view.layoutRootPaths
+	    templateRootPaths < plugin.tx_sitsetup.view.templateRootPaths
+	    partialRootPaths < plugin.tx_sitsetup.view.partialRootPaths
+	}
+}

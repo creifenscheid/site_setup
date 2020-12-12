@@ -1,4 +1,15 @@
 plugin.tx_sitsetup {
 	# cat=Site setup; type=string; label=Path to favicon file
    favicon = 
+   
+   view {
+       # cat=Site setup; type=string; label=Path to template files
+       templateRootPath = EXT:site_setup/Resources/Private/Templates/
+       # cat=Site setup; type=string; label=Path to layout files
+       layoutRootPath = EXT:site_setup/Resources/Private/Layouts/
+       # cat=Site setup; type=string; label=Path to partial files
+       partialRootPath = EXT:site_setup/Resources/Private/Partials/
+       # cat=Site setup; type=string; label=Name of the template to use
+       templateName = Default
+   }
 }

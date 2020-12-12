@@ -1,2 +1,24 @@
-@import 'EXT:site_setup/Configuration/TypoScript/Config/Config.typoscript'
+@import 'EXT:site_setup/Configuration/TypoScript/Config/*.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/Page.typoscript'
+@import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'
+
+plugin.tx_sitsetup {
+   view {
+       templateRootPaths {
+           10 = EXT:site_setup/Resources/Private/Templates/
+           20 = {$plugin.tx_sitsetup.view.templateRootPath}
+       }
+       
+       layoutRootPaths {
+           10 = EXT:site_setup/Resources/Private/Layouts/
+           20 = {$plugin.tx_sitsetup.view.layoutRootPath}
+       }
+       
+       partialRootPaths {
+           10 = EXT:site_setup/Resources/Private/Partials/
+           20 = {$plugin.tx_sitsetup.view.partialRootPath}
+       }
+       
+       templateName = {$plugin.tx_sitsetup.view.templateName}
+   }
+}
