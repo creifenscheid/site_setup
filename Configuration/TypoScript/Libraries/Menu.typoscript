@@ -1,5 +1,5 @@
-lib.menu < lib.boilerplates.fluidtemplate
-lib.menu {
+lib.menuTemplate < lib.boilerplates.fluidtemplate
+lib.menuTemplate {
     templateName = {$plugin.tx_sitsetup.view.menuTemplateName}
     
     dataProcessing {

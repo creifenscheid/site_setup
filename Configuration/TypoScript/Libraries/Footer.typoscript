@@ -1,5 +1,5 @@
-lib.footer < lib.boilerplates.fluidtemplate
-lib.footer {
+lib.footerTemplate < lib.boilerplates.fluidtemplate
+lib.footerTemplate {
     templateName = {$plugin.tx_sitsetup.view.footerTemplateName}
     
     dataProcessing {

@@ -1,4 +1,10 @@
-lib.content < lib.boilerplates.fluidtemplate
-lib.content {
+lib.contentTemplate < lib.boilerplates.fluidtemplate
+lib.contentTemplate {
     templateName = {$plugin.tx_sitsetup.view.templateName}
+}
+
+lib.contentRendering < styles.content.get
+lib.contentTendering {
+    current = 1
+    select.where.wrap = {#colpos}=|
 }
