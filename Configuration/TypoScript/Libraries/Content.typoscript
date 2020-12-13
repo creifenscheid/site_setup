@@ -1,10 +1,10 @@
 lib.contentTemplate < lib.boilerplates.fluidtemplate
 lib.contentTemplate {
-    templateName = {$plugin.tx_sitsetup.view.templateName}
+    templateName = {$plugin.tx_sitesetup.view.contentTemplateName}
 }
 
 lib.contentRendering < styles.content.get
-lib.contentTendering {
-    current = 1
-    select.where.wrap = {#colpos}=|
+lib.contentRendering {
+    select.where = {#colPos}={field:colPos}
+    select.where.insertData = 1
 }

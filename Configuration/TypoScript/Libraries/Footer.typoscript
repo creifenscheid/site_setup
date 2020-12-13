@@ -1,12 +1,12 @@
 lib.footerTemplate < lib.boilerplates.fluidtemplate
 lib.footerTemplate {
-    templateName = {$plugin.tx_sitsetup.view.footerTemplateName}
+    templateName = {$plugin.tx_sitesetup.view.footerTemplateName}
     
     dataProcessing {
         10 < lib.boilerplates.menu
         10 {
-            if.isTrue = {$plugin.tx_sitsetup.view.footerMenuParentPageId}
-            special.value = {$plugin.tx_sitsetup.view.footerMenuParentPageId}
+            if.isTrue = {$plugin.tx_sitesetup.view.footerMenuParentPageId}
+            special.value = {$plugin.tx_sitesetup.view.footerMenuParentPageId}
         }
     }
 }

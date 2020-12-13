@@ -4,7 +4,7 @@ page = PAGE
 @import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'
 
 page {
-    10 < lib.headerTemplate
+	10 < lib.headerTemplate
     20 < lib.menuTemplate
 	30 < lib.contentTemplate
 	40 < lib.footerTemplate

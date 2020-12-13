@@ -1,8 +1,8 @@
 lib.boilerplates.fluidtemplate  = FLUIDTEMPLATE
 lib.boilerplates.fluidtemplate {
-     layoutRootPaths < plugin.tx_sitsetup.view.layoutRootPaths
-     templateRootPaths < plugin.tx_sitsetup.view.templateRootPaths
-     partialRootPaths < plugin.tx_sitsetup.view.partialRootPaths
+     layoutRootPaths < plugin.tx_sitesetup.view.layoutRootPaths
+     templateRootPaths < plugin.tx_sitesetup.view.templateRootPaths
+     partialRootPaths < plugin.tx_sitesetup.view.partialRootPaths
 }
 
 lib.boilerplates.menu = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor

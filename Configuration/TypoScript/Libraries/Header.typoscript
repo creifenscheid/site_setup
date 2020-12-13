@@ -1,4 +1,4 @@
 lib.headerTemplate < lib.boilerplates.fluidtemplate
 lib.headerTemplate {
-    templateName = {$plugin.tx_sitsetup.view.headerTemplateName}
+    templateName = {$plugin.tx_sitesetup.view.headerTemplateName}
 }
