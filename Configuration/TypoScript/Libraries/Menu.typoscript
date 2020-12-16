@@ -1,5 +1,6 @@
 lib.menuTemplate < lib.boilerplates.fluidtemplate
 lib.menuTemplate {
+    if.isTrue = {$plugin.tx_sitesetup.view.menuTemplateName}
     templateName = {$plugin.tx_sitesetup.view.menuTemplateName}
     
     dataProcessing {

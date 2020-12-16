@@ -1,0 +1,13 @@
+<f:comment>
+    This partial can be used to render a skip navigation.
+    
+    Variables:
+    - navId
+    - targetId
+    - linkText
+    - linkClass (optional)
+</f:comment>
+
+<nav id="{navId}">
+    <a href="#{targetId}"{f:if(condition:linkClass, then: 'class="{linkClass}"')}>{linkText}</a>
+</nav>

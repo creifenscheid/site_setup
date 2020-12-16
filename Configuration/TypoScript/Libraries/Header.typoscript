@@ -1,4 +1,5 @@
 lib.headerTemplate < lib.boilerplates.fluidtemplate
 lib.headerTemplate {
+    if.isTrue = {$plugin.tx_sitesetup.view.headerTemplateName}
     templateName = {$plugin.tx_sitesetup.view.headerTemplateName}
 }
