@@ -6,7 +6,7 @@ lib.boilerplates.fluidtemplate {
 }
 
 lib.boilerplates.menuProcessor = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-lib.boilerplates.menu {
+lib.boilerplates.menuProcessor {
     special = directory
     levels = 2
     expandAll = 1
