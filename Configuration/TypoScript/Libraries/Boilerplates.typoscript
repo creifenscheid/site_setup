@@ -5,7 +5,7 @@ lib.boilerplates.fluidtemplate {
      partialRootPaths < plugin.tx_sitesetup.view.partialRootPaths
 }
 
-lib.boilerplates.menu = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+lib.boilerplates.menuProcessor = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 lib.boilerplates.menu {
     special = directory
     levels = 2

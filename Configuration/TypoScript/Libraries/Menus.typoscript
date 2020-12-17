@@ -1,0 +1,28 @@
+lib.menuProcessor < lib.boilerplates.menuProcessor
+lib.menuProcessor {
+    if.isTrue = {$plugin.tx_sitesetup.view.menuParentPageId}
+    special.value = {$plugin.tx_sitesetup.view.menuParentPageId}
+}
+
+lib.menuTemplate < lib.boilerplates.fluidtemplate
+lib.menuTemplate {
+    if.isTrue = {$plugin.tx_sitesetup.view.menuTemplateName}
+    templateName = {$plugin.tx_sitesetup.view.menuTemplateName}
+    
+    dataProcessing {
+        10 < lib.menuProcessor
+    }
+}
+
+lib.languageMenu < lib.boilerplates.fluidtemplate
+lib.languageMenu {
+    if.isTrue = {$plugin.tx_sitesetup.view.languageMenuTemplateName}
+    templateName = {$plugin.tx_sitesetup.view.languageMenuTemplateName}
+    
+    10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+    10 {
+        if.isTrue = {$plugin.tx_sitesetup.view.languageIds}
+        languages = {$plugin.tx_sitesetup.view.languageIds}
+        as = languagenavigation
+    }
+}
