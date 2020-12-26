@@ -10,6 +10,9 @@ plugin.tx_sitesetup {
        # cat=Site setup; type=string; label=Path to partial files
        partialRootPath = EXT:site_setup/Resources/Private/Partials/
        
+       # cat=Site setup/Logo; type=string; label=Path to logo svg file
+       logoPath = 
+       
        # cat=Site setup/Content; type=string; label=Name of the template to use for content rendering
        contentTemplateName = Content
       

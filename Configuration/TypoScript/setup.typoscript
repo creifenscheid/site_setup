@@ -1,11 +1,13 @@
 plugin.tx_sitesetup {
    view {
        templateRootPaths {
-           10 = {$plugin.tx_sitesetup.view.templateRootPath}
+           10 = EXT:site_setup/Resources/Private/Templates/
+           20 = {$plugin.tx_sitesetup.view.templateRootPath}
        }
        
        layoutRootPaths {
-           10 = {$plugin.tx_sitesetup.view.layoutRootPath}
+           10 = EXT:site_setup/Resources/Private/Layouts/
+           20 = {$plugin.tx_sitesetup.view.layoutRootPath}
        }
        
        partialRootPaths {
