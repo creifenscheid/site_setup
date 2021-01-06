@@ -12,7 +12,7 @@
     <ul{f:if(condition:menuClass, then: ' class="{menuClass}"')}>
         <f:for each="{menu}" as="element">
             <li{f:if(condition:menuElementClass, then: ' class="{menuElementClass}"')}>
-                <f:link.page pageUid="{element.data.uid}">{element.title}</f:link.page>
+                <f:link.page pageUid="{element.data.uid}" class="link">{element.title}</f:link.page>
             </li>
       </f:for>
     </ul>

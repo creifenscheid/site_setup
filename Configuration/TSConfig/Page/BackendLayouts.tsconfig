@@ -1,0 +1,35 @@
+mod.web_layout.BackendLayouts {
+  headerContent {
+    title = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.headerContent
+    config {
+      backend_layout { 
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                colspan = 1
+                name = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.header
+                colPos = 100
+                allowed {
+		            CType = image
+		        }
+        		maxitems = 1
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                colspan = 1
+                name = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.content
+                colPos = 200
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
