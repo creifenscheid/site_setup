@@ -12,9 +12,6 @@ mod.web_layout.BackendLayouts {
                 colspan = 1
                 name = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.header
                 colPos = 100
-                allowed {
-		            CType = image
-		        }
         		maxitems = 1
               }
             }

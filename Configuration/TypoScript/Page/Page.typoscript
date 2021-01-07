@@ -4,6 +4,12 @@ page = PAGE
 @import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'
 
 page {
+	# add two letter iso code as css class for body tag - needed to "locate" in css
+	bodyTag >
+	bodyTagCObject = TEXT
+	bodyTagCObject.data= siteLanguage:iso-639-1
+	bodyTagCObject.wrap = <body class="|">
+
 	10 < lib.headerTemplate
 	20 < lib.menuTemplate
 	30 < lib.contentTemplate
