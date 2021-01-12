@@ -14,3 +14,10 @@ lib.boilerplates.menuProcessor {
     as = menu
     titleField = nav_title // title
 }
+
+lib.boilerplates.fileProcessor = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+lib.boilerplates.fileProcessor {
+     as = media
+     references.fieldName = media
+     references.table = pages
+  }

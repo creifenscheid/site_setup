@@ -1,16 +1,14 @@
-lib.menuProcessor < lib.boilerplates.menuProcessor
-lib.menuProcessor {
-    if.isTrue = {$plugin.tx_sitesetup.view.menuParentPageId}
-    special.value = {$plugin.tx_sitesetup.view.menuParentPageId}
-}
-
 lib.menuTemplate < lib.boilerplates.fluidtemplate
 lib.menuTemplate {
     if.isTrue = {$plugin.tx_sitesetup.view.menuTemplateName}
     templateName = {$plugin.tx_sitesetup.view.menuTemplateName}
     
     dataProcessing {
-        10 < lib.menuProcessor
+        10 < lib.boilerplates.menuProcessor
+		10 {
+		    if.isTrue = {$plugin.tx_sitesetup.view.menuParentPageId}
+		    special.value = {$plugin.tx_sitesetup.view.menuParentPageId}
+		}
     }
 }
 

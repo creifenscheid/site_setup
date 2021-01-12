@@ -12,6 +12,26 @@
          <trans-unit id="backendlayouts.columns.content" resname="backendlayouts.columns.content">
             <source>Content</source>
          </trans-unit>
+         
+         <!-- CropVariants -->
+         <trans-unit id="cropvariants.mobile.title" resname="cropvariants.mobile.title">
+            <source>Mobile</source>
+         </trans-unit>
+         <trans-unit id="cropvariants.tablet.title" resname="cropvariants.tablet.title">
+            <source>Tablet</source>
+         </trans-unit>
+         <trans-unit id="cropvariants.desktop.title" resname="cropvariants.desktop.title">
+            <source>Desktop</source>
+         </trans-unit>
+         <trans-unit id="cropvariants.ratios.default" resname="cropvariants.ratios.default">
+            <source>Default</source>
+         </trans-unit>
+         <trans-unit id="cropvariants.ratios.1_1" resname="cropvariants.ratios.1_1">
+            <source>1:1</source>
+         </trans-unit>
+         <trans-unit id="cropvariants.ratios.3_2" resname="cropvariants.ratios.3_2">
+            <source>3:2</source>
+         </trans-unit>
       </body>
    </file>
 </xliff>
