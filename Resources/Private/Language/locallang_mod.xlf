@@ -3,6 +3,9 @@
    <file source-language="en" datatype="plaintext" original="EXT:site_setup/Resources/Private/Language/locallang_mod.xlf" date="2020-12-27T23:55:00Z" product-name="site_setup">
       <header/>
       <body>
+         <trans-unit id="backendlayouts.contentOnly" resname="backendlayouts.contentOnly">
+            <source>Content column</source>
+         </trans-unit>
          <trans-unit id="backendlayouts.headerContent" resname="backendlayouts.headerContent">
             <source>Header and Content column</source>
          </trans-unit>
