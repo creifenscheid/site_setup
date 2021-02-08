@@ -11,7 +11,7 @@ plugin.tx_sitesetup {
        partialRootPath = EXT:site_setup/Resources/Private/Partials/
        
        # cat=Site setup; type=string; label=Path to partial files
-       titlePostfix = \m/&nbsp;(-.-)&nbsp;Christian Reifenscheid
+       titlePostfix = &#124;&nbsp;Christian Reifenscheid
        
        # cat=Site setup/Logo; type=string; label=Path to logo svg file
        logoPath = 
