@@ -16,5 +16,13 @@ page {
 				<link rel="shortcut icon" href="{$plugin.tx_sitesetup.favicon}" type="image/x-icon">
 			)
 		}
+		
+		# TITLE TAG
+		30 = TEXT
+		30 {
+		    if.isTrue = {$plugin.tx_sitesetup.titlePostfix}
+		    field = subtitle // title
+		    dataWrap = <title>|&nbsp;{$plugin.tx_sitesetup.titlePostfix}</title>
+		}
 	}
 }
