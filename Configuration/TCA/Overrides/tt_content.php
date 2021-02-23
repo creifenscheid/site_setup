@@ -8,21 +8,45 @@ call_user_func(function()
      */
     $extensionKey = 'site_setup';
     
-    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
-        (
-            new \B13\Container\Tca\ContainerConfiguration(
-                'site-setup-2cols', // CType
-                'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.site-setup-2cols',
-                'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.site-setup-2cols.description',
-                [
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
+        
+        $cType = 'site-setup-2cols';
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    $cType, // CType
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType,
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType . '.description',
                     [
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 202]
+                        [
+                            ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
+                            ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
+                        ]
                     ]
-                ]
+                    )
                 )
-            )
-        // set an optional icon configuration
-        ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/site-setup-2cols.svg')
+            // set an optional icon configuration
+            ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
         );
+        
+        $cType = 'site-setup-3cols';
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    $cType, // CType
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType,
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType . '.description',
+                    [
+                        [
+                            ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
+                            ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.center', 'colPos' => 202],
+                            ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
+                        ]
+                    ]
+                    )
+                )
+            // set an optional icon configuration
+            ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
+        );
+    }
 });

@@ -24,6 +24,12 @@
          <trans-unit id="content.site-setup-2cols.description" resname="content.site-setup-2cols.description">
             <source>Content container with 2 columns</source>
          </trans-unit>
+         <trans-unit id="content.site-setup-3cols" resname="content.site-setup-3cols">
+            <source>3 Columns</source>
+         </trans-unit>
+         <trans-unit id="content.site-setup-3cols.description" resname="content.site-setup-3cols.description">
+            <source>Content container with 3 columns</source>
+         </trans-unit>
          
          <!-- CropVariants -->
          <trans-unit id="cropvariants.mobile.title" resname="cropvariants.mobile.title">
