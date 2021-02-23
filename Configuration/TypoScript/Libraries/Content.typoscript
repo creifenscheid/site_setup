@@ -9,3 +9,31 @@ lib.contentRendering {
     select.where = {#colPos}={field:colPos}
     select.where.insertData = 1
 }
+
+tt_content.site-setup-2cols < lib.contentElement
+tt_content.site-setup-2cols {
+    templateName = 3Columns
+    templateRootPaths {
+        10 = EXT:site_setup/Resources/Private/Templates/
+    }
+    partialRootPaths {
+        10 = EXT:site_setup/Resources/Private/Partials/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.site-setup-3cols < lib.contentElement
+tt_content.site-setup-3cols {
+    templateName = 3Columns
+    templateRootPaths {
+        10 = EXT:site_setup/Resources/Private/Templates/
+    }
+    partialRootPaths {
+        10 = EXT:site_setup/Resources/Private/Partials/
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
