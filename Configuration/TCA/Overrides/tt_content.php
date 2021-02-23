@@ -14,7 +14,7 @@ call_user_func(function()
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
             (
                 new \B13\Container\Tca\ContainerConfiguration(
-                    $cType, // CType
+                    $cType,
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType,
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType . '.description',
                     [
@@ -25,7 +25,6 @@ call_user_func(function()
                     ]
                     )
                 )
-            // set an optional icon configuration
             ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
         );
         
@@ -33,7 +32,7 @@ call_user_func(function()
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
             (
                 new \B13\Container\Tca\ContainerConfiguration(
-                    $cType, // CType
+                    $cType,
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType,
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:content.' . $cType . '.description',
                     [
@@ -45,7 +44,6 @@ call_user_func(function()
                     ]
                     )
                 )
-            // set an optional icon configuration
             ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
         );
     }
