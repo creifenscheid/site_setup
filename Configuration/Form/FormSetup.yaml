@@ -1,0 +1,12 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:site_setup/Resources/Private/Templates/Form/'
+                partialRootPaths:
+                  20: 'EXT:site_setup/Resources/Private/Partials/Form/'
