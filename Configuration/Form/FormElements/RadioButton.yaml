@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            RadioButton:
+              properties:
+                containerClassAttribute: 'tx-sitesetup-formelement'
+                elementClassAttribute: 'radio'

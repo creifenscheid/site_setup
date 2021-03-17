@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Telephone:
+              properties:
+                containerClassAttribute: 'tx-sitesetup-formelement'
+                elementClassAttribute: 'input phone'
