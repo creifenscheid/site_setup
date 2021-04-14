@@ -3,7 +3,6 @@ imports:
     - { resource: "./FormElements/Password.yaml" }
     - { resource: "./FormElements/AdvancedPassword.yaml" }
     - { resource: "./FormElements/Textarea.yaml" }
-    - { resource: "./FormElements/Honeypot.yaml" }
     - { resource: "./FormElements/Hidden.yaml" }
     - { resource: "./FormElements/Email.yaml" }
     - { resource: "./FormElements/Telephone.yaml" }
