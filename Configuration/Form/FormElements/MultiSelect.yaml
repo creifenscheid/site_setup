@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             MultiSelect:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement multiple select'
+                containerClassAttribute: 'tx-sitesetup-formelement multi-select-container'
                 elementClassAttribute: 'select multiple'

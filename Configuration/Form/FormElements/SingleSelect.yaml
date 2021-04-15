@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             SingleSelect:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
+                containerClassAttribute: 'tx-sitesetup-formelement select-container'
                 elementClassAttribute: 'select'
