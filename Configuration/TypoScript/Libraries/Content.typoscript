@@ -19,3 +19,5 @@ tt_content.site-setup-3cols < lib.boilerplates.container
 tt_content.site-setup-3cols {
     templateName = 3Columns
 }
+
+lib.contentElement.stdWrap.postUserFunc = CReifenscheid\SiteSetup\UserFunc\ParseUserFunc->replaceMarker

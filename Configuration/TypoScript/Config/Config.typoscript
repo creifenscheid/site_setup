@@ -1,4 +1,3 @@
-
 config.noPageTitle = 2
 
 [applicationContext == "Development"]
