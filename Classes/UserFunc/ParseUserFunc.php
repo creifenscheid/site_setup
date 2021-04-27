@@ -51,15 +51,37 @@ class ParseUserFunc
      */
     public function replaceMarker(string $content, ?array $conf) : string
     {
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump([$content, $conf, $this->cObj], __CLASS__ . '::' . __FUNCTION__ . ':' . __LINE__);
+        // define pattern to extract content enclosed in {}
+        $pattern = '/\{([^\}]*)\}/';
 
-        // TODO
-        /**
-         * - extract marker with regex
-         * - get typoscript
-         * - lookup marker in typoscript lib.marker
-         * - replace marker with typoscript content
-         */
+        // extract marker from content
+        preg_match_all($pattern, $content, $matches);
+
+        // if matches are
+        if (!empty($matches[1])) {
+
+            // loop through extracted markers
+            foreach ($matches[1] as $marker) {
+                $markerConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(':', $marker);
+
+                switch ($markerConfiguration[0]) {
+                    case 'forYears':
+                        $thisYear = date('Y', time());
+                        $markerContent = $thisYear - $markerConfiguration[1];
+                        
+                        if ($markerContent > 0) {
+                            if ($markerContent == 1) {
+                                $prefix = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
+                            } else {
+                                $prefix = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.years', 'SiteSetup');
+                            }
+
+                            $content = str_replace ('{' . $marker . '}', $markerContent . ' ' . $prefix, $content);
+                        }
+                        break;
+                }
+            }
+        }
 
         return $content;
     }
