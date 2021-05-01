@@ -1,0 +1,9 @@
+RTE {
+    default.preset = default
+    config {
+        tt_content.bodytext {
+            preset = full
+            types.text.preset = full
+        }
+    }
+}

@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Textarea:
+              properties:
+                containerClassAttribute: 'tx-sitesetup-formelement'
+                elementClassAttribute: 'textarea'

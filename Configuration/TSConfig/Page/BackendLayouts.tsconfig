@@ -1,0 +1,22 @@
+mod.web_layout.BackendLayouts {
+  contentOnly {
+    title = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.contentOnly
+    config {
+      backend_layout { 
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                colspan = 1
+                name = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.content
+                colPos = 200
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

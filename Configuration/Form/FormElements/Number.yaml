@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Number:
+              properties:
+                containerClassAttribute: 'tx-sitesetup-formelement'
+                elementClassAttribute: 'input number'

@@ -1,0 +1,8 @@
+config.noPageTitle = 2
+
+[applicationContext == "Development"]
+	config {
+		contentObjectExceptionHandler = 1
+		no_cache = 1
+	}
+[END]

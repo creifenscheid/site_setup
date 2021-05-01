@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            MultiSelect:
+              properties:
+                containerClassAttribute: 'tx-sitesetup-formelement multi-select-container'
+                elementClassAttribute: 'select multiple'

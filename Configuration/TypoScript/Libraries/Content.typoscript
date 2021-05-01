@@ -1,0 +1,23 @@
+lib.contentTemplate < lib.boilerplates.fluidtemplate
+lib.contentTemplate {
+    if.isTrue = {$plugin.tx_sitesetup.view.contentTemplateName}
+    templateName = {$plugin.tx_sitesetup.view.contentTemplateName}
+}
+
+lib.contentRendering < styles.content.get
+lib.contentRendering {
+    select.where = {#colPos}={field:colPos}
+    select.where.insertData = 1
+}
+
+tt_content.site-setup-2cols < lib.boilerplates.container
+tt_content.site-setup-2cols {
+    templateName = 2Columns
+}
+
+tt_content.site-setup-3cols < lib.boilerplates.container
+tt_content.site-setup-3cols {
+    templateName = 3Columns
+}
+
+lib.contentElement.stdWrap.postUserFunc = CReifenscheid\SiteSetup\UserFunc\ParseUserFunc->replaceMarker

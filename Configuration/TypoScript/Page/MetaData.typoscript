@@ -1,0 +1,30 @@
+page {
+	meta {
+	
+		# VIEWPORT
+		viewport = width=device-width, initial-scale=1.0
+		
+		# DESCRIPTION
+		description.data = page:description
+		description.ifEmpty.data = levelfield :-1, description, slide
+		
+		# ROBOTS
+		robots = index, follow
+		
+        # LAST MODIFIED
+        last-modified.data = page:SYS_LASTCHANGED
+        last-modified.date = c
+        
+        # WEB APP CONFIGURATION
+        apple-mobile-web-app-capable = yes
+        mobile-web-app-capable = yes
+	}
+}
+
+[applicationContext == "Development"]
+	page {
+		meta {
+			robots = noindex, nofollow
+		}
+	}
+[END]
