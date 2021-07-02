@@ -4,11 +4,12 @@
     Variables:
     - navId
     - menu
+    - label
     - menuClass (optional)
     - menuElementClass (optional)
 </f:comment>
 
-<nav id="{navId}">
+<nav id="{navId}" aria-label="{label}">
     <ul{f:if(condition:menuClass, then: ' class="{menuClass}"')}>
         <f:for each="{menu}" as="element">
             <li{f:if(condition:menuElementClass, then: ' class="{menuElementClass}"')}>
