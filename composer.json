@@ -18,8 +18,8 @@
 		}
 	],
 	"extra": {
-          "typo3/cms": {
-            "extension-key": "site_setup"
-          }
-        }
+		"typo3/cms": {
+			"extension-key": "site_setup"
+		}
+	}
 }
