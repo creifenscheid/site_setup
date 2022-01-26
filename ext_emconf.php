@@ -28,13 +28,13 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Site setup',
     'description' => 'Basic site setup',
-    'category' => 'fe',
+    'category' => 'template',
     'author' => 'C. Reifenscheid',
-    'version' => '10.0.0',
+    'version' => '11.0.0',
     'state' => 'dev',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-10.4.99'
+            'typo3' => '11.5.0-11.5.99'
         ]
     ],
     'autoload' => [
