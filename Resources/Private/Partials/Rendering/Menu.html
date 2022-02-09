@@ -9,7 +9,8 @@
     - menuElementClass (optional)
 </f:comment>
 
-<nav id="{navId}" aria-label="{label}">
+<nav id="{navId}">
+    <h2 class="sr-only">{label}</h2>
     <ul{f:if(condition:menuClass, then: ' class="{menuClass}"')}>
         <f:for each="{menu}" as="element">
             <li{f:if(condition:menuElementClass, then: ' class="{menuElementClass}"')}>
