@@ -1,7 +1,7 @@
 lib.contentTemplate < lib.boilerplates.fluidtemplate
 lib.contentTemplate {
-    if.isTrue = {$plugin.tx_sitesetup.view.contentTemplateName}
-    templateName = {$plugin.tx_sitesetup.view.contentTemplateName}
+    if.isTrue = {$plugin.tx_sitesetup.settings.contentTemplateName}
+    templateName = {$plugin.tx_sitesetup.settings.contentTemplateName}
 }
 
 lib.contentRendering < styles.content.get

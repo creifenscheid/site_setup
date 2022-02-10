@@ -1,26 +1,26 @@
 lib.menuTemplate < lib.boilerplates.fluidtemplate
 lib.menuTemplate {
-    if.isTrue = {$plugin.tx_sitesetup.view.menuTemplateName}
-    templateName = {$plugin.tx_sitesetup.view.menuTemplateName}
+    if.isTrue = {$plugin.tx_sitesetup.settings.menuTemplateName}
+    templateName = {$plugin.tx_sitesetup.settings.menuTemplateName}
     
     dataProcessing {
         10 < lib.boilerplates.menuProcessor
 		10 {
-		    if.isTrue = {$plugin.tx_sitesetup.view.menuParentPageId}
-		    special.value = {$plugin.tx_sitesetup.view.menuParentPageId}
+		    if.isTrue = {$plugin.tx_sitesetup.settings.menuParentPageId}
+		    special.value = {$plugin.tx_sitesetup.settings.menuParentPageId}
 		}
     }
 }
 
 lib.languageMenu < lib.boilerplates.fluidtemplate
 lib.languageMenu {
-    if.isTrue = {$plugin.tx_sitesetup.view.languageMenuTemplateName}
-    templateName = {$plugin.tx_sitesetup.view.languageMenuTemplateName}
+    if.isTrue = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
+    templateName = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
     
     10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
     10 {
-        if.isTrue = {$plugin.tx_sitesetup.view.languageIds}
-        languages = {$plugin.tx_sitesetup.view.languageIds}
+        if.isTrue = {$plugin.tx_sitesetup.settings.languageIds}
+        languages = {$plugin.tx_sitesetup.settings.languageIds}
         as = languagenavigation
     }
 }

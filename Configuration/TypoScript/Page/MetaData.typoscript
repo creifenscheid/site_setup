@@ -8,9 +8,6 @@ page {
 		description.data = page:description
 		description.ifEmpty.data = levelfield :-1, description, slide
 		
-		# ROBOTS
-		robots = index, follow
-		
         # LAST MODIFIED
         last-modified.data = page:SYS_LASTCHANGED
         last-modified.date = c

@@ -1,13 +1,13 @@
 lib.headerTemplate < lib.boilerplates.fluidtemplate
 lib.headerTemplate {
-    if.isTrue = {$plugin.tx_sitesetup.view.headerTemplateName}
-    templateName = {$plugin.tx_sitesetup.view.headerTemplateName}
+    if.isTrue = {$plugin.tx_sitesetup.settings.headerTemplateName}
+    templateName = {$plugin.tx_sitesetup.settings.headerTemplateName}
     
     dataProcessing {
         10 < lib.boilerplates.fileProcessor
 		10 {
-		    if.isTrue = {$plugin.tx_sitesetup.view.menuParentPageId}
-		    special.value = {$plugin.tx_sitesetup.view.menuParentPageId}
+		    if.isTrue = {$plugin.tx_sitesetup.settings.menuParentPageId}
+		    special.value = {$plugin.tx_sitesetup.settings.menuParentPageId}
 		}
     }
 

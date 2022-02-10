@@ -11,18 +11,18 @@ page {
 		# FAVICON
 		20 = TEXT
 		20 {
-			if.isTrue = {$plugin.tx_sitesetup.favicon}
+			if.isTrue = {$plugin.tx_sitesetup.settings.favicon}
 			value (
-				<link rel="shortcut icon" href="{$plugin.tx_sitesetup.favicon}" type="image/x-icon">
+				<link rel="shortcut icon" href="{$plugin.tx_sitesetup.settings.favicon}" type="image/svg+xml">
 			)
 		}
 		
 		# TITLE TAG
 		30 = TEXT
 		30 {
-		    if.isTrue = {$plugin.tx_sitesetup.titlePostfix}
-		    field = subtitle // title
-		    dataWrap = <title>|&nbsp;{$plugin.tx_sitesetup.titlePostfix}</title>
+		    if.isTrue = {$plugin.tx_sitesetup.settings.titlePostfix}
+		    field = nav_title // title
+		    dataWrap = <title>|&nbsp;{$plugin.tx_sitesetup.settings.titlePostfix}</title>
 		}
 	}
 }
