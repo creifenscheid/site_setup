@@ -15,8 +15,27 @@ page {
         # WEB APP CONFIGURATION
         apple-mobile-web-app-capable = yes
         mobile-web-app-capable = yes
+		apple-mobile-web-app-status-bar-style = black-translucent
 	}
 }
+
+["{$plugin.tx_sitesetup.settings.webapp.statusBarStyle}" != ""] 
+
+page {
+	meta {
+		apple-mobile-web-app-status-bar-style = {$plugin.tx_sitesetup.settings.webapp.statusBarStyle}
+	}
+}
+
+
+["{$plugin.tx_sitesetup.settings.webapp.appTitle}" != ""] 
+
+page {
+	meta {
+		apple-mobile-web-app-title = {$plugin.tx_sitesetup.settings.webapp.appTitle}
+	}
+}
+
 
 [applicationContext == "Development"]
 	page {

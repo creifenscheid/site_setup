@@ -44,5 +44,17 @@ plugin.tx_sitesetup {
 
        # cat=Site setup/config; type=string; label=Postfix for title tag
        titlePostfix =
+
+       # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:constantEditor.customsubcategory.webapp
+       webapp {
+            # cat=Site setup/webapp/a; type=string; label=App title
+            appTitle =
+
+            # cat=Site setup/webapp/b; type=string; label=Folder where app icons are located
+            iconFolder =
+
+            # cat=Site setup/webapp/c; type=options[default=default, black=black, translucent=black-translucent]; label=Status bar style
+            statusBarStyle =
+       }
    }
 }

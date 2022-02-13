@@ -75,6 +75,10 @@
             <source>Configuration</source>
             <target>Konfiguration</target>
          </trans-unit>
+         <trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
+            <source>Web app configuration</source>
+            <target>Web-App-Konfiguration</target>
+         </trans-unit>
       </body>
    </file>
 </xliff>

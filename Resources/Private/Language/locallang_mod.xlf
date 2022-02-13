@@ -58,6 +58,9 @@
          <trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
             <source>Configuration</source>
          </trans-unit>
+         <trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
+            <source>Web app configuration</source>
+         </trans-unit>
       </body>
    </file>
 </xliff>
