@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+   <file source-language="en" target-language="de" datatype="plaintext" original="EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf" date="2020-12-27T23:55:00Z" product-name="site_setup">
+      <header/>
+      <body>
+         <!-- SUBCATEGORIES -->
+         <trans-unit id="constantEditor.customsubcategory.path" resname="constantEditor.customsubcategory.path">
+            <source>Paths</source>
+            <target>Pfade</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
+            <source>Configuration</source>
+            <target>Konfiguration</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
+            <source>Web app configuration</source>
+            <target>Web-App-Konfiguration</target>
+         </trans-unit>
+
+         <!-- PATHS -->
+         <trans-unit id="constantEditor.path.templateRootPath" resname="constantEditor.path.templateRootPath">
+            <source>TemplateRootPath: Path to template files</source>
+            <target>TemplateRootPath: Pfad zu Template-Dateien</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.path.layoutRootPath" resname="constantEditor.path.layoutRootPath">
+            <source>LayoutRootPath: Path to layout files</source>
+            <target>LayoutRootPath: Pfad zu Layout-Dateien</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.path.partialRootPath" resname="constantEditor.path.partialRootPath">
+            <source>PartialRootPath: Path to layout files</source>
+            <target>PartialRootPath: Pfad zu Partial-Dateien</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.path.favicon" resname="constantEditor.path.favicon">
+            <source>Favicon: Path to favicon file</source>
+            <target>Favicon: Pfad zur Favicon-Datei</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.path.logoPath" resname="constantEditor.path.logoPath">
+            <source>Logo: Path to logo file</source>
+            <target>Logo: Pfad zur Logo-Datei</target>
+         </trans-unit>
+
+         <!-- FILES -->
+         <trans-unit id="constantEditor.file.headerTemplateName" resname="constantEditor.file.headerTemplateName">
+            <source>Header template: Name of the template to use for header rendering</source>
+            <target>Header-Template: Name des Templates, das für die Header-Darstellung verwendet werden soll</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.file.menuTemplateName" resname="constantEditor.file.menuTemplateName">
+            <source>Menu template: Name of the template to use for menu rendering</source>
+            <target>Menü-Template: Name des Templates, das für die Menü-Darstellung verwendet werden soll</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.file.contentTemplateName" resname="constantEditor.file.contentTemplateName">
+            <source>Content template: Name of the template to use for menu rendering</source>
+            <target>Inhalts-Template: Name des Templates, das für die Inhaltsdarstellung verwendet werden soll</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.file.footerTemplateName" resname="constantEditor.file.footerTemplateName">
+            <source>Footer template: Name of the template to use for menu rendering</source>
+            <target>Footer-Template: Name des Templates, das für die Footer-Darstellung verwendet werden soll</target>
+         </trans-unit>
+
+         <!-- CONFIGURATION -->
+         <trans-unit id="constantEditor.config.titlePostfix" resname="constantEditor.config.titlePostfix">
+            <source>Title postfix: Postfix for the title tag</source>
+            <target>Title-Postfix: Postfix für das Title-Tag</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.config.menuParentPageId" resname="constantEditor.config.menuParentPageId">
+            <source>Menu id: Page id of the parent page of the menu pages</source>
+            <target>Menü-ID: Seiten-ID der übergeordneten Seite der Menü-Seiten</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.config.footerMenuParentPageId" resname="constantEditor.config.footerMenuParentPageId">
+            <source>Footer menu id: Page id of the parent page of the footer menu pages</source>
+            <target>Footer-Menü-ID: Seiten-ID der übergeordneten Seite der Footer-Menü-Seiten</target>
+         </trans-unit>
+
+         <!-- LANGUAGE -->
+         <trans-unit id="constantEditor.language.languageIds" resname="constantEditor.language.languageIds">
+            <source>Language ids: Ids of the languages for the language menu</source>
+            <target>Sprach-IDs: Ids der Sprachen für das Sprachmenü</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.language.languageMenuTemplateName" resname="constantEditor.language.languageMenuTemplateName">
+            <source>Language menu template: Name of the template to use for language menu rendering</source>
+            <target>Sprachmenü-Template: Name des Templates, das für die Darstellung des Sprachmenüs verwendet werden soll</target>
+         </trans-unit>
+
+         <!-- WEBAPP -->
+         <trans-unit id="constantEditor.webapp.appTitle" resname="constantEditor.webapp.appTitle">
+            <source>App title: Title of the web application shown on homescreen</source>
+            <target>App-Titel: Titel der Webanwendung, der auf dem Startbildschirm angezeigt wird</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.webapp.iconFolder" resname="constantEditor.webapp.iconFolder">
+            <source>Icon folder: Path to the folder where app icons are stored</source>
+            <target>Icon-Ordner: Pfad zu dem Ordner, in dem die App-Icons gespeichert sind</target>
+         </trans-unit>
+         <trans-unit id="constantEditor.webapp.statusBarStyle" resname="constantEditor.webapp.statusBarStyle">
+            <source>Statusbar style: Style configuration for the iOS status bar</source>
+            <target>Stil der Statusleiste: Darstellungskonfiguration für die iOS-Statusleiste</target>
+         </trans-unit>
+      </body>
+   </file>
+</xliff>

@@ -65,20 +65,6 @@
             <source>3:2</source>
             <target>3:2</target>
          </trans-unit>
-
-         <!-- Constant Editor -->
-         <trans-unit id="constantEditor.customsubcategory.path" resname="constantEditor.customsubcategory.path">
-            <source>Paths</source>
-            <target>Pfade</target>
-         </trans-unit>
-         <trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
-            <source>Configuration</source>
-            <target>Konfiguration</target>
-         </trans-unit>
-         <trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
-            <source>Web app configuration</source>
-            <target>Web-App-Konfiguration</target>
-         </trans-unit>
       </body>
    </file>
 </xliff>

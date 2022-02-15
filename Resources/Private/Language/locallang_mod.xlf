@@ -50,17 +50,6 @@
          <trans-unit id="cropvariants.ratios.3_2" resname="cropvariants.ratios.3_2">
             <source>3:2</source>
          </trans-unit>
-
-         <!-- Constant Editor -->
-         <trans-unit id="constantEditor.customsubcategory.path" resname="constantEditor.customsubcategory.path">
-            <source>Paths</source>
-         </trans-unit>
-         <trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
-            <source>Configuration</source>
-         </trans-unit>
-         <trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
-            <source>Web app configuration</source>
-         </trans-unit>
       </body>
    </file>
 </xliff>
