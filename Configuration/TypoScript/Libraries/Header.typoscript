@@ -5,10 +5,6 @@ lib.headerTemplate {
     
     dataProcessing {
         10 < lib.boilerplates.fileProcessor
-		10 {
-		    if.isTrue = {$plugin.tx_sitesetup.settings.menuParentPageId}
-		    special.value = {$plugin.tx_sitesetup.settings.menuParentPageId}
-		}
     }
 
     variables {
