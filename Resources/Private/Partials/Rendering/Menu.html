@@ -2,19 +2,18 @@
     This partial can be used to render menus.
     
     Variables:
-    - navId
+    - id
     - menu
     - label
-    - menuClass (optional)
-    - menuElementClass (optional)
+    - additionalClasses (optional)
 </f:comment>
 
-<nav id="{navId}">
+<nav id="{id}">
     <h2 class="sr-only">{label}</h2>
-    <ul{f:if(condition:menuClass, then: ' class="{menuClass}"')}>
+    <ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
         <f:for each="{menu}" as="element">
-            <li{f:if(condition:menuElementClass, then: ' class="{menuElementClass}"')}>
-                <f:link.page pageUid="{element.data.uid}" class="link">{element.title}</f:link.page>
+            <li class="{id}__element">
+                <f:link.page pageUid="{element.data.uid}" class="{id}__link">{element.title}</f:link.page>
             </li>
       </f:for>
     </ul>
