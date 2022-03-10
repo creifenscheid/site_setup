@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Date:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input date'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input form-element__input--date'

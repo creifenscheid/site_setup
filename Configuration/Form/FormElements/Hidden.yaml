@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Hidden:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input hidden'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input form-element__input--hidden'

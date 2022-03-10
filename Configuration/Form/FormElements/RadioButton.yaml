@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             RadioButton:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'radio'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__radio'

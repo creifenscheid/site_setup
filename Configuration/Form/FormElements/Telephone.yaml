@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Telephone:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input phone'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input form-element__input--phone'

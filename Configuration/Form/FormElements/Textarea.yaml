@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Textarea:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'textarea'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__textarea'

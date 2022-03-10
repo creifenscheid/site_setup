@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             DatePicker:
               properties:
-                containerClassAttribute:  'tx-sitesetup-formelement'
-                elementClassAttribute: 'date-picker'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__date-picker'

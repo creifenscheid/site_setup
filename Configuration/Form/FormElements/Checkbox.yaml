@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Checkbox:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'checkbox'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__checkbox'

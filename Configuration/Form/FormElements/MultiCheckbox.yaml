@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             MultiCheckbox:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement multiple checkbox'
-                elementClassAttribute: 'checkbox multiple'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__checkbox form-element__checkbox--multiple'

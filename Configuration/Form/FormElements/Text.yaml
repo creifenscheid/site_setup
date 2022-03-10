@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Text:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input'

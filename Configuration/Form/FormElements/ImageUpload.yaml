@@ -6,6 +6,6 @@ TYPO3:
           formElementsDefinition:
             ImageUpload:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input image'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input form-element__input--image'
                 

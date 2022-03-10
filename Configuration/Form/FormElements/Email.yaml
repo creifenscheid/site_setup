@@ -6,5 +6,5 @@ TYPO3:
           formElementsDefinition:
             Email:
               properties:
-                containerClassAttribute: 'tx-sitesetup-formelement'
-                elementClassAttribute: 'input email'
+                containerClassAttribute: 'form-element'
+                elementClassAttribute: 'form-element__input form-element__input--email'
