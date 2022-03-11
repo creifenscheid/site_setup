@@ -8,7 +8,7 @@
     - additionalClasses (optional)
 </f:comment>
 
-<nav id="{id}">
+<nav id="{id}" aria-label="{label}">
     <h2 class="sr-only">{label}</h2>
     <ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
         <f:for each="{menu}" as="element">
