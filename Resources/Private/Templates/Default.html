@@ -1,0 +1,17 @@
+<f:comment>HEADER</f:comment>
+<header id="page-header">
+	<h1>Header</h1>
+</header>
+
+<f:comment>MENU</f:comment>
+<f:render partial="Rendering/Menu" arguments="{navId:'main-menu', menu: menu, menuClass:'main-menu', menuElementClass: 'main-menu-element'}" />
+
+<f:comment>CONTENT</f:comment>
+<main id="main-content">
+	<f:render partial="Rendering/Content" arguments="{colPos:200}" />
+</main>
+
+<f:comment>FOOTER</f:comment>
+<footer>
+	<f:render partial="Rendering/Menu" arguments="{navId:'footer-menu', menu: footerMenu, menuClass:'footer-menu', menuElementClass: 'footer-menu-element'}" />
+</footer>

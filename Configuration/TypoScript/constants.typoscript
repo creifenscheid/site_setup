@@ -17,17 +17,8 @@ plugin.tx_sitesetup {
        # cat=Site setup/path/e; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.logoPath
        logoPath = 
     
-       # cat=Site setup/file/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.headerTemplateName
-       headerTemplateName = Header
-       
-       # cat=Site setup/file/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.menuTemplateName
-       menuTemplateName = Menu
-       
-       # cat=Site setup/file/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.contentTemplateName
-       contentTemplateName = Content
-       
-       # cat=Site setup/file/d; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.footerTemplateName
-       footerTemplateName = Footer
+       # cat=Site setup/file/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.templateName
+       templateName = Default
 
        # customsubcategory=config=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.config
        # cat=Site setup/config/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.titlePostfix
