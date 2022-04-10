@@ -3,6 +3,10 @@
    <file source-language="en" datatype="plaintext" original="EXT:site_setup/Resources/Private/Language/locallang.xlf" date="2020-12-27T23:55:00Z" product-name="site_setup">
       <header/>
       <body>
+         <trans-unit id="skipToContent" resname="skipToContent">
+            <source>Skip to content</source>
+         </trans-unit>
+
          <trans-unit id="tt_content.parser.year" resname="tt_content.parser.year">
             <source>year</source>
          </trans-unit>
