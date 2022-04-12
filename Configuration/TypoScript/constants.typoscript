@@ -27,8 +27,8 @@ plugin.tx_sitesetup {
        # cat=Site setup/config/b; type=int; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.menuParentPageId
        menuParentPageId = 
 
-       # cat=Site setup/config/c; type=int; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.footerMenuParentPageId
-       footerMenuParentPageId = 
+       # cat=Site setup/config/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.footerMenuIds
+       footerMenuIds = 
 
        # cat=Site setup/Language/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.language.languageIds
        languageIds = 

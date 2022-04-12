@@ -52,8 +52,8 @@
          <trans-unit id="constantEditor.config.menuParentPageId" resname="constantEditor.config.menuParentPageId">
             <source>Menu id: Page id of the parent page of the menu pages</source>
          </trans-unit>
-         <trans-unit id="constantEditor.config.footerMenuParentPageId" resname="constantEditor.config.footerMenuParentPageId">
-            <source>Footer menu id: Page id of the parent page of the footer menu pages</source>
+         <trans-unit id="constantEditor.config.footerMenuIds" resname="constantEditor.config.footerMenuIds">
+            <source>Footer menu ids: Comma-separated list of page ids of footer menu pages</source>
          </trans-unit>
 
          <!-- LANGUAGE -->
