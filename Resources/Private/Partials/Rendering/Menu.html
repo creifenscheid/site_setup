@@ -12,9 +12,16 @@
     <h2 class="sr-only">{label}</h2>
     <ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
         <f:for each="{menu}" as="element">
-            <li class="{id}__element">
-                <f:link.page pageUid="{element.data.uid}" class="{id}__link">{element.title}</f:link.page>
-            </li>
+            <f:if condition="{element.spacer}">
+                <f:then>
+                    <hr class="divider divider__menu" />
+                </f:then>
+                <f:else>
+                    <li class="{id}__element">
+                        <f:link.page pageUid="{element.data.uid}" class="{id}__link">{element.title}</f:link.page>
+                    </li>
+                </f:else>
+            </f:if>
       </f:for>
     </ul>
 </nav>
