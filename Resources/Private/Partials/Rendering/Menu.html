@@ -9,7 +9,15 @@
 </f:comment>
 
 <nav id="{id}" aria-label="{label}">
-    <h2 class="sr-only">{label}</h2>
+    <f:if condition="{level}">
+        <f:then>
+            <f:variable name="headlineTag">h{level}</f:variable>
+        </f:then>
+        <f:else>
+            <f:variable name="headlineTag" value="h2"/>
+        </f:else>
+    </f:if>
+    <{headlineTag} class="sr-only">{label}</{headlineTag}>
     <ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
         <f:for each="{menu}" as="element">
             <f:if condition="{element.spacer}">
