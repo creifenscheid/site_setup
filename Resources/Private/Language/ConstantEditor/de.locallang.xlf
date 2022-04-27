@@ -40,21 +40,9 @@
          </trans-unit>
 
          <!-- FILES -->
-         <trans-unit id="constantEditor.file.headerTemplateName" resname="constantEditor.file.headerTemplateName">
-            <source>Header template: Name of the template to use for header rendering</source>
-            <target>Header-Template: Name des Templates, das für die Header-Darstellung verwendet werden soll</target>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.menuTemplateName" resname="constantEditor.file.menuTemplateName">
-            <source>Menu template: Name of the template to use for menu rendering</source>
-            <target>Menü-Template: Name des Templates, das für die Menü-Darstellung verwendet werden soll</target>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.contentTemplateName" resname="constantEditor.file.contentTemplateName">
-            <source>Content template: Name of the template to use for menu rendering</source>
-            <target>Inhalts-Template: Name des Templates, das für die Inhaltsdarstellung verwendet werden soll</target>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.footerTemplateName" resname="constantEditor.file.footerTemplateName">
-            <source>Footer template: Name of the template to use for menu rendering</source>
-            <target>Footer-Template: Name des Templates, das für die Footer-Darstellung verwendet werden soll</target>
+         <trans-unit id="constantEditor.file.templateName" resname="constantEditor.file.templateName">
+            <source>Template: Name of the template to use for page rendering</source>
+            <target>Template: Name des Templates, das für die Seiten-Darstellung verwendet werden soll</target>
          </trans-unit>
 
          <!-- CONFIGURATION -->

@@ -32,17 +32,8 @@
          </trans-unit>
 
          <!-- FILES -->
-         <trans-unit id="constantEditor.file.headerTemplateName" resname="constantEditor.file.headerTemplateName">
-            <source>Header template: Name of the template to use for header rendering</source>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.menuTemplateName" resname="constantEditor.file.menuTemplateName">
-            <source>Menu template: Name of the template to use for menu rendering</source>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.contentTemplateName" resname="constantEditor.file.contentTemplateName">
-            <source>Content template: Name of the template to use for menu rendering</source>
-         </trans-unit>
-         <trans-unit id="constantEditor.file.footerTemplateName" resname="constantEditor.file.footerTemplateName">
-            <source>Footer template: Name of the template to use for menu rendering</source>
+         <trans-unit id="constantEditor.file.templateName" resname="constantEditor.file.templateName">
+            <source>Template: Name of the template to use for page rendering</source>
          </trans-unit>
 
          <!-- CONFIGURATION -->
