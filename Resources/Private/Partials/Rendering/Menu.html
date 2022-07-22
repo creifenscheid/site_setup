@@ -26,7 +26,14 @@
                 </f:then>
                 <f:else>
                     <li class="{id}__element">
-                        <f:link.page pageUid="{element.data.uid}" class="{id}__link">{element.title}</f:link.page>
+                        <f:if condition="{element.current}">
+                            <f:then>
+                                <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text">{element.title}</span></f:link.page>
+                            </f:then>
+                            <f:else>
+                                <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text">{element.title}</span></f:link.page>
+                            </f:else>
+                        </f:if>
                     </li>
                 </f:else>
             </f:if>
