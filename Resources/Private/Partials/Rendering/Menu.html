@@ -28,10 +28,10 @@
                     <li class="{id}__element">
                         <f:if condition="{element.current}">
                             <f:then>
-                                <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text">{element.title}</span></f:link.page>
+                                <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
                             </f:then>
                             <f:else>
-                                <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text">{element.title}</span></f:link.page>
+                                <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
                             </f:else>
                         </f:if>
                     </li>
@@ -40,3 +40,10 @@
       </f:for>
     </ul>
 </nav>
+
+<f:section name="elementText">
+    <f:if condition="{element.navTitle}">
+        <f:then>{element.navTitle}</f:then>
+        <f:else>{element.title}</f:else>
+    </f:if>
+</f:section>
