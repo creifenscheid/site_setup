@@ -73,7 +73,7 @@ class ParseUserFunc
                         $markerContent = $difference->y;
             
                         
-                        if ($markerConfiguration[2] && $markerConfiguration[2] === 1) {
+                        if ($markerConfiguration[2] && (int)$markerConfiguration[2] === 1) {
                             if ($markerContent == 1) {
                                 $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
                             } else {
