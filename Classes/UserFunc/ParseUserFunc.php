@@ -66,18 +66,23 @@ class ParseUserFunc
 
                 switch ($markerConfiguration[0]) {
                     case 'forYears':
-                        $thisYear = date('Y', time());
-                        $markerContent = $thisYear - $markerConfiguration[1];
+                        $prefix = '';
+                        $now = new \DateTime(date('d.m.Y', time()));
+                        $reference = new \DateTime($markerConfiguration[1]);
+                        $difference = $now->diff($reference);
+                        $markerContent = $difference->y;
+            
                         
-                        if ($markerContent > 0) {
+                        if ($markerConfiguration[2] && $markerConfiguration[2] === 1) {
                             if ($markerContent == 1) {
-                                $prefix = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
+                                $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
                             } else {
-                                $prefix = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.years', 'SiteSetup');
+                                $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.years', 'SiteSetup');
                             }
-
-                            $content = str_replace ('{' . $marker . '}', $markerContent . ' ' . $prefix, $content);
                         }
+
+                        $content = str_replace ('{' . $marker . '}', $markerContent . $prefix, $content);
+
                         break;
                 }
             }
