@@ -5,7 +5,7 @@ namespace CReifenscheid\SiteSetup\ViewHelpers;
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * A ViewHelper for creating links to external targets.
+ * A ViewHelper to create skip links.
  *
  * Examples
  * ========
@@ -19,7 +19,7 @@ use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  *
  * Output::
  *
- *    <a class="txaa-skip-button my-class" href="#elementId">Label</a>
+ *    <a class="skip-button my-class" href="#elementId">Label</a>
  *
  */
 class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper
@@ -47,7 +47,7 @@ class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTag
     public function render()
     {
         // define tag attribute values
-        $cssClasses = 'txaa-skip-button';
+        $cssClasses = 'skip-button';
         
         if($this->arguments['additionalClasses']) {
             $cssClasses .= ' '.$this->arguments['additionalClasses'];
