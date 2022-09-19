@@ -3,6 +3,10 @@
    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:site_setup/Resources/Private/Language/locallang.xlf" date="2020-12-27T23:55:00Z" product-name="site_setup">
       <header/>
       <body>
+         <trans-unit id="toc.label" resname="toc.label">
+            <source>Table of contents</source>
+            <target>Inhaltsverzeichnis</target>
+         </trans-unit>
          <trans-unit id="skipToContent" resname="skipToContent">
             <source>Skip to content</source>
             <target>zum Inhalt springen</target>
