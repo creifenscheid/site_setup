@@ -5,17 +5,17 @@ namespace CReifenscheid\SiteSetup\ViewHelpers;
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * A ViewHelper to create a table of content of the given page.
+ * A ViewHelper to create a table of content of the given page based on content elements. RTE headings are ignored.
  *
- * Examples
+ * Example
  * ========
  *
  * Default
  * -------
  *
  * ::
- *
- *    <siteSetup:toc pageUid="pageUid" maxLevel="4" />
+ *    Create toc with all headings from h2 to h4
+ *    <siteSetup:toc pageUid="666" minLevel="2" maxLevel="4" />
  *
  * Output::
  *
@@ -85,21 +85,8 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
                  */
                 if (array_key_exists($currentLevel, $this->previousElementsByLevel)) {
 
-                    /**
-                     * Perform a backward loop.
-                     * 
-                     * Set the counter to the highest level stored and loop until the counter equals the minimum level.
-                     * 
-                     * Each element has to be added to the parent element,
-                     * e.g. element with level 5 has be added to  a subelement key in element with level 4.
-                     * 
-                     * The element is then stored in there and can be removed.
-                     */
-                    for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
-                        $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
-                        unset($this->previousElementsByLevel[$i]);
-                    }
-
+                    $this->reset();
+                    
                     // add the stored element with the minimum level in the toc storage and removed it from the tmp storage
                     $toc[$this->previousElementsByLevel[$currentLevel]['uid']] = $this->previousElementsByLevel[$currentLevel];
                     unset($this->previousElementsByLevel[$currentLevel]);
@@ -122,17 +109,33 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
             $this->previousElementsByLevel[$currentLevel] = $element;
             $previousLevel = $currentLevel;
         }
-
-        $lastPreviousElementsKey = array_key_last($this->previousElementsByLevel);
-
-        // merge previous last elements
-        for ($i = $lastPreviousElementsKey; $i > $minLevel; $i--) {
-            $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
-            unset($this->previousElementsByLevel[$i]);
-        }
-
+ 
+        $this->reset();
         $toc[$this->previousElementsByLevel[$minLevel]['uid']] = $this->previousElementsByLevel[$minLevel];
 
         return empty($toc) ? null : $toc;
+    }
+    
+    /**
+     * Sets elements in previous storage as subheader in the corresponding parent heading 
+     *
+     * @return void
+     */
+    private function reset() : void 
+    {
+        /**
+         * Perform a backward loop.
+         * 
+         * Set the counter to the highest level stored and loop until the counter equals the minimum level.
+         * 
+         * Each element has to be added to the parent element,
+         * e.g. element with level 5 has be added to  a subelement key in element with level 4.
+         * 
+         * The element is then stored in there and can be removed.
+         */ 
+        for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
+            $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+            unset($this->previousElementsByLevel[$i]);
+        }
     }
 }
