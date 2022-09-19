@@ -25,6 +25,12 @@ use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
     /**
+     * Stores ladt treated element of each heading level
+     * @var array
+     */
+    private $previousElementsByLevel = [];
+    
+    /**
      * Initialize arguments
      */
     public function initializeArguments()
@@ -67,7 +73,6 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 
         // RESULT PROCESSING
         $previousLevel = null;
-        $previousElementsByLevel = [];
 
         foreach ($contentElements as $element) {
             $currentLevel = $element['header_layout'] === '0' ? 2 : (int)$element['header_layout'];
@@ -78,7 +83,7 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
                  * There is already an element with this level in the storage.
                  * This has to be added to the toc, before it gets overwritten at the end of the loop
                  */
-                if (array_key_exists($currentLevel, $previousElementsByLevel)) {
+                if (array_key_exists($currentLevel, $this->previousElementsByLevel)) {
 
                     /**
                      * Perform a backward loop.
@@ -90,43 +95,43 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
                      * 
                      * The element is then stored in there and can be removed.
                      */
-                    for ($i = array_key_last($previousElementsByLevel); $i > $minLevel; $i--) {
-                        $previousElementsByLevel[($i-1)]['subheader'][$previousElementsByLevel[$i]['uid']] = $previousElementsByLevel[$i];
-                        unset($previousElementsByLevel[$i]);
+                    for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
+                        $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+                        unset($this->previousElementsByLevel[$i]);
                     }
 
                     // add the stored element with the minimum level in the toc storage and removed it from the tmp storage
-                    $toc[$previousElementsByLevel[$currentLevel]['uid']] = $previousElementsByLevel[$currentLevel];
-                    unset($previousElementsByLevel[$currentLevel]);
+                    $toc[$this->previousElementsByLevel[$currentLevel]['uid']] = $this->previousElementsByLevel[$currentLevel];
+                    unset($this->previousElementsByLevel[$currentLevel]);
                 }
             } else {
                 if ($currentLevel < $previousLevel) {
-                    $lastPreviousElementsKey = array_key_last($previousElementsByLevel);
+                    $lastPreviousElementsKey = array_key_last($this->previousElementsByLevel);
 
                     // merge previous elements
                     for ($i = $lastPreviousElementsKey; $i >= $currentLevel; $i--) {
-                        $uid = $previousElementsByLevel[$i]['uid'] ? : 0;
-                        $previousElementsByLevel[($i-1)]['subheader'][$uid] = $previousElementsByLevel[$i];
-                        unset($previousElementsByLevel[$i]);
+                        $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                        $this->previousElementsByLevel[($i-1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
+                        unset($this->previousElementsByLevel[$i]);
                     }
                 }
 
-                $previousElementsByLevel[($currentLevel-1)]['subheader'][$element['uid']] = $element;
+                $this->previousElementsByLevel[($currentLevel-1)]['subheader'][$element['uid']] = $element;
             }
 
-            $previousElementsByLevel[$currentLevel] = $element;
+            $this->previousElementsByLevel[$currentLevel] = $element;
             $previousLevel = $currentLevel;
         }
 
-        $lastPreviousElementsKey = array_key_last($previousElementsByLevel);
+        $lastPreviousElementsKey = array_key_last($this->previousElementsByLevel);
 
         // merge previous last elements
         for ($i = $lastPreviousElementsKey; $i > $minLevel; $i--) {
-            $previousElementsByLevel[($i-1)]['subheader'][$previousElementsByLevel[$i]['uid']] = $previousElementsByLevel[$i];
-            unset($previousElementsByLevel[$i]);
+            $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+            unset($this->previousElementsByLevel[$i]);
         }
 
-        $toc[$previousElementsByLevel[$minLevel]['uid']] = $previousElementsByLevel[$minLevel];
+        $toc[$this->previousElementsByLevel[$minLevel]['uid']] = $this->previousElementsByLevel[$minLevel];
 
         return empty($toc) ? null : $toc;
     }
