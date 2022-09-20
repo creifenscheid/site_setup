@@ -2,7 +2,9 @@
 
 namespace CReifenscheid\SiteSetup\ViewHelpers;
 
-use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * A ViewHelper to create a table of content of the given page based on content elements. RTE headings are ignored.
@@ -22,14 +24,15 @@ use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  *    {array}
  *
  */
-class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class TocViewHelper extends AbstractViewHelper
 {
     /**
      * Stores ladt treated element of each heading level
+     *
      * @var array
      */
     private $previousElementsByLevel = [];
-    
+
     /**
      * Initialize arguments
      */
@@ -43,7 +46,7 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 
     /**
      * Returns an array with all headers of the page
-     * 
+     *
      * @return null|array
      */
     public function render() : ?array
@@ -54,9 +57,9 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
         $maxLevel = $this->arguments['maxLevel'];
         $table = 'tt_content';
         $toc = [];
-        
+
         // QUERYBUILDER
-        $queryBuilder = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         $contentElements = $queryBuilder
             ->select('uid', 'pid', 'header', 'header_layout')
             ->from($table)
@@ -77,9 +80,9 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
         if (!empty($contentElements)) {
             foreach ($contentElements as $element) {
                 $currentLevel = $element['header_layout'] === '0' ? 2 : (int)$element['header_layout'];
-    
+
                 if ($currentLevel === $minLevel) {
-    
+
                     /**
                      * There is already an element with this level in the storage.
                      * This has to be added to the toc, before it gets overwritten at the end of the loop
@@ -87,19 +90,19 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
                     if (array_key_exists($currentLevel, $this->previousElementsByLevel)) {
                         /**
                          * Perform a backward loop.
-                         * 
+                         *
                          * Set the counter to the highest level stored and loop until the counter equals the minimum level.
-                         * 
+                         *
                          * Each element has to be added to the parent element,
                          * e.g. element with level 5 has be added to  a subelement key in element with level 4.
-                         * 
+                         *
                          * The element is then stored in there and can be removed.
-                         */ 
+                         */
                         for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
-                            $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+                            $this->previousElementsByLevel[($i - 1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
                             unset($this->previousElementsByLevel[$i]);
                         }
-                        
+
                         // add the stored element with the minimum level in the toc storage and removed it from the tmp storage
                         $toc[$this->previousElementsByLevel[$currentLevel]['uid']] = $this->previousElementsByLevel[$currentLevel];
                         unset($this->previousElementsByLevel[$currentLevel]);
@@ -107,27 +110,27 @@ class TocViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
                 } else {
                     if ($currentLevel < $previousLevel) {
                         $lastPreviousElementsKey = array_key_last($this->previousElementsByLevel);
-    
+
                         // merge previous elements
                         for ($i = $lastPreviousElementsKey; $i >= $currentLevel; $i--) {
                             $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
-                            $this->previousElementsByLevel[($i-1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
+                            $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                             unset($this->previousElementsByLevel[$i]);
                         }
                     }
-    
-                    $this->previousElementsByLevel[($currentLevel-1)]['subheader'][$element['uid']] = $element;
+
+                    $this->previousElementsByLevel[($currentLevel - 1)]['subheader'][$element['uid']] = $element;
                 }
-    
+
                 $this->previousElementsByLevel[$currentLevel] = $element;
                 $previousLevel = $currentLevel;
             }
         }
- 
+
         // get the last stored elements
-        if(!empty($this->previousElementsByLevel)) {
+        if (!empty($this->previousElementsByLevel)) {
             for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
-                $this->previousElementsByLevel[($i-1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+                $this->previousElementsByLevel[($i - 1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
                 unset($this->previousElementsByLevel[$i]);
             }
             $toc[$this->previousElementsByLevel[$minLevel]['uid']] = $this->previousElementsByLevel[$minLevel];
