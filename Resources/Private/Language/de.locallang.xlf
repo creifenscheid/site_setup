@@ -7,6 +7,10 @@
             <source>Table of contents</source>
             <target>Inhaltsverzeichnis</target>
          </trans-unit>
+         <trans-unit id="toc.skip" resname="toc.skip">
+            <source>Skip table of contents</source>
+            <target>Inhaltsverzeichnis überspringen</target>
+         </trans-unit>
          <trans-unit id="skipToContent" resname="skipToContent">
             <source>Skip to content</source>
             <target>zum Inhalt springen</target>

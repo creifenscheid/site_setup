@@ -31,10 +31,12 @@
 </f:if>
 
 <f:if condition="{toc}">
+    <f:link.page pageUid="{pageUid}" section="skip-toc" absolute="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.skip" /></f:link.page>
     <nav id="table-of-contents" aria-labelledby="toc-label" class="toc">
         <h2 id="toc-label" class="toc__heading"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.label" /></h2>
         <f:render section="toc" arguments="{toc:toc}" />
     </nav>
+    <div id="skip-toc"></div>
 </f:if>
 
 <f:section name="toc">
