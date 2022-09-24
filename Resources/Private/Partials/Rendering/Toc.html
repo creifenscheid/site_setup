@@ -43,7 +43,9 @@
     <ul class="toc__list">
         <f:for each="{toc}" as="element">
             <li class="toc__item">
-                <f:link.page pageUid="{element.pid}" section="c{element.uid}" absolute="true" class="toc__link"><span class="text">{element.header}</span><span class="fill"></span></f:link.page>
+                <f:if condition="{element.header}">
+                    <f:link.page pageUid="{element.pid}" section="c{element.uid}" absolute="true" class="toc__link"><span class="text">{element.header}</span><span class="fill"></span></f:link.page>
+                </f:if>
 
                 <f:if condition="{element.subheader}">
                     <f:render section="toc" arguments="{toc:element.subheader}" />
