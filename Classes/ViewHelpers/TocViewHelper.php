@@ -60,24 +60,34 @@ class TocViewHelper extends AbstractViewHelper
 
         // QUERYBUILDER
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
-        $contentElements = $queryBuilder
+
+        $whereExpressions = [
+            $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($pageUid)),
+            $queryBuilder->expr()->neq('header', $queryBuilder->createNamedParameter('')),
+            $queryBuilder->expr()->neq('header_layout', $queryBuilder->createNamedParameter(100)),
+            $queryBuilder->expr()->lte('header_layout', $queryBuilder->createNamedParameter($maxLevel))
+        ];
+
+        if ($minLevel <= 2) {
+            $whereExpressions[] = $queryBuilder->expr()->or(
+                $queryBuilder->expr()->eq('header_layout', $queryBuilder->createNamedParameter(0)),
+                $queryBuilder->expr()->gte('header_layout', $queryBuilder->createNamedParameter($minLevel))
+            );
+        } else {
+            $whereExpressions[] = $queryBuilder->expr()->gte('header_layout', $queryBuilder->createNamedParameter($minLevel));
+        }
+        
+        $queryBuilder
             ->select('uid', 'pid', 'header', 'header_layout')
             ->from($table)
-            ->where(
-                $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($pageUid)),
-                $queryBuilder->expr()->eq('deleted', $queryBuilder->createNamedParameter(0)),
-                $queryBuilder->expr()->eq('hidden', $queryBuilder->createNamedParameter(0)),
-                $queryBuilder->expr()->neq('header', $queryBuilder->createNamedParameter('')),
-                $queryBuilder->expr()->neq('header_layout', $queryBuilder->createNamedParameter(100)),
-                $queryBuilder->expr()->lte('header_layout', $queryBuilder->createNamedParameter($maxLevel))
-            )
-            ->orderBy('sorting')
-            ->executeQuery()
+            ->where(...$whereExpressions)
+            ->orderBy('sorting');
+
+        $contentElements = $queryBuilder->executeQuery()
             ->fetchAllAssociative();
 
         // RESULT PROCESSING
         $previousLevel = null;
-
         if (!empty($contentElements)) {
             foreach ($contentElements as $element) {
                 $currentLevel = $element['header_layout'] === '0' ? 2 : (int)$element['header_layout'];
@@ -100,12 +110,14 @@ class TocViewHelper extends AbstractViewHelper
                          * The element is then stored in there and can be removed.
                          */
                         for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
-                            $this->previousElementsByLevel[($i - 1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+                            $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                            $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                             unset($this->previousElementsByLevel[$i]);
                         }
 
                         // add the stored element with the minimum level in the toc storage and removed it from the tmp storage
-                        $toc[$this->previousElementsByLevel[$currentLevel]['uid']] = $this->previousElementsByLevel[$currentLevel];
+                        $uid = $this->previousElementsByLevel[$currentLevel]['uid'] ? : 0;
+                        $toc[$uid] = $this->previousElementsByLevel[$currentLevel];
                         unset($this->previousElementsByLevel[$currentLevel]);
                     }
                 } else {
@@ -131,7 +143,8 @@ class TocViewHelper extends AbstractViewHelper
         // get the last stored elements
         if (!empty($this->previousElementsByLevel)) {
             for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
-                $this->previousElementsByLevel[($i - 1)]['subheader'][$this->previousElementsByLevel[$i]['uid']] = $this->previousElementsByLevel[$i];
+                $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                 unset($this->previousElementsByLevel[$i]);
             }
             $toc[$this->previousElementsByLevel[$minLevel]['uid']] = $this->previousElementsByLevel[$minLevel];

@@ -64,4 +64,106 @@ call_user_func(function()
             'title'
         ]
     ];
+
+    /**
+     * Table extension
+     */
+    $additionalColumns = [
+        'tx_sitesetup_toc_disabled' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_disabled',
+            'onChange' => 'reload',
+            'config' => [
+                'default' => 0,
+                'type' => 'check',
+                'renderType' => 'checkboxToggle'
+            ]
+        ],
+        'tx_sitesetup_toc_min' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_min',
+            'displayCond' => 'FIELD:tx_sitesetup_toc_disabled:REQ:false',
+            'config' => [
+                'default' => 2,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1',
+                        1,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2',
+                        2,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3',
+                        3,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4',
+                        4,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5',
+                        5,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6',
+                        6,
+                    ]
+                ]
+            ]
+        ],
+        'tx_sitesetup_toc_max' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_max',
+            'displayCond' => 'FIELD:tx_sitesetup_toc_disabled:REQ:false',
+            'config' => [
+                'default' => 6,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1',
+                        1,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2',
+                        2,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3',
+                        3,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4',
+                        4,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5',
+                        5,
+                    ],
+                    [
+                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6',
+                        6,
+                    ]
+                ]
+            ]
+        ]
+    ];
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+        'pages',
+        $additionalColumns
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'pages',
+        'tocSettings',
+        'tx_sitesetup_toc_min,tx_sitesetup_toc_max'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'pages',
+        '--div--;LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tab.toc, tx_sitesetup_toc_disabled, --palette--;;tocSettings',
+        '1'
+    );
 });
