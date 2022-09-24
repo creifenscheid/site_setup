@@ -67,6 +67,7 @@ class TocViewHelper extends AbstractViewHelper
                 $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($pageUid)),
                 $queryBuilder->expr()->eq('deleted', $queryBuilder->createNamedParameter(0)),
                 $queryBuilder->expr()->eq('hidden', $queryBuilder->createNamedParameter(0)),
+                $queryBuilder->expr()->neq('header', $queryBuilder->createNamedParameter('')),
                 $queryBuilder->expr()->neq('header_layout', $queryBuilder->createNamedParameter(100)),
                 $queryBuilder->expr()->lte('header_layout', $queryBuilder->createNamedParameter($maxLevel))
             )
