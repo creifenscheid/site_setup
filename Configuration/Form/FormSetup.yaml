@@ -1,4 +1,5 @@
 imports:
+    - { resource: "./FormElements/Form.yaml" }
     - { resource: "./FormElements/Text.yaml" }
     - { resource: "./FormElements/Password.yaml" }
     - { resource: "./FormElements/AdvancedPassword.yaml" }
