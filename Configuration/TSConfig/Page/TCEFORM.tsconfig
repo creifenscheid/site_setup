@@ -1,0 +1,9 @@
+TCEFORM {
+    pages {
+        description {
+            config {
+                max = 120
+            }
+        }
+    }
+}
