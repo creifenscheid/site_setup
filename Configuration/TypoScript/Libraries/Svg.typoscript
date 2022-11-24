@@ -1,0 +1,5 @@
+lib.inlineSvg = SVG
+lib.inlineSvg {
+	renderMode = inline
+    src.field = src
+}

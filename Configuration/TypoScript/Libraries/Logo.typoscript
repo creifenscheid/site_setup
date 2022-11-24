@@ -1,6 +1,0 @@
-lib.logo = SVG
-lib.logo {
-	if.isTrue = {$plugin.tx_sitesetup.settings.logoPath}
-	src = {$plugin.tx_sitesetup.settings.logoPath}
-	renderMode = inline
-}
