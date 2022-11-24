@@ -6,4 +6,28 @@ TCEFORM {
             }
         }
     }
+
+    tt_content {
+        layout {
+            types {
+                site-setup-2cols {
+                    removeItems = 3
+                    altLabels {
+                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
+                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
+                        2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
+                    }
+                }
+                
+                site-setup-3cols {
+                    removeItems = 0,1,2,3
+                    altLabels {
+                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
+                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
+                        2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
+                    }
+                }
+            }
+        }
+    }
 }

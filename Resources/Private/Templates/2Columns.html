@@ -1,8 +1,16 @@
-<div class="columns">
-  <div class="column">
-    <f:render partial="Rendering/Records" arguments="{records:children_201}" />
-  </div>
-  <div class="column">
-    <f:render partial="Rendering/Records" arguments="{records:children_203}" />
+<f:switch expression="{data.layout}">
+    <f:case value="1"><f:variable name="spacing" value="half"/></f:case>
+    <f:case value="2"><f:variable name="spacing" value="no"/></f:case>
+    <f:defaultCase><f:variable name="spacing" value="default"/></f:defaultCase>
+</f:switch>
+
+<div id="c{data.uid}" class="frame {spacing}-spacing">
+  <div class="columns">
+    <div class="column">
+      <f:render partial="Rendering/Records" arguments="{records:children_201}" />
+    </div>
+    <div class="column">
+      <f:render partial="Rendering/Records" arguments="{records:children_203}" />
+    </div>
   </div>
 </div>

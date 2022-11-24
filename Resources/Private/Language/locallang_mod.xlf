@@ -30,6 +30,15 @@
          <trans-unit id="content.site-setup-3cols.description" resname="content.site-setup-3cols.description">
             <source>Content container with 3 columns</source>
          </trans-unit>
+         <trans-unit id="content.spacing.default" resname="content.spacing.default">
+            <source>Default spacing</source>
+         </trans-unit>
+         <trans-unit id="content.spacing.half" resname="content.spacing.half">
+            <source>Half spacing</source>
+         </trans-unit>
+         <trans-unit id="content.spacing.none" resname="content.spacing.none">
+            <source>No spacing</source>
+         </trans-unit>
          
          <!-- CropVariants -->
          <trans-unit id="cropvariants.mobile.title" resname="cropvariants.mobile.title">
