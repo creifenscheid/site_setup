@@ -38,16 +38,13 @@ namespace CReifenscheid\SiteSetup\UserFunc;
 class ParseUserFunc
 {
     /**
-     * Reference to the parent (calling) cObject set from TypoScript
-     */
-    public $cObj;
-
-    /**
      * Function to replace marker in rte content with corresponding typoscrip lib content
      *
-     * @param       string          When custom methods are used for data processing (like in stdWrap functions), the $content variable will hold the value to be processed. When methods are meant to just return some generated content (like in USER and USER_INT objects), this variable is empty.
-     * @param       null|array           TypoScript properties passed to this method.
+     * @param string     $content When custom methods are used for data processing (like in stdWrap functions), the $content variable will hold the value to be processed. When methods are meant to just return some generated content (like in USER and USER_INT objects), this variable is empty.
+     * @param null|array $conf    TypoScript properties passed to this method.
+     *
      * @return      string  The input string reversed. If the TypoScript property "uppercase" was set, it will also be in uppercase. May also be linked.
+     * @throws \Exception
      */
     public function replaceMarker(string $content, ?array $conf) : string
     {
@@ -64,26 +61,23 @@ class ParseUserFunc
             foreach ($matches[1] as $marker) {
                 $markerConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(':', $marker);
 
-                switch ($markerConfiguration[0]) {
-                    case 'forYears':
-                        $prefix = '';
-                        $now = new \DateTime(date('d.m.Y', time()));
-                        $reference = new \DateTime($markerConfiguration[1]);
-                        $difference = $now->diff($reference);
-                        $markerContent = $difference->y;
-            
-                        
-                        if ($markerConfiguration[2] && (int)$markerConfiguration[2] === 1) {
-                            if ($markerContent == 1) {
-                                $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
-                            } else {
-                                $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.years', 'SiteSetup');
-                            }
+                if ($markerConfiguration[0] === 'forYears') {
+                    $prefix = '';
+                    $now = new \DateTime(date('d.m.Y', time()));
+                    $reference = new \DateTime($markerConfiguration[1]);
+                    $difference = $now->diff($reference);
+                    $markerContent = $difference->y;
+
+
+                    if ($markerConfiguration[2] && (int)$markerConfiguration[2] === 1) {
+                        if ($markerContent === 1) {
+                            $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.year', 'SiteSetup');
+                        } else {
+                            $prefix = ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:tt_content.parser.years', 'SiteSetup');
                         }
+                    }
 
-                        $content = str_replace ('{' . $marker . '}', $markerContent . $prefix, $content);
-
-                        break;
+                    $content = str_replace('{' . $marker . '}', $markerContent . $prefix, $content);
                 }
             }
         }
