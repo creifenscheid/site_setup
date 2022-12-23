@@ -1,3 +1,12 @@
+lib.headerTypes {
+    1 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1
+    2 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2
+    3 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3
+    4 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4
+    5 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5
+    6 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6
+}
+
 TCEFORM {
     pages {
         description {
@@ -5,9 +14,21 @@ TCEFORM {
                 max = 120
             }
         }
+        tx_sitesetup_toc_min {
+            additems < lib.headerTypes
+        }
+        tx_sitesetup_toc_max {
+            additems < lib.headerTypes
+        }
     }
 
     tt_content {
+        tx_sitesetup_toc_min {
+            additems < lib.headerTypes
+        }
+        tx_sitesetup_toc_max {
+            additems < lib.headerTypes
+        }
         layout {
             types {
                 site-setup-2cols {

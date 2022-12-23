@@ -85,32 +85,7 @@ call_user_func(function()
                 'default' => 2,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1',
-                        1,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2',
-                        2,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3',
-                        3,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4',
-                        4,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5',
-                        5,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6',
-                        6,
-                    ]
-                ]
+                'items' => []
             ]
         ],
         'tx_sitesetup_toc_max' => [
@@ -120,32 +95,7 @@ call_user_func(function()
                 'default' => 6,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1',
-                        1,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2',
-                        2,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3',
-                        3,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4',
-                        4,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5',
-                        5,
-                    ],
-                    [
-                        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6',
-                        6,
-                    ]
-                ]
+                'items' => []
             ]
         ]
     ];

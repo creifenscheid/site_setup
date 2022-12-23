@@ -24,11 +24,47 @@ call_user_func(function()
       'subpages',
       'after'
    );
+   
+   /**
+     * Table extension
+     */
+    $additionalColumns = [
+        'tx_sitesetup_toc_min' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_min',
+            'config' => [
+                'default' => 2,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => []
+            ]
+        ],
+        'tx_sitesetup_toc_max' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_max',
+            'config' => [
+                'default' => 6,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => []
+            ]
+        ]
+    ];
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+        'tt_content',
+        $additionalColumns
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'tt_content',
+        'tocSettings',
+        'tx_sitesetup_toc_min,tx_sitesetup_toc_max'
+    );
     
    // backend fields
    $GLOBALS['TCA']['tt_content']['types']['sitesetup_toc'] = [
    'showitem' => '
-      --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, xxx,
+      --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+      --palette--;;tocSettings,
       --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
          --palette--;;hidden,
          --palette--;;access,

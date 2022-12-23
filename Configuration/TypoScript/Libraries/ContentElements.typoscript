@@ -1,0 +1,11 @@
+lib.contentElement {
+    templateRootPaths.50 = EXT:site_setup/Resources/Private/Templates/
+    partialRootPaths.50 = EXT:site_setup/Resources/Private/Partials/
+}
+
+tt_content {
+    sitesetup_toc =< lib.contentElement
+    sitesetup_toc {
+        templateName = Toc
+    }
+}
