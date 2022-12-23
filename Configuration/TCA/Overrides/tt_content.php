@@ -3,11 +3,39 @@ defined('TYPO3_MODE') || die();
 
 call_user_func(function()
 {
-    /**
-     * Extension key
-     */
-    $extensionKey = 'site_setup';
+   /**
+    * Extension key
+    */
+   $extensionKey = 'site_setup';
     
+   /**
+    * CE: table of contents
+    */
+     
+   // registration
+   \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+      'tt_content',
+      'CType',
+      [
+         'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:toc.label',
+         'sitesetup_toc',
+         'sitesetup-toc',
+      ],
+      'subpages',
+      'after'
+   );
+    
+   // backend fields
+   $GLOBALS['TCA']['tt_content']['types']['sitesetup_toc'] = [
+   'showitem' => '
+      --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, xxx,
+      --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+         --palette--;;hidden,
+         --palette--;;access,
+      ',
+   ];
+    
+    // EXT:container registrations
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
         
         $cType = 'site-setup-2cols';
