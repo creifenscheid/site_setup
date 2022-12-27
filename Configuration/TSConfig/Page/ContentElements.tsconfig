@@ -2,7 +2,7 @@ mod.wizards.newContentElement.wizardItems {
    menu {
       elements {
          sitesetup_toc {
-            iconIdentifier = sitesetup-toc
+            iconIdentifier = content-menu-pages
             title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.label
             description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.description
             tt_content_defValues {

@@ -19,7 +19,8 @@ call_user_func(function()
       [
          'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:toc.label',
          'sitesetup_toc',
-         'sitesetup-toc',
+         'content-menu-pages',
+          'menu'
       ],
       'subpages',
       'after'
