@@ -1,6 +1,6 @@
 lib.contentElement {
-    templateRootPaths.50 = EXT:site_setup/Resources/Private/Templates/
-    partialRootPaths.50 = EXT:site_setup/Resources/Private/Partials/
+    templateRootPaths.10 = EXT:site_setup/Resources/Private/Templates/
+    partialRootPaths.10 = EXT:site_setup/Resources/Private/Partials/
 }
 
 tt_content {

@@ -2,6 +2,8 @@ page = PAGE
 
 @import 'EXT:site_setup/Configuration/TypoScript/Page/MetaData.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/HeaderData.typoscript'
+@import 'EXT:site_setup/Configuration/TypoScript/Page/Libraries.typoscript'
+@import 'EXT:site_setup/Configuration/TypoScript/Page/Assets.typoscript'
 
 page {
 	10 < lib.template
