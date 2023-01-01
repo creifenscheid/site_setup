@@ -1,6 +1,6 @@
 <f:comment>
     This partial can be used to render menus.
-    
+
     Variables:
     - id
     - menu
@@ -8,7 +8,7 @@
     - additionalClasses (optional)
 </f:comment>
 
-<nav id="{id}" aria-label="{label}">
+<nav id="{id}" aria-labelledby="header_{id}">
     <f:if condition="{level}">
         <f:then>
             <f:variable name="headlineTag">h{level}</f:variable>
@@ -17,28 +17,28 @@
             <f:variable name="headlineTag" value="h2"/>
         </f:else>
     </f:if>
-    <{headlineTag} class="sr-only">{label}</{headlineTag}>
-    <ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
-        <f:for each="{menu}" as="element">
-            <f:if condition="{element.spacer}">
-                <f:then>
-                    <hr class="divider divider__menu" />
-                </f:then>
-                <f:else>
-                    <li class="{id}__element">
-                        <f:if condition="{element.current}">
-                            <f:then>
-                                <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
-                            </f:then>
-                            <f:else>
-                                <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
-                            </f:else>
-                        </f:if>
-                    </li>
-                </f:else>
-            </f:if>
-      </f:for>
-    </ul>
+    <{headlineTag} id="header_{id}" class="sr-only">{label}</{headlineTag}>
+<ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
+    <f:for each="{menu}" as="element">
+        <f:if condition="{element.spacer}">
+            <f:then>
+                <hr class="divider divider__menu" />
+            </f:then>
+            <f:else>
+                <li class="{id}__element">
+                    <f:if condition="{element.current}">
+                        <f:then>
+                            <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                        </f:then>
+                        <f:else>
+                            <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:else>
+        </f:if>
+    </f:for>
+</ul>
 </nav>
 
 <f:section name="elementText">
