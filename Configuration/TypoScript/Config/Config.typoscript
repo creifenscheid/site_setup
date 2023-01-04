@@ -1,4 +1,6 @@
-config.noPageTitle = 2
+config {
+	noPageTitle = 2
+}
 
 [applicationContext == "Development"]
 	config {
