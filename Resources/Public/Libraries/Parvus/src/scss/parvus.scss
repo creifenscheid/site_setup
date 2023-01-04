@@ -1,0 +1,320 @@
+:root {
+  --parvus-transition-duration: 300ms;
+  --parvus-transition-timing-function: cubic-bezier(0.4, 0, 0.22, 1);
+
+  --parvus-overlay-color: hsl(23, 40%, 96%);
+  --parvus-overlay-text: hsl(228, 24%, 23%);
+
+  --parvus-button-color: hsl(228, 24%, 23%);
+  --parvus-button-text: hsl(0, 0%, 100%);
+
+  --parvus-button-hover-color: hsl(229, 24%, 33%);
+  --parvus-button-hover-text: hsl(0, 0%, 100%);
+
+  --parvus-loader-background-color: hsl(23, 40%, 96%);
+  --parvus-loader-color: hsl(228, 24%, 23%);
+}
+
+.parvus-is-open {
+  touch-action: none;
+}
+
+/**
+ * Parvus trigger
+ *
+ */
+
+.parvus-zoom {
+  display: block;
+  position: relative;
+
+
+  &__indicator {
+    align-items: center;
+    background-color: var(--parvus-button-color);
+    color: var(--parvus-button-text);
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    padding: 0.5rem;
+    position: absolute;
+    inset-inline-end: 0.5rem;
+    inset-block-start: 0.5rem;
+
+
+    & svg {
+      fill: none;
+      height: 1.5rem;
+      pointer-events: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.5;
+      stroke: currentColor;
+      width: 1.5rem;
+    }
+  }
+
+  & img {
+    display: block;
+  }
+}
+
+/**
+ * Parvus
+ *
+ */
+
+.parvus {
+  align-items: center;
+  box-sizing: border-box;
+  contain: strict;
+  display: flex;
+  font: normal normal 400 1.125rem/1.7 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  inset: 0;
+  justify-content: center;
+  line-height: 1.667;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  position: fixed;
+  z-index: 1337;
+
+
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: border-box;
+  }
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
+  &__overlay {
+    background-color: var(--parvus-overlay-color);
+    inset: 0;
+    position: absolute;
+  }
+
+  &__slider {
+    inset: 0;
+    position: absolute;
+
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+
+      &--animate:not(&--is-dragging) {
+        transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+      }
+    }
+
+    &--is-draggable {
+      cursor: grab;
+    }
+
+    &--is-dragging {
+      cursor: grabbing;
+    }
+  }
+
+  &__slide {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding-block-end: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-block-start: 3.75rem;
+    width: 100%;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: visibility var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+
+    &:not(&--is-active) {
+      visibility: hidden;
+    }
+
+    & .parvus__caption {
+      color: var(--parvus-overlay-text);
+      padding-block-start: 0.5rem;
+      text-align: start;
+      will-change: transform, opacity;
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+      }
+    }
+
+    & img {
+      display: block;
+      height: auto;
+      margin-inline-start: auto;
+      margin-inline-end: auto;
+      transform-origin: left top;
+      width: auto;
+    }
+  }
+
+  &__loader {
+    display: inline-block;
+    height: 6.25rem;
+    inset-inline-start: 50%;
+    position: absolute;
+    inset-block-start: 50%;
+    transform: translate(-50%, -50%);
+    width: 6.25rem;
+
+
+    &::before {
+      animation: spin 1s infinite;
+      border-radius: 100%;
+      border: 0.25rem solid var(--parvus-loader-background-color);
+      border-top-color: var(--parvus-loader-color);
+      content: '';
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &__toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    inset-inline-start: 1rem;
+    position: absolute;
+    inset-inline-end: 1rem;
+    inset-block-start: 1rem;
+  }
+
+  &__btn {
+    appearance: none;
+    background-color: var(--parvus-button-color);
+    background-image: none;
+    border-radius: 0;
+    border: 0.0625rem solid transparent;
+    color: var(--parvus-button-text);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    padding: 0.3125rem;
+    position: relative;
+    touch-action: manipulation;
+    will-change: transform, opacity;
+    z-index: 7;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+
+    &:hover {
+      background-color: var(--parvus-button-hover-color);
+      color: var(--parvus-button-hover-text);
+    }
+
+
+    &--close {
+
+    }
+
+    &--previous {
+      inset-inline-start: 1rem;
+      position: absolute;
+      inset-block-start: calc(50% + 1.375rem);// 50% + (paddingTop / 2 - paddingBottom / 2) from .parvus__slide
+      transform: translateY(-50%);
+    }
+
+    &--next {
+      position: absolute;
+      inset-inline-end: 1rem;
+      inset-block-start: calc(50% + 1.375rem);// 50% + (paddingTop / 2 - paddingBottom / 2) from .parvus__slide
+      transform: translateY(-50%);
+    }
+
+    & svg {
+      fill: none;
+      height: 2rem;
+      pointer-events: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1;
+      stroke: currentColor;
+      width: 2rem;
+    }
+
+    &[disabled] {
+      display: none;
+    }
+  }
+
+  &__counter {
+    position: relative;
+    z-index: 7;
+
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+
+    &--is-opening,
+    &--is-closing {
+
+
+
+      & .parvus__counter,
+      & .parvus__btn--close,
+      & .parvus__btn--previous,
+      & .parvus__btn--next,
+      & .parvus__caption {
+        opacity: 0;
+      }
+    }
+
+    &--is-vertical-closing {
+
+
+
+      & .parvus__counter,
+      & .parvus__btn--close {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      & .parvus__btn--previous {
+        transform: translate(-100%, -50%);
+        opacity: 0;
+      }
+
+      & .parvus__btn--next {
+        transform: translate(100%, -50%);
+        opacity: 0;
+      }
+
+      & .parvus__caption {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
