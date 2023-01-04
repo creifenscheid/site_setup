@@ -2,8 +2,8 @@ page {
 	includeCSSLibs {
 		parvus = EXT:site_setup/Resources/Public/Libraries/Parvus/dist/css/parvus.min.css
 	}
-	
+
 	includeJSFooterlibs {
-		parvus = EXT:site_setup/Resources/Public/Libraries/Parvus/dist/js/parvus.esm.js
+		parvus = EXT:site_setup/Resources/Public/Libraries/Parvus/dist/js/parvus.min.js
 	}
 }
