@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
-<figure class="image">
+<figure class="image{f:if(condition:file.properties.copyright, then:' has-copyright')}">
     <f:if condition="{file.link}">
         <f:then>
             <f:link.typolink parameter="{file.link}" title="{file.title}">
@@ -21,9 +21,9 @@
             </f:if>
         </f:else>
     </f:if>
-    <f:if condition="{file.description}">
-        <figcaption class="image-caption">
-            {file.description -> f:format.nl2br()}
+    <f:if condition="{file.properties.copyright}">
+        <figcaption class="image__copyright has-text-small">
+            &copy; {file.properties.copyright}
         </figcaption>
     </f:if>
 </figure>
