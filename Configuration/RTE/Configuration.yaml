@@ -8,18 +8,17 @@ editor:
 
   config:
     toolbar:
-          - [ 'Link', 'Unlink', 'Anchor', 'Table', 'SpecialChar', 'Abbr' ]
-          - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
-          - [ 'NumberedList', 'BulletedList']
-          - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord' ]
-          - [ 'Undo', 'Redo', 'RemoveFormat' ]
-          - "/"
-          - [ 'Language' ]
-          - [ 'Format', 'Styles' ]
-          - [ 'Bold', 'Italic', 'Underline']
-          - [ 'Blockquote', 'CreateDiv', 'ShowBlocks']
-          - [ 'Subscript', 'Superscript']
-          - [ 'HorizontalRule', 'Source', 'Maximize', 'About']
+      - [ 'Link', 'Unlink', 'Abbr' ]
+      - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
+      - [ 'BulletedList', 'NumberedList']}
+      - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', 'RemoveFormat' ]
+      - [ 'Undo', 'Redo' ]
+      - "/"
+      - [ 'Language' ]
+      - [ 'Format' ]
+      - [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
+      - [ 'HorizontalRule', 'Blockquote', 'SpecialChar']
+      - [ 'Source', 'Maximize' ]
 
     contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
     resize_enabled: true
@@ -29,18 +28,8 @@ editor:
 
     justifyClasses: ['align-left', 'align-center', 'align-right', 'align-justify']
 
-    removeDialogTabs: "div:advanced"
-
     extraPlugins:
-      - showblocks
-      - find
-      - div
       - justify
-      - font
-      - find
-      - bidi
-      - selectall
-      - autolink
       - wordcount
       - abbr
       - language
@@ -48,7 +37,7 @@ editor:
     removePlugins:
       - image
 
-    format_tags: "p;pre"
+    format_tags: "p"
 
 processing:
   allowTags:
