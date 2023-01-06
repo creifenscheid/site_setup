@@ -1,0 +1,56 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "./Plugins.yaml" }
+
+editor:
+
+  config:
+    toolbar:
+          - [ 'Link', 'Unlink', 'Anchor', 'Table', 'SpecialChar', 'Abbr' ]
+          - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
+          - [ 'NumberedList', 'BulletedList']
+          - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord' ]
+          - [ 'Undo', 'Redo', 'RemoveFormat' ]
+          - "/"
+          - [ 'Language' ]
+          - [ 'Format', 'Styles' ]
+          - [ 'Bold', 'Italic', 'Underline']
+          - [ 'Blockquote', 'CreateDiv', 'ShowBlocks']
+          - [ 'Subscript', 'Superscript']
+          - [ 'HorizontalRule', 'Source', 'Maximize', 'About']
+
+    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
+    resize_enabled: true
+    resize_dir: 'both'
+    uiColor: "#F8F8F8"
+    qtClass: 'content-table'
+
+    justifyClasses: ['align-left', 'align-center', 'align-right', 'align-justify']
+
+    removeDialogTabs: "div:advanced"
+
+    extraPlugins:
+      - showblocks
+      - find
+      - div
+      - justify
+      - font
+      - find
+      - bidi
+      - selectall
+      - autolink
+      - wordcount
+      - abbr
+      - language
+
+    removePlugins:
+      - image
+
+    format_tags: "p;pre"
+
+processing:
+  allowTags:
+    - s
+    - u
