@@ -27,7 +27,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class TocViewHelper extends AbstractViewHelper
 {
     /**
-     * Stores ladt treated element of each heading level
+     * Stores last treated element of each heading level
      *
      * @var array
      */
