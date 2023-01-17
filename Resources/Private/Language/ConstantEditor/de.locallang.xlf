@@ -54,9 +54,9 @@
             <source>Menu id: Page id of the parent page of the menu pages</source>
             <target>Menü-ID: Seiten-ID der übergeordneten Seite der Menü-Seiten</target>
          </trans-unit>
-         <trans-unit id="constantEditor.config.footerMenuIds" resname="constantEditor.config.footerMenuIds">
-            <source>Footer menu ids: Comma-separated list of page ids of footer menu pages</source>
-            <target>Footer-Menü-IDs: Komma-separierte Liste von Seiten-IDs der Footer-Menü-Seiten</target>
+         <trans-unit id="constantEditor.config.footerMenuStorage" resname="constantEditor.config.footerMenuStorage">
+            <source>Footer menu storage: ID of footer menu storage folder</source>
+            <target>Footer-Menü-Ordner: ID des Footer-Menü-Ordners</target>
          </trans-unit>
 
          <!-- LANGUAGE -->

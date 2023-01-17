@@ -14,9 +14,9 @@ lib.template {
 
         30 < lib.boilerplates.menuProcessor
         30 {
-            if.isTrue = {$plugin.tx_sitesetup.settings.footerMenuIds}
-            special = list
-            special.value = {$plugin.tx_sitesetup.settings.footerMenuIds}
+            if.isTrue = {$plugin.tx_sitesetup.settings.footerMenuStorage}
+            special = directory
+            special.value = {$plugin.tx_sitesetup.settings.footerMenuStorage}
             as = footerMenu
         }
     }
