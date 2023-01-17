@@ -37,38 +37,30 @@ class LastPageEditViewHelper extends AbstractViewHelper
     public function render() : integer
     {
         // VARS
-        $ttContentTable = 'tt_content';
-        $lastEditPage
-
-        // QUERYBUILDER
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($pagesTable);
-
-        $whereExpressions = [
-            $
+        $tables = [
+            'pages',
+            'tt_content'
         ];
         
-
+        foreach ($tables as $table) {
+          $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         
-
-        return $toc;
-    }
-    
-    private function getLastPageEdit() : int
-    {
-        $table = 'pages';
-        
-        $pagesQueryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
-        
-        $pagesQueryBuilder
+        $result = $queryBuilder
             ->select('tstamp')
             ->from($table)
             ->where([
-                $pagesQueryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($this->arguments['pageUid']))
-            ]);
-
-        $result = $pagesQueryBuilder->executeQuery()
+                $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($this->arguments['pageUid']))
+            ])
+            ->orderBy('tstamp', 'DESC')
+            ->setMaxResults(1)
+            ->executeQuery()
             ->fetchAllAssociative();
-            
-        // goon 
+        }
+
+        
+        
+        
+
+   
     }
 }
