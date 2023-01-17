@@ -12,4 +12,18 @@ mod.wizards.newContentElement.wizardItems {
       }
       show := addToList(sitesetup_toc)
    }
+   
+   special {
+      elements {
+         sitesetup_lastPageEdit {
+            iconIdentifier = sitesetup_lastPageEdit
+            title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.label
+            description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.description
+            tt_content_defValues {
+               CType = sitesetup_lastPageEdit
+            }
+         }
+      }
+      show := addToList(sitesetup_lastPageEdit)
+   }
 }

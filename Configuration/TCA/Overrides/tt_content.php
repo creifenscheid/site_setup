@@ -26,6 +26,19 @@ call_user_func(function()
       'after'
    );
    
+   \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+      'tt_content',
+      'CType',
+      [
+         'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:lastPageEdit.label',
+         'sitesetup_lastPageEdit',
+         'content-clock',
+          'special'
+      ],
+      'div',
+      'after'
+   );
+   
    /**
      * Table extension
      */

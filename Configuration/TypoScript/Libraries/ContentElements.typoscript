@@ -9,3 +9,10 @@ tt_content {
         templateName = Toc
     }
 }
+
+tt_content {
+    sitesetup_lastPageEdit =< lib.contentElement
+    sitesetup_lastPageEdit {
+        templateName = LastPageEdit 
+    }
+}

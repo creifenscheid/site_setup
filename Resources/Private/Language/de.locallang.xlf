@@ -3,6 +3,10 @@
    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:site_setup/Resources/Private/Language/locallang.xlf" date="2020-12-27T23:55:00Z" product-name="site_setup">
       <header/>
       <body>
+         <trans-unit id="dateformat" resname="dateformat">
+            <source>d/m/Y</source>
+            <target>d.m.Y</target>
+         </trans-unit>
          <trans-unit id="toc.label" resname="toc.label">
             <source>Table of contents</source>
             <target>Inhaltsverzeichnis</target>
@@ -18,6 +22,19 @@
          <trans-unit id="skipToContent" resname="skipToContent">
             <source>Skip to content</source>
             <target>zum Inhalt springen</target>
+         </trans-unit>
+         
+         <trans-unit id="lastPageEdit.label" resname="lastPageEdit.label">
+            <source>Last page edit</source>
+            <target>Letzte Seitenbearbeitung</target>
+         </trans-unit>
+         <trans-unit id="lastPageEdit.description" resname="lastPageEdit.description">
+            <source>Inserts the date when the page was last edited.</source>
+            <target>Fügt das Datum ein, an dem die Seite zuletzt bearbeitet wurde.</target>
+         </trans-unit>
+         <trans-unit id="lastPageEdit.page.edit" resname="lastPageEdit.page.edit">
+            <source>This page was last edited on %s.</source>
+            <target>Diese Seite wurde zuletzt am %s bearbeitet.</target>
          </trans-unit>
 
          <trans-unit id="tt_content.parser.year" resname="tt_content.parser.year">
