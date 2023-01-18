@@ -42,6 +42,8 @@ class LastPageEditViewHelper extends AbstractViewHelper
             'tt_content'
         ];
         
+        $timestamps = [];
+        
         foreach ($tables as $table) {
           $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         
@@ -54,13 +56,11 @@ class LastPageEditViewHelper extends AbstractViewHelper
             ->orderBy('tstamp', 'DESC')
             ->setMaxResults(1)
             ->executeQuery()
-            ->fetchAllAssociative();
+            ->fetchAllAssociative(); 
+            
+            // look at result and push to timestamps
         }
-
-        
-        
-        
-
    
+        return max($timestamps);
     }
 }
