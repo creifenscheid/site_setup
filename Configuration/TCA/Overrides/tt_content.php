@@ -26,19 +26,6 @@ call_user_func(function()
       'after'
    );
    
-   \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-      'tt_content',
-      'CType',
-      [
-         'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:lastPageEdit.label',
-         'sitesetup_lastPageEdit',
-         'content-clock',
-          'special'
-      ],
-      'div',
-      'after'
-   );
-   
    /**
      * Table extension
      */
@@ -84,6 +71,29 @@ call_user_func(function()
          --palette--;;access,
       ',
    ];
+
+   \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+        'tt_content',
+        'CType',
+        [
+        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:lastPageEdit.label',
+        'sitesetup_lastPageEdit',
+        'content-clock',
+            'special'
+        ],
+        'div',
+        'after'
+    );
+
+    // backend fields
+    $GLOBALS['TCA']['tt_content']['types']['sitesetup_lastPageEdit'] = [
+        'showitem' => '
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,header, header_layout,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                --palette--;;hidden,
+                --palette--;;access,
+        ',
+    ];
     
     // EXT:container registrations
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {

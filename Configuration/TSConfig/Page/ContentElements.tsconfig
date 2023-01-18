@@ -16,7 +16,7 @@ mod.wizards.newContentElement.wizardItems {
    special {
       elements {
          sitesetup_lastPageEdit {
-            iconIdentifier = sitesetup_lastPageEdit
+            iconIdentifier = content-clock
             title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.label
             description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.description
             tt_content_defValues {

@@ -1,6 +1,16 @@
-<div class="tx-sitesetup-tstamp">
-    <f:variable name="format" value="{f:translate(key:'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:dateformat')}" />
-    <f:variable name="date" value="{f:format.date(date:lastChange,format:format)}" />
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-    <p><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:date}" /></p>
-</div>
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+    <div class="tx-sitesetup-tstamp">
+        <f:variable name="format" value="{f:translate(key:'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:dateformat')}" />
+        <f:variable name="date" value="{f:format.date(date:lastChange,format:format)}" />
+
+        <p><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:date}" /></p>
+    </div>
+
+</f:section>
+
+</html>
