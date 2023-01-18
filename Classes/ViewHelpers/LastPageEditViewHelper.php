@@ -34,33 +34,37 @@ class LastPageEditViewHelper extends AbstractViewHelper
         $this->registerArgument('pageUid', 'int', 'Uid of the page to get the last edit timestamp.', true);
     }
 
-    public function render() : integer
+    public function render() : ?int
     {
         // VARS
         $tables = [
-            'pages',
-            'tt_content'
+            'pages' => 'uid',
+            'tt_content' => 'pid'
         ];
         
         $timestamps = [];
         
-        foreach ($tables as $table) {
-          $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        foreach ($tables as $table => $field) {
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         
-        $result = $queryBuilder
-            ->select('tstamp')
-            ->from($table)
-            ->where([
-                $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($this->arguments['pageUid']))
-            ])
-            ->orderBy('tstamp', 'DESC')
-            ->setMaxResults(1)
-            ->executeQuery()
-            ->fetchAllAssociative(); 
-            
-            // look at result and push to timestamps
+            $result = $queryBuilder
+                ->select('tstamp')
+                ->from($table)
+                ->where(
+                    $queryBuilder->expr()->eq($field, $queryBuilder->createNamedParameter($this->arguments['pageUid']))
+                )
+                ->orderBy('tstamp', 'DESC')
+                ->setMaxResults(1)
+                ->executeQuery()
+                ->fetchAllAssociative();
+
+                foreach($result as $entry) {
+                    if (array_key_exists('tstamp', $entry)) {
+                        $timestamps[] = $entry['tstamp'];
+                    }
+                }
         }
    
-        return max($timestamps);
+        return !empty($timestamps) ? max($timestamps) : null;
     }
 }

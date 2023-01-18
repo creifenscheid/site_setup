@@ -1,6 +1,7 @@
 <div class="tx-sitesetup-tstamp">
-    <f:variable name="format" value="{f:translate(key:'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:dateformat')" />
     <f:variable name="tstamp" value="{siteSetup:lastPageEdit(pageUid:data.pid)}" />
-    <f:variable name="date" value="{f:format.date(date:tstamp,format:format)" />
-    <f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:date}" />
+    <f:variable name="format" value="{f:translate(key:'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:dateformat')}" />
+    <f:variable name="date" value="{f:format.date(date:tstamp,format:format)}" />
+
+    <p><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:date}" /></p>
 </div>
