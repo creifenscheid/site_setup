@@ -1,5 +1,6 @@
 config {
 	noPageTitle = 2
+	spamProtectEmailAddresses = -2	
 }
 
 [applicationContext == "Development"]
