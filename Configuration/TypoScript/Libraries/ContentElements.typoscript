@@ -13,6 +13,11 @@ tt_content {
 tt_content {
     sitesetup_lastPageEdit =< lib.contentElement
     sitesetup_lastPageEdit {
-        templateName = LastPageEdit 
+        templateName = LastPageEdit
+
+        variables {
+            lastChange = TEXT
+            lastChange.value.data = page:SYS_LASTCHANGED
+        }
     }
 }
