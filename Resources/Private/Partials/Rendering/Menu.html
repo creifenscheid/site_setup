@@ -22,7 +22,7 @@
     <f:for each="{menu}" as="element">
         <f:if condition="{element.spacer}">
             <f:then>
-                <hr class="divider divider__menu" />
+                <li class="{id}__element menu-divider"><hr class="divider divider--menu" /></li>
             </f:then>
             <f:else>
                 <li class="{id}__element">
