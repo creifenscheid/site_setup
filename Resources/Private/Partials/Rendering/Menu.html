@@ -43,7 +43,7 @@
 
 <f:section name="elementText">
     <f:if condition="{element.navTitle}">
-        <f:then>{element.navTitle}</f:then>
-        <f:else>{element.title}</f:else>
+        <f:then><f:format.html>{element.navTitle}</f:format.html></f:then>
+        <f:else><f:format.html>{element.title}</f:format.html></f:else>
     </f:if>
 </f:section>
