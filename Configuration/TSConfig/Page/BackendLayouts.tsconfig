@@ -2,9 +2,9 @@ mod.web_layout.BackendLayouts {
   contentOnly {
     title = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:backendlayouts.contentOnly
     config {
-      backend_layout { 
+      backend_layout {
         colCount = 1
-        rowCount = 2
+        rowCount = 1
         rows {
           1 {
             columns {
