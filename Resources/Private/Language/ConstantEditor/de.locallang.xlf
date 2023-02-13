@@ -44,6 +44,10 @@
             <source>Template: Name of the template to use for page rendering</source>
             <target>Template: Name des Templates, das für die Seiten-Darstellung verwendet werden soll</target>
          </trans-unit>
+         <trans-unit id="constantEditor.file.attentionIcon" resname="constantEditor.file.attentionIcon">
+            <source>Attention icon: Path to the attention icon which shall be used in this installation</source>
+            <target>Achtung-Icon: Pfad zum Achtung-Icon, welches in dieser Installation verwendet werden soll</target>
+         </trans-unit>
 
          <!-- CONFIGURATION -->
          <trans-unit id="constantEditor.config.titlePostfix" resname="constantEditor.config.titlePostfix">

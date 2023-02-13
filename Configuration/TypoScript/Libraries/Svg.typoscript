@@ -3,3 +3,8 @@ lib.inlineSvg {
 	renderMode = inline
     src.field = src
 }
+
+lib.attentionIcon = SVG
+lib.attentionIcon {
+    src = {$plugin.tx_sitesetup.settings.attentionIcon}
+}
