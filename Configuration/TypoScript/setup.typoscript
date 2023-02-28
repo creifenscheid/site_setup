@@ -20,4 +20,3 @@ plugin.tx_sitesetup {
 @import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Config/*.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/Page.typoscript'
-@import 'EXT:site_setup/Configuration/TypoScript/Extensions/*.typoscript'
