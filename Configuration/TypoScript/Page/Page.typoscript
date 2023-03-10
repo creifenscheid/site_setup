@@ -7,5 +7,4 @@ page = PAGE
 
 page {
 	10 < lib.template
-	40 < lib.footerTemplate
 }

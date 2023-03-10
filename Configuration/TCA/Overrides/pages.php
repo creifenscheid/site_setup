@@ -63,6 +63,7 @@ call_user_func(function()
             'nav_title', 
             'title'
         ],
+        'prefixParentPageSlug' => true,
         'replacements' => [
             '&shy;' => '',
         ]
