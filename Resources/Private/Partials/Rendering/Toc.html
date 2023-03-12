@@ -1,6 +1,6 @@
 <f:comment>
     This partial can be used to render a table of content with the given toc array
-    
+
     Variables:
     - pageUid
     - toc array
@@ -8,7 +8,7 @@
 
 <f:if condition="{toc}">
     <div class="toc-container">
-        <f:link.page pageUid="{pageUid}" section="skip-toc" absolute="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.skip" /></f:link.page>
+        <f:link.page pageUid="{pageUid}" section="skip-toc" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.skip" /></f:link.page>
         <nav id="table-of-contents" aria-labelledby="toc-label" class="toc">
             <h2 id="toc-label" class="toc__heading"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:toc.label" /></h2>
             <f:render section="toc" arguments="{toc:toc}" />
@@ -22,7 +22,7 @@
         <f:for each="{toc}" as="element">
             <li class="toc__item">
                 <f:if condition="{element.header}">
-                    <f:link.page pageUid="{pageUid}" section="c{element.uid}" absolute="true" class="toc__link"><f:format.html>{element.header}</f:format.html></f:link.page>
+                    <f:link.page pageUid="{pageUid}" section="c{element.uid}" absolute="true" addQueryString="true" class="toc__link"><f:format.html>{element.header}</f:format.html></f:link.page>
                 </f:if>
 
                 <f:if condition="{element.subheader}">
