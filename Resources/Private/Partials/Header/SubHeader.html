@@ -1,20 +1,23 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{subheader}">
+    <f:if condition="{positionClass}">
+        <f:variable name="positionClass" value=" {positionClass}" />
+    </f:if>
     <f:switch expression="{layout}">
         <f:case value="1">
-            <h2 class="header {positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h2>
+            <h2 class="header{positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h2>
         </f:case>
         <f:case value="2">
-            <h3 class="header {positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h3>
+            <h3 class="header{positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h3>
         </f:case>
         <f:case value="3">
-            <h4 class="header {positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h4>
+            <h4 class="header{positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h4>
         </f:case>
         <f:case value="4">
-            <h5 class="header {positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h5>
+            <h5 class="header{positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h5>
         </f:case>
         <f:case value="5">
-            <h6 class="header {positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h6>
+            <h6 class="header{positionClass}"><f:format.html parseFuncTSPath="lib.parseFunc">{subheader}</f:format.html></h6>
         </f:case>
         <f:defaultCase>
             <f:if condition="{default}">
