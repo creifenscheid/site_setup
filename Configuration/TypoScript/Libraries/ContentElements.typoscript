@@ -1,23 +1,33 @@
 lib.contentElement {
-    templateRootPaths.10 = EXT:site_setup/Resources/Private/Templates/
-    partialRootPaths.10 = EXT:site_setup/Resources/Private/Partials/
+  templateRootPaths.10 = EXT:site_setup/Resources/Private/Templates/
+  partialRootPaths.10 = EXT:site_setup/Resources/Private/Partials/
 }
 
 tt_content {
-    sitesetup_toc =< lib.contentElement
-    sitesetup_toc {
-        templateName = Toc
-    }
-}
+  sitesetup_toc =< lib.contentElement
+  sitesetup_toc {
+    templateName = Toc
+  }
 
-tt_content {
-    sitesetup_lastPageEdit =< lib.contentElement
-    sitesetup_lastPageEdit {
-        templateName = LastPageEdit
+  sitesetup_lastPageEdit =< lib.contentElement
+  sitesetup_lastPageEdit {
+    templateName = LastPageEdit
 
-        variables {
-            lastChange = TEXT
-            lastChange.value.data = page:SYS_LASTCHANGED
-        }
+    variables {
+      lastChange = TEXT
+      lastChange.value.data = page:SYS_LASTCHANGED
     }
+  }
+
+  sitesetup_carousel =< lib.contentElement
+  sitesetup_carousel {
+    templateName = Carousel
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = image
+      }
+    }
+  }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext"
+		  original="EXT:site_setup/Resources/Private/Language/TCA/locallang_ttcontent.xlf" date="2022-09-24T23:55:00Z"
+		  product-name="site_setup">
+		<header/>
+		<body>
+			<trans-unit id="tx_sitesetup_carousel_slides_to_show" resname="tx_sitesetup_carousel_slides_to_show">
+				<source>Number of images to show at once</source>
+				<target>Anzahl auf einmal anzuzeigender Bilder</target>
+			</trans-unit>
+			<trans-unit id="tx_sitesetup_carousel_autoslide" resname="tx_sitesetup_carousel_autoslide">
+				<source>Auto slide</source>
+				<target>Automatisches starten</target>
+			</trans-unit>
+			<trans-unit id="tx_sitesetup_carousel_duration" resname="tx_sitesetup_carousel_duration">
+				<source>Duration until picture change (in seconds)</source>
+				<target>Dauer bis Bildwechsel (in Sekunden)</target>
+			</trans-unit>
+			<trans-unit id="tx_sitesetup_carousel_duration.description"
+						resname="tx_sitesetup_carousel_duration.description">
+				<source>From an accessibility standpoint, the duration is not allowed to be lower than 5 seconds.
+				</source>
+				<target>Unter dem Gesichtspunkt der Barrierefreiheit darf die Dauer nicht unter 5 Sekunden liegen.
+				</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

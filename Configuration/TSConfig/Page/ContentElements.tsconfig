@@ -12,7 +12,7 @@ mod.wizards.newContentElement.wizardItems {
       }
       show := addToList(sitesetup_toc)
    }
-   
+
    special {
       elements {
          sitesetup_lastPageEdit {
@@ -25,5 +25,19 @@ mod.wizards.newContentElement.wizardItems {
          }
       }
       show := addToList(sitesetup_lastPageEdit)
+   }
+
+   common {
+      elements {
+         sitesetup_carousel {
+            iconIdentifier = content-carousel-image
+            title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.label
+            description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.description
+            tt_content_defValues {
+               CType = sitesetup_carousel
+            }
+         }
+      }
+      show := addToList(sitesetup_carousel)
    }
 }
