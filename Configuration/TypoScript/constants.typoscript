@@ -1,54 +1,63 @@
 plugin.tx_sitesetup {
-   
-   view {
-       # customsubcategory=path=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.path
-       # cat=Site setup/path/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.templateRootPath
-       templateRootPath = EXT:site_setup/Resources/Private/Templates/
-       # cat=Site setup/path/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.partialRootPath
-       partialRootPath = EXT:site_setup/Resources/Private/Partials/
-       # cat=Site setup/path/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.layoutRootPath
-       layoutRootPath = EXT:site_setup/Resources/Private/Layouts/
-   }
 
-   settings {
-       # cat=Site setup/path/d; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.favicon
-       favicon = 
-       
-       # cat=Site setup/path/e; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.logoPath
-       logoPath = 
-    
-       # cat=Site setup/file/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.templateName
-       templateName = Default
+  view {
+    # customsubcategory=path=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.path
+    # cat=Site setup/path/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.templateRootPath
+    templateRootPath = EXT:site_setup/Resources/Private/Templates/
+    # cat=Site setup/path/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.partialRootPath
+    partialRootPath = EXT:site_setup/Resources/Private/Partials/
+    # cat=Site setup/path/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.layoutRootPath
+    layoutRootPath = EXT:site_setup/Resources/Private/Layouts/
+  }
 
-       # cat=Site setup/file/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.attentionIcon
-       attentionIcon = EXT:site_setup/Resources/Public/Icons/Attention.svg
+  settings {
+    # cat=Site setup/path/d; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.favicon
+    favicon =
 
-       # customsubcategory=config=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.config
-       # cat=Site setup/config/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.titlePostfix
-       titlePostfix =
+    # cat=Site setup/path/e; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.logoPath
+    logoPath =
 
-       # cat=Site setup/config/b; type=int; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.menuParentPageId
-       menuParentPageId = 
+    # cat=Site setup/file/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.templateName
+    templateName = Default
 
-       # cat=Site setup/config/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.footerMenuStorage
-       footerMenuStorage = 
+    # cat=Site setup/file/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.attentionIcon
+    attentionIcon = EXT:site_setup/Resources/Public/Icons/Attention.svg
 
-       # cat=Site setup/Language/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.language.languageIds
-       languageIds = 
-       
-       # cat=Site setup/Language/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.language.languageMenuTemplateName
-       languageMenuTemplateName = LanguageMenu
+    # customsubcategory=config=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.config
+    # cat=Site setup/config/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.titlePostfix
+    titlePostfix =
 
-       # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.webapp
-       webapp {
-            # cat=Site setup/webapp/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.appTitle
-            appTitle =
+    # cat=Site setup/config/b; type=int; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.menuParentPageId
+    menuParentPageId =
 
-            # cat=Site setup/webapp/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.iconFolder
-            iconFolder =
+    # cat=Site setup/config/c; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.config.footerMenuStorage
+    footerMenuStorage =
 
-            # cat=Site setup/webapp/c; type=options[default=default, black=black, translucent=black-translucent]; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.statusBarStyle
-            statusBarStyle =
-       }
-   }
+    # cat=Site setup/Language/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.language.languageIds
+    languageIds =
+
+    # cat=Site setup/Language/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.language.languageMenuTemplateName
+    languageMenuTemplateName = LanguageMenu
+
+    # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.webapp
+    webapp {
+      # cat=Site setup/webapp/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.appTitle
+      appTitle =
+
+      # cat=Site setup/webapp/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.iconFolder
+      iconFolder =
+
+      # cat=Site setup/webapp/c; type=options[default=default, black=black, translucent=black-translucent]; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.statusBarStyle
+      statusBarStyle =
+    }
+
+    # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.carousel
+    carousel {
+      # cat=Site setup/carousel/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.js
+      js =
+
+      # cat=Site setup/carousel/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.css
+      css =
+    }
+  }
 }

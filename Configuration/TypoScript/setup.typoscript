@@ -1,20 +1,26 @@
 plugin.tx_sitesetup {
-   view {
-       templateRootPaths {
-           10 = EXT:site_setup/Resources/Private/Templates/
-           20 = {$plugin.tx_sitesetup.view.templateRootPath}
-       }
-       
-       layoutRootPaths {
-           10 = EXT:site_setup/Resources/Private/Layouts/
-           20 = {$plugin.tx_sitesetup.view.layoutRootPath}
-       }
-       
-       partialRootPaths {
-           10 = EXT:site_setup/Resources/Private/Partials/
-           20 = {$plugin.tx_sitesetup.view.partialRootPath}
-       }
-   }
+  view {
+    templateRootPaths {
+      10 = EXT:site_setup/Resources/Private/Templates/
+      20 = {$plugin.tx_sitesetup.view.templateRootPath}
+    }
+
+    layoutRootPaths {
+      10 = EXT:site_setup/Resources/Private/Layouts/
+      20 = {$plugin.tx_sitesetup.view.layoutRootPath}
+    }
+
+    partialRootPaths {
+      10 = EXT:site_setup/Resources/Private/Partials/
+      20 = {$plugin.tx_sitesetup.view.partialRootPath}
+    }
+  }
+  settings {
+    carousel {
+      js = {$plugin.tx_sitesetup.settings.carousel.js}
+      css = {$plugin.tx_sitesetup.settings.carousel.css}
+    }
+  }
 }
 
 @import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'
