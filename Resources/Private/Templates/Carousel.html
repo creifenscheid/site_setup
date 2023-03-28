@@ -3,7 +3,12 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-    
+    <f:if condition="{settings.css}">
+        <f:asset.css identifier="sitesSetupCarousel" href="{settings.css}" />
+    </f:if>
+    <f:if condition="{settings.js}">
+        <f:asset.script identifier="sitesSetupCarousel" src="{settings.js}" />
+    </f:if>
 </f:section>
 
 </html>

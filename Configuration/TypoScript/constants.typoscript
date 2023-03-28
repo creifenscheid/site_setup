@@ -54,10 +54,10 @@ plugin.tx_sitesetup {
     # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.carousel
     carousel {
       # cat=Site setup/carousel/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.js
-      js =
+      js = https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js
 
       # cat=Site setup/carousel/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.css
-      css =
+      css = https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css
     }
   }
 }
