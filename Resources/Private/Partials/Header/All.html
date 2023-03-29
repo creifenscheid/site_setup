@@ -6,6 +6,7 @@
             layout: data.header_layout,
             cssClass: '{f:if(condition: data.tx_sitesetup_header_sr_only, then: \'{settings.srOnlyClass}\')}{f:if(condition: data.header_position, then: \' ce-headline-{data.header_position}\')}',
             link: data.header_link,
+            id: 'c{data.uid}-heading',
             default: settings.defaultHeaderType}" />
         <f:render partial="Header/SubHeader" arguments="{
             subheader: data.subheader,
