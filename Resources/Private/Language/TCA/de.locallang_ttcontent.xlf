@@ -5,6 +5,14 @@
 		  product-name="site_setup">
 		<header/>
 		<body>
+			<trans-unit id="tx_sitesetup_header_sr_only" resname="tx_sitesetup_header_sr_only">
+				<source>Screen-reader-only headline</source>
+				<target>Überschrift nur für Screen-Reader</target>
+			</trans-unit>
+			<trans-unit id="tx_sitesetup_header_sr_only.description" resname="tx_sitesetup_header_sr_only.description">
+				<source>By activating this checkbox, the headline will not be visible but still accessible by screen readers. Take care to still set the correct header level.</source>
+				<target>Wenn dieses Kontrollkästchen aktivieren ist, wird die Überschrift optisch ausgeblendet. Sie ist dennoch für Screen-Reader zugänglich. Es ist darauf zu achten, dennoch richtige Überschriftenebene einzustellen.</target>
+			</trans-unit>
 			<trans-unit id="tx_sitesetup_carousel_slides_to_show" resname="tx_sitesetup_carousel_slides_to_show">
 				<source>Number of images to show at once</source>
 				<target>Anzahl auf einmal anzuzeigender Bilder</target>

@@ -9,6 +9,41 @@ call_user_func(function () {
     $extensionKey = 'site_setup';
 
     /**
+     * General tt_content extension
+     */
+    // table extension
+    $ttContentFields = [
+        'tx_sitesetup_header_sr_only' => [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_header_sr_only',
+            'description' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_header_sr_only.description',
+            'config' => [
+                'default' => 0,
+                'type' => 'check',
+                'renderType' => 'checkboxToggle'
+            ]
+        ]
+    ];
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+        'tt_content',
+        $ttContentFields
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'tt_content',
+        'headers',
+        'tx_sitesetup_header_sr_only',
+        'after:header_layout'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'tt_content',
+        'header',
+        'tx_sitesetup_header_sr_only',
+        'after:header_layout'
+    );
+
+    /**
      * CE: table of contents
      */
 
@@ -167,7 +202,9 @@ call_user_func(function () {
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_carousel'] = [
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,header, header_layout,tx_sitesetup_carousel_slides_to_show,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                --palette--;;header,
+            tx_sitesetup_carousel_slides_to_show,
                 --palette--;;carouselSettings,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images,image,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,

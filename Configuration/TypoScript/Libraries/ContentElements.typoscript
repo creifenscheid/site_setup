@@ -1,6 +1,8 @@
 lib.contentElement {
   templateRootPaths.10 = EXT:site_setup/Resources/Private/Templates/
   partialRootPaths.10 = EXT:site_setup/Resources/Private/Partials/
+
+  settings.srOnlyClass = {$plugin.tx_sitesetup.settings.srOnlyClass}
 }
 
 tt_content {

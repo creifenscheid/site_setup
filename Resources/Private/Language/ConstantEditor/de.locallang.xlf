@@ -62,6 +62,10 @@
 				<source>Title postfix: Postfix for the title tag</source>
 				<target>Title-Postfix: Postfix für das Title-Tag</target>
 			</trans-unit>
+			<trans-unit id="constantEditor.config.srOnlyClass" resname="constantEditor.config.srOnlyClass">
+				<source>Screen-Reader-only class: CSS class for sr-only settings</source>
+				<target>Screen-Reader-only-Klasses: CSS-Klasse für sr-only-Konfiguration</target>
+			</trans-unit>
 			<trans-unit id="constantEditor.config.menuParentPageId" resname="constantEditor.config.menuParentPageId">
 				<source>Menu id: Page id of the parent page of the menu pages</source>
 				<target>Menü-ID: Seiten-ID der übergeordneten Seite der Menü-Seiten</target>
