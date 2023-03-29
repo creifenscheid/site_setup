@@ -1,8 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:layout name="Default" />
+<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
 
-<f:section name="Main">
     <f:if condition="{settings.css}">
         <f:asset.css identifier="sitesSetupCarousel" href="{settings.css}" />
     </f:if>
@@ -12,15 +11,15 @@
 
     <f:debug title="Debug">{_all}</f:debug>
 
-    <section class="carousel" aria-labelledby="carouselheading">
-        <h3 id="carouselheading" class="visuallyhidden">Recent news</h3>
+    <section class="carousel" aria-labelledby="c{data.uid}-heading">
+        <f:render partial="Header/All" arguments="{_all}" />
+
         <ul>
             <li class="slide">…</li>
             <li class="slide">…</li>
             <li class="slide">…</li>
         </ul>
     </section>
-
-</f:section>
+</div>
 
 </html>
