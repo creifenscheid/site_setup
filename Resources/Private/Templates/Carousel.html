@@ -9,17 +9,32 @@
         <f:asset.script identifier="sitesSetupCarousel" src="{settings.js}" />
     </f:if>
 
-    <f:debug title="Debug">{_all}</f:debug>
-
     <section class="carousel" aria-labelledby="c{data.uid}-heading">
         <f:render partial="Header/All" arguments="{_all}" />
 
-        <ul>
-            <li class="slide">…</li>
-            <li class="slide">…</li>
-            <li class="slide">…</li>
+        <ul class="carousel__container">
+            <f:for each="{files}" as="file">
+                <li class="carousel__element">
+                    <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
+                </li>
+            </f:for>
         </ul>
+
+        <button class="carousel__button carousel__button--prev" aria-label="prev"><--</button>
+        <button class="carousel__button carousel__button--next" aria-label="next">--></button>
     </section>
 </div>
+
+<f:asset.script identifier="sitesSetupCarousel_init">
+    const swiper = new Swiper('.carousel', {
+        direction: 'vertical',
+        loop: true,
+    
+        navigation: {
+            nextEl: '.carousel__button--next',
+            prevEl: '.carousel__button--prev',
+        },
+    });
+</f:asset.script>
 
 </html>

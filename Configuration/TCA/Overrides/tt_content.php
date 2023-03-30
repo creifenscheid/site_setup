@@ -32,14 +32,14 @@ call_user_func(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'headers',
-        'tx_sitesetup_header_sr_only',
+        'tx_sitesetup_header_sr_only,--linebreak--',
         'after:header_layout'
     );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'header',
-        'tx_sitesetup_header_sr_only',
+        'tx_sitesetup_header_sr_only,--linebreak--',
         'after:header_layout'
     );
 
