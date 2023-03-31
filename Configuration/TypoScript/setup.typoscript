@@ -15,12 +15,6 @@ plugin.tx_sitesetup {
       20 = {$plugin.tx_sitesetup.view.partialRootPath}
     }
   }
-  settings {
-    carousel {
-      js = {$plugin.tx_sitesetup.settings.carousel.js}
-      css = {$plugin.tx_sitesetup.settings.carousel.css}
-    }
-  }
 }
 
 @import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'

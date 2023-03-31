@@ -1,40 +1,24 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-
-    <f:if condition="{settings.css}">
-        <f:asset.css identifier="sitesSetupCarousel" href="{settings.css}" />
-    </f:if>
-    <f:if condition="{settings.js}">
-        <f:asset.script identifier="sitesSetupCarousel" src="{settings.js}" />
-    </f:if>
-
-    <section class="carousel" aria-labelledby="c{data.uid}-heading">
+    <section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading">
         <f:render partial="Header/All" arguments="{_all}" />
 
-        <ul class="carousel__container">
+        <div class="carousel-actions">
+            <button class="carousel__button carousel__button--prev swiper-button-prev" aria-label="prev">PREV</button>
+            <button class="carousel__button carousel__button--prev swiper-button-play" aria-label="play">PLAY</button>
+            <button class="carousel__button carousel__button--prev swiper-button-stop" aria-label="stop">STOP</button>
+            <button class="carousel__button carousel__button--next swiper-button-next" aria-label="next">NEXT</button>
+        </div>
+
+        <ul class="carousel__container swiper-wrapper">
             <f:for each="{files}" as="file">
-                <li class="carousel__element">
+                <li class="carousel__element swiper-slide">
                     <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
                 </li>
             </f:for>
         </ul>
-
-        <button class="carousel__button carousel__button--prev" aria-label="prev"><--</button>
-        <button class="carousel__button carousel__button--next" aria-label="next">--></button>
     </section>
 </div>
-
-<f:asset.script identifier="sitesSetupCarousel_init">
-    const swiper = new Swiper('.carousel', {
-        direction: 'vertical',
-        loop: true,
-    
-        navigation: {
-            nextEl: '.carousel__button--next',
-            prevEl: '.carousel__button--prev',
-        },
-    });
-</f:asset.script>
 
 </html>

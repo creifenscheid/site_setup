@@ -10,5 +10,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
             nextButtonLabel: 'Nächstes Bild',
             closeButtonLabel: 'Dialogfenster schließen'
         }
-      })
+    })
+
+    const swiper = new Swiper('.carousel', {
+      direction: 'vertical',
+      loop: true,
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
 });

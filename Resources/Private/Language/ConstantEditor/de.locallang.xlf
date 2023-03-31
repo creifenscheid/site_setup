@@ -18,11 +18,6 @@
 				<source>Web app configuration</source>
 				<target>Web-App-Konfiguration</target>
 			</trans-unit>
-			<trans-unit id="constantEditor.customsubcategory.carousel"
-						resname="constantEditor.customsubcategory.carousel">
-				<source>Carousel configuration</source>
-				<target>Karussell-Konfiguration</target>
-			</trans-unit>
 
 			<!-- PATHS -->
 			<trans-unit id="constantEditor.path.templateRootPath" resname="constantEditor.path.templateRootPath">
@@ -100,16 +95,6 @@
 			<trans-unit id="constantEditor.webapp.statusBarStyle" resname="constantEditor.webapp.statusBarStyle">
 				<source>Statusbar style: Style configuration for the iOS status bar</source>
 				<target>Stil der Statusleiste: Darstellungskonfiguration für die iOS-Statusleiste</target>
-			</trans-unit>
-
-			<!-- CAROUSEL -->
-			<trans-unit id="constantEditor.carousel.js" resname="constantEditor.carousel.js">
-				<source>JavaScript: Path to carousel javascript file</source>
-				<target>JavaScript: Pfad zur JavaScript-Datei des Karussells</target>
-			</trans-unit>
-			<trans-unit id="constantEditor.carousel.css" resname="constantEditor.carousel.css">
-				<source>CSS: Path to carousel css file</source>
-				<target>CSS: Pfad zur CSS-Datei des Karussells</target>
 			</trans-unit>
 		</body>
 	</file>

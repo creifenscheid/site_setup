@@ -31,6 +31,5 @@ tt_content {
         references.fieldName = image
       }
     }
-    settings < plugin.tx_sitesetup.settings.carousel
   }
 }
