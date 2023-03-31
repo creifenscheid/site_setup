@@ -18,6 +18,10 @@
 				<source>Web app configuration</source>
 				<target>Web-App-Konfiguration</target>
 			</trans-unit>
+			<trans-unit id="constantEditor.customsubcategory.carousel" resname="constantEditor.customsubcategory.carousel">
+				<source>Carousel configuration</source>
+				<target>Karussell-Konfiguration</target>
+			</trans-unit>
 
 			<!-- PATHS -->
 			<trans-unit id="constantEditor.path.templateRootPath" resname="constantEditor.path.templateRootPath">
@@ -95,6 +99,24 @@
 			<trans-unit id="constantEditor.webapp.statusBarStyle" resname="constantEditor.webapp.statusBarStyle">
 				<source>Statusbar style: Style configuration for the iOS status bar</source>
 				<target>Stil der Statusleiste: Darstellungskonfiguration für die iOS-Statusleiste</target>
+			</trans-unit>
+
+			<!-- CAROUSEL -->
+			<trans-unit id="constantEditor.carousel.prevIcon" resname="constantEditor.carousel.prevIcon">
+				<source>Icon "previous": Path to icon file to use for button "previous slide"</source>
+				<target>Icon "vorheriges": Pfad zur Icon-Datei, die für die Schaltfläche "Vorherige Folie" verwendet werden soll</target>
+			</trans-unit>
+			<trans-unit id="constantEditor.carousel.nextIcon" resname="constantEditor.carousel.nextIcon">
+				<source>Icon "next": Path to icon file to use for button "next slide"</source>
+				<target>Icon "nächstes": Pfad zur Icon-Datei, die für die Schaltfläche "nächste Folie" verwendet werden soll</target>
+			</trans-unit>
+			<trans-unit id="constantEditor.carousel.playIcon" resname="constantEditor.carousel.playIcon">
+				<source>Icon "play": Path to icon file to use for button "play"</source>
+				<target>Icon "Abspielen": Pfad zur Icon-Datei, die für die Schaltfläche "Abspielen" verwendet werden soll</target>
+			</trans-unit>
+			<trans-unit id="constantEditor.carousel.stopIcon" resname="constantEditor.carousel.stopIcon">
+				<source>Icon "stop": Path to icon file to use for button "stop"</source>
+				<target>Icon "Stopp": Pfad zur Icon-Datei, die für die Schaltfläche "Stop" verwendet werden soll</target>
 			</trans-unit>
 		</body>
 	</file>

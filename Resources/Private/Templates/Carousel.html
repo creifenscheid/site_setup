@@ -1,17 +1,28 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-    <section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading">
+
+    <section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading" data-next="näxt" data-prev="pröv" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
         <f:render partial="Header/All" arguments="{_all}" />
 
-        <div class="carousel-actions">
-            <button class="carousel__button carousel__button--prev swiper-button-prev" aria-label="prev">PREV</button>
-            <button class="carousel__button carousel__button--prev swiper-button-play" aria-label="play">PLAY</button>
-            <button class="carousel__button carousel__button--prev swiper-button-stop" aria-label="stop">STOP</button>
-            <button class="carousel__button carousel__button--next swiper-button-next" aria-label="next">NEXT</button>
-        </div>
+        <f:link.page pageUid="{data.pid}" section="skip-carousel-{data.uid}" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.skip" /></f:link.page>
 
-        <ul class="carousel__container swiper-wrapper">
+        <ul class="icon-box__list">
+            <li class="icon-box__item">
+                <button class="icon-box__link cta cta--icon js-carousel-prev" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.prev')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.prevIcon}" /></span></button>
+            </li>
+            <li class="icon-box__item">
+                <button class="icon-box__link cta cta--icon js-carousel-play" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.play')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.playIcon}" /></span></button>
+            </li>
+            <li class="icon-box__item">
+                <button class="icon-box__link cta cta--icon js-carousel-strop" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.stop')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.stopIcon}" /></span></button>
+            </li>
+            <li class="icon-box__item">
+                <button class="icon-box__link cta cta--icon js-carousel-next" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.stopLLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.play')}"><span class="icon-box__image cta__icon svg--primary" aria-controls="carousel-{data.uid}"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.nextIcon}" /></span></button>
+            </li>
+        </ul>
+
+        <ul id="carousel-{data.uid}" class="carousel__container swiper-wrapper">
             <f:for each="{files}" as="file">
                 <li class="carousel__element swiper-slide">
                     <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
@@ -19,6 +30,8 @@
             </f:for>
         </ul>
     </section>
+
+    <div id="skip-carousel-{data.uid}"></div>
 </div>
 
 </html>

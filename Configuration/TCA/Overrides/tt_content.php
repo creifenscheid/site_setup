@@ -158,7 +158,7 @@ call_user_func(function () {
         'tx_sitesetup_carousel_slides_to_show' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_slides_to_show',
             'config' => [
-                'default' => '1',
+                'default' => 1,
                 'type' => 'input',
                 'size' => 30,
                 'max' => 1,

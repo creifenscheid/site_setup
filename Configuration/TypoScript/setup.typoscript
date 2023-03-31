@@ -15,6 +15,14 @@ plugin.tx_sitesetup {
       20 = {$plugin.tx_sitesetup.view.partialRootPath}
     }
   }
+  settings {
+    carousel {
+      prevIcon = {$plugin.tx_sitesetup.settings.carousel.prevIcon}
+      nextIcon = {$plugin.tx_sitesetup.settings.carousel.nextIcon}
+      playIcon = {$plugin.tx_sitesetup.settings.carousel.playIcon}
+      stopIcon = {$plugin.tx_sitesetup.settings.carousel.stopIcon}
+    }
+  }
 }
 
 @import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'

@@ -36,6 +36,21 @@
 			<trans-unit id="carousel.description" resname="carousel.description">
 				<source>Inserts a carousel of chosen images.</source>
 			</trans-unit>
+			<trans-unit id="carousel.skip" resname="carousel.skip">
+				<source>Skip carousel</source>
+			</trans-unit>
+			<trans-unit id="carousel.prev" resname="carousel.prev">
+				<source>previous image</source>
+			</trans-unit>
+			<trans-unit id="carousel.next" resname="carousel.next">
+				<source>next image</source>
+			</trans-unit>
+			<trans-unit id="carousel.play" resname="carousel.play">
+				<source>start carousel</source>
+			</trans-unit>
+			<trans-unit id="carousel.stop" resname="carousel.stop">
+				<source>stop carousel</source>
+			</trans-unit>
 
 			<trans-unit id="tt_content.parser.year" resname="tt_content.parser.year">
 				<source>year</source>

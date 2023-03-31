@@ -53,5 +53,20 @@ plugin.tx_sitesetup {
       # cat=Site setup/webapp/c; type=options[default=default, black=black, translucent=black-translucent]; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.webapp.statusBarStyle
       statusBarStyle =
     }
+
+    # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.carousel
+    carousel {
+      # cat=Site setup/carousel/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.prevIcon
+      prevIcon = EXT:site_setup/Resources/Public/Icons/Carousel/Prev.svg
+
+      # cat=Site setup/carousel/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.nextIcon
+      nextIcon = EXT:site_setup/Resources/Public/Icons/Carousel/Next.svg
+
+      # cat=Site setup/carousel/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.playIcon
+      playIcon = EXT:site_setup/Resources/Public/Icons/Carousel/Play.svg
+
+      # cat=Site setup/carousel/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.stopIcon
+      stopIcon = EXT:site_setup/Resources/Public/Icons/Carousel/Stop.svg
+    }
   }
 }
