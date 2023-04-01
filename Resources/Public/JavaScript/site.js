@@ -17,20 +17,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const slidesPerView = carousel.getAttribute('data-slides-to-show')
     const duration = carousel.getAttribute('data-duration')
     const autoslide = carousel.getAttribute('data-autoslide')
-    const prevLabel = carousel.getAttribute('data-prev')
-    const nextLabel = carousel.getAttribute('data-next')
 
     let carouselOptions = {
       slidesPerView: slidesPerView,
 
       keyboard: {
         enabled: true
-      },
-
-      a11y: {
-        prevSlideMessage: prevLabel,
-        nextSlideMessage: nextLabel,
-      },
+      }
     }
 
     if (autoslide === '1') {
