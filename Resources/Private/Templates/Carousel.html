@@ -2,7 +2,7 @@
 
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
 
-    <section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading" data-next="näxt" data-prev="pröv" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
+    <section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
         <f:render partial="Header/All" arguments="{_all}" />
 
         <f:link.page pageUid="{data.pid}" section="skip-carousel-{data.uid}" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.skip" /></f:link.page>
