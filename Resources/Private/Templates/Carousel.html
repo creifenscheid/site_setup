@@ -7,7 +7,7 @@
 
         <f:link.page pageUid="{data.pid}" section="skip-carousel-{data.uid}" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.skip" /></f:link.page>
 
-        <ul id="carousel-{data.uid}-controls"class="icon-box__list" aria-live="polite">
+        <ul id="carousel-{data.uid}-controls"class="icon-box__list">
             <li class="icon-box__item">
                 <button id="carousel-{data.uid}-prev" class="icon-box__link cta cta--icon js-carousel-action" data-action="prev" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.prev')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.prevIcon}" /></span></button>
             </li>
