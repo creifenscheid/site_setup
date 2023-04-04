@@ -1,6 +1,6 @@
 # Site Setup
 
-This TYPO3 extension provides the configuration to setup a webpage. 
+This TYPO3 extension provides the configuration to set up a webpage. 
 It does not offer any styling.
 
 ## Features
@@ -17,20 +17,20 @@ Using the constant editor you‘ll get a bunch of configuration possibilities su
 The extension sets the following configurations via typoscript:
 
 * Compression of css and js
-* Concatentation of css and js
+* Concatenation of css and js
 * Title tag incl. configured postfix
 * App and fav icon
 * meta data
-** viewport
-** description
-** last modification 
-** mobile Web App configuration 
+  * viewport
+  * description
+  * last modification 
+  * mobile Web App configuration 
 
 ### Templating / Frontend
 
-The extensions comes a long with some ready-to-use partials, e.g. for menus, skip links, content rendering etc., always by providing the maximum amount of accessibility. 
+The extensions come a long with some ready-to-use partials, e.g. for menus, skip links, content rendering etc., always by providing the maximum amount of accessibility. 
 
-Besides partials there are a some typoscript libraries to use, e.g. inline svg rendering or rendering of an „attention icon“.
+Besides partials there are a some typoscript libraries to use, e.g. inline svg rendering or rendering of an "attention icon".
 
 ### Extension of page properties
 
@@ -55,17 +55,17 @@ The extension implements the following content Elements in addition to the TYPO3
 
 #### Carousel
 
-* implementation of a image carousel
+* implementation of an image carousel
 * using javascript library „swiper“
 * minimal configuration 
-** images to show at once (for tablet and larger screens)
-** enable/disable autoplay
-** speed of duration
+  * images to show at once (for tablet and larger screens)
+  * enable/disable autoplay
+  * speed of duration
 * frontend comes along with buttons for the following actions
-** previous image 
-** next image
-** start carousel 
-** stop carousel
+  * previous image 
+  * next image
+  * start carousel 
+  * stop carousel
 
 ### Third party libraries
 
@@ -76,4 +76,4 @@ The extension comes a long with the following frameworks:
 
 All libraries are included locally and not via cdn or something. 
 This is done to prevent privacy issues. 
-Therefore the delivered frameworks may not be the latest release.
+Therefor the delivered frameworks may not be the latest release.

@@ -36,8 +36,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const swiper = new Swiper('.carousel', carouselOptions)
     const carouselId = swiper.el.dataset.carousel
 
-    console.log(swiper)
-
     swiper.on('slideChange', function () {
       document.getElementById(carouselId + '-prev').removeAttribute('disabled')
       document.getElementById(carouselId + '-next').removeAttribute('disabled')
@@ -56,6 +54,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
       switch (actionElement.dataset.action) {
         case 'prev':
+
+          if (swiper.isBeginning) {
+            actionElement.setAttribute('disabled', true)
+          }
 
           actionElement.addEventListener('click', function () {
             swiper.slidePrev()
@@ -104,6 +106,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
           break;
 
         case 'next':
+
+          if (swiper.isEnd) {
+            actionElement.setAttribute('disabled', true)
+          }
 
           actionElement.addEventListener('click', function () {
             swiper.slideNext()
