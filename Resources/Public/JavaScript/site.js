@@ -19,10 +19,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const autoslide = carousel.getAttribute('data-autoslide')
 
     let carouselOptions = {
-      slidesPerView: slidesPerView,
+      slidesPerView: 1,
 
       keyboard: {
         enabled: true
+      },
+      
+      breakpoints: {
+        700: {
+          slidesPerView: slidesPerView
+        }
       }
     }
 
