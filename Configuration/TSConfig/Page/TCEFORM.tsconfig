@@ -50,5 +50,26 @@ TCEFORM {
                 }
             }
         }
+      header_position{
+        types {
+          sitesetup_carousel {
+            disabled = 1
+          }
+        }
+      }
+      header_link{
+        types {
+          sitesetup_carousel {
+            disabled = 1
+          }
+        }
+      }
+      date{
+        types {
+          sitesetup_carousel {
+            disabled = 1
+          }
+        }
+      }
     }
 }
