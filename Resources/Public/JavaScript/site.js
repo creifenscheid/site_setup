@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  // lightbox
+  // LIGHTBOX
   // @SeppToDo localization
   const prvs = new Parvus({
     l10n: {
@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   })
 
+  // CAROUSEL
   const swiperContainer = '.carousel'
   document.querySelectorAll(swiperContainer).forEach.call(document.querySelectorAll(swiperContainer), function (carousel, index, arr) {
     const slidesPerView = carousel.getAttribute('data-slides-to-show')
@@ -19,15 +20,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const autoslide = carousel.getAttribute('data-autoslide')
 
     let carouselOptions = {
-      slidesPerView: 1,
+      slidesPerView: slidesPerView,
+      watchSlidesProgress: true,
 
       keyboard: {
         enabled: true
       },
-      
-      breakpoints: {
-        700: {
-          slidesPerView: slidesPerView
+
+      on: {
+        init: function () {
+          adjustCarouselElementVisibility(this)
         }
       }
     }
@@ -52,7 +54,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       if (swiper.isEnd) {
         document.getElementById(carouselId + '-next').setAttribute('disabled', true)
       }
-    });
+
+      adjustCarouselElementVisibility(swiper)
+    })
 
     // get carousel controller
     const carouselControls = document.getElementById(carouselId + '-controls').querySelectorAll('.js-carousel-action');
@@ -130,3 +134,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
   })
 })
+
+function adjustCarouselElementVisibility(swiper) {
+  swiper.slides.forEach.call(swiper.slides, function (slide, index, arr) {
+    if (slide.classList.contains('swiper-slide-visible')) {
+      slide.removeAttribute('aria-hidden')
+    } else {
+      slide.setAttribute('aria-hidden', true)
+    }
+  })
+}
