@@ -26,12 +26,13 @@
             </f:then>
             <f:else>
                 <li class="{id}__element">
-                    <f:if condition="{element.current}">
+                    <f:if condition="{element.hasSubpages} && {element.children}">
                         <f:then>
-                            <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                            <f:render section="link" arguments="{id:id, element:element}" /> | Button
+                            <f:render section="sublist" arguments="{id:id, parentId: element.data.uid, subpages:element.children}" />
                         </f:then>
                         <f:else>
-                            <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                            <f:render section="link" arguments="{id:id, element:element}" />
                         </f:else>
                     </f:if>
                 </li>
@@ -40,6 +41,35 @@
     </f:for>
 </ul>
 </nav>
+
+<f:section name="sublist">
+    <ul id="{id}-sublist-{parentId}" class="{id}__sublist">
+        <f:for each="{subpages}" as="subpage">
+            <li class="{id}__element">
+                <f:if condition="{subpage.hasSubpages} && {subpage.children}">
+                    <f:then>
+                        <f:render section="link" arguments="{id:id, element:subpage}" /> | Button
+                        <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
+                    </f:then>
+                    <f:else>
+                        <f:render section="link" arguments="{id:id, element:subpage}" />
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:section>
+
+<f:section name="link">
+    <f:if condition="{element.current} || {element.active}">
+        <f:then>
+            <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+        </f:then>
+        <f:else>
+            <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+        </f:else>
+    </f:if>
+</f:section>
 
 <f:section name="elementText">
     <f:if condition="{element.navTitle}">
