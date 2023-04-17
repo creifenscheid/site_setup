@@ -1,31 +1,31 @@
 lib.template < lib.boilerplates.fluidtemplate
 lib.template {
-    if.isTrue = {$plugin.tx_sitesetup.settings.templateName}
-    templateName = {$plugin.tx_sitesetup.settings.templateName}
-    
-    dataProcessing {
-        10 < lib.boilerplates.fileProcessor
+  if.isTrue = {$plugin.tx_sitesetup.settings.templateName}
+  templateName = {$plugin.tx_sitesetup.settings.templateName}
 
-        20 < lib.boilerplates.menuProcessor
-		20 {
-		    if.isTrue = {$plugin.tx_sitesetup.settings.menuParentPageId}
-		    special.value = {$plugin.tx_sitesetup.settings.menuParentPageId}
-		}
+  dataProcessing {
+    10 < lib.boilerplates.fileProcessor
 
-        30 < lib.boilerplates.menuProcessor
-        30 {
-            if.isTrue = {$plugin.tx_sitesetup.settings.footerMenuStorage}
-            special = directory
-            special.value = {$plugin.tx_sitesetup.settings.footerMenuStorage}
-            as = footerMenu
-        }
+    20 < lib.boilerplates.menuProcessor
+    20 {
+      if.isTrue = {$plugin.tx_sitesetup.settings.menuParentPageId}
+      special.value = {$plugin.tx_sitesetup.settings.menuParentPageId}
     }
 
-    variables {
-        rootPageId = TEXT
-        rootPageId.data = site : rootPageId
-
-        pageTitle = TEXT
-        pageTitle.data = page : title
+    30 < lib.boilerplates.menuProcessor
+    30 {
+      if.isTrue = {$plugin.tx_sitesetup.settings.footerMenuStorage}
+      special = directory
+      special.value = {$plugin.tx_sitesetup.settings.footerMenuStorage}
+      as = footerMenu
     }
+  }
+
+  variables {
+    rootPageId = TEXT
+    rootPageId.data = site : rootPageId
+
+    pageTitle = TEXT
+    pageTitle.data = page : title
+  }
 }
