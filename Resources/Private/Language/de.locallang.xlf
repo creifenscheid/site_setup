@@ -74,6 +74,10 @@
 				<source>%s - contains current page link</source>
 				<target>%s - enthält den Link zur aktuellen Seite</target>
 			</trans-unit>
+			<trans-unit id="menu.button.label" resname="menu.button.label">
+				<source>Open submenu "%s"</source>
+				<target>Untermenü "%s" öffnen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

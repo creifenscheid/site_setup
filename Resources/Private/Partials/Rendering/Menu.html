@@ -28,8 +28,10 @@
                 <li class="{id}__element">
                     <f:if condition="{element.hasSubpages} && {element.children}">
                         <f:then>
-                            <f:render section="link" arguments="{id:id, element:element}" /><f:render section="button" arguments="{id:id, parentId:element.data.uid}" />
-                            <f:render section="sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
+                            <div class="{id}__sub-container">
+                                <f:render section="link" arguments="{id:id, element:element}" /><f:render section="button" arguments="{id:id, element:element,parentId:element.data.uid}" />
+                                <f:render section="sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
+                            </div>
                         </f:then>
                         <f:else>
                             <f:render section="link" arguments="{id:id, element:element}" />
@@ -43,13 +45,15 @@
 </nav>
 
 <f:section name="sublist">
-    <ul id="{id}-sublist-{parentId}" class="{id}__sublist">
+    <ul id="{id}-sublist-{parentId}" class="{id}__submenu is-menu">
         <f:for each="{subpages}" as="subpage">
             <li class="{id}__element">
                 <f:if condition="{subpage.hasSubpages} && {subpage.children}">
                     <f:then>
-                        <f:render section="link" arguments="{id:id, element:subpage}" /><f:render section="button" arguments="{id:id, parentId:subpage.data.uid}" />
-                        <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
+                        <div class="{id}__sub-container">
+                            <f:render section="link" arguments="{id:id, element:subpage}" /><f:render section="button" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
+                            <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
+                        </div>
                     </f:then>
                     <f:else>
                         <f:render section="link" arguments="{id:id, element:subpage}" />
@@ -80,7 +84,7 @@
 </f:section>
 
 <f:section name="button">
-    <button class="cta" aria-controls="{id}-sublist-{parentId}"> > </button>
+    <button class="cta cta--icon" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.button.label', arguments:{0:element.title})}"><span class="cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.submenuIcon" /></span></button>
 </f:section>
 
 <f:section name="elementText">

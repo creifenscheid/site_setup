@@ -9,3 +9,9 @@ lib.attentionIcon {
     renderMode = inline
     src = {$plugin.tx_sitesetup.settings.attentionIcon}
 }
+
+lib.submenuIcon = SVG
+lib.submenuIcon {
+    renderMode = inline
+    src = {$plugin.tx_sitesetup.settings.submenuIcon}
+}
