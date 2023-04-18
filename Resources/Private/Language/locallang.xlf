@@ -52,11 +52,8 @@
 				<source>stop carousel</source>
 			</trans-unit>
 
-			<trans-unit id="tt_content.parser.year" resname="tt_content.parser.year">
-				<source>year</source>
-			</trans-unit>
-			<trans-unit id="tt_content.parser.years" resname="tt_content.parser.years">
-				<source>years</source>
+			<trans-unit id="menu.activeLink.label" resname="menu.activeLink.label">
+				<source>%s - contains current page link</source>
 			</trans-unit>
 		</body>
 	</file>

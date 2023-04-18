@@ -70,13 +70,9 @@
 				<target>Karussell anhalten</target>
 			</trans-unit>
 
-			<trans-unit id="tt_content.parser.year" resname="tt_content.parser.year">
-				<source>year</source>
-				<target>Jahr</target>
-			</trans-unit>
-			<trans-unit id="tt_content.parser.years" resname="tt_content.parser.years">
-				<source>years</source>
-				<target>Jahren</target>
+			<trans-unit id="menu.activeLink.label" resname="menu.activeLink.label">
+				<source>%s - contains current page link</source>
+				<target>%s - enthält den Link zur aktuellen Seite</target>
 			</trans-unit>
 		</body>
 	</file>

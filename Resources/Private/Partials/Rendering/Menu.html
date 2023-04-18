@@ -28,8 +28,8 @@
                 <li class="{id}__element">
                     <f:if condition="{element.hasSubpages} && {element.children}">
                         <f:then>
-                            <f:render section="link" arguments="{id:id, element:element}" /> | Button
-                            <f:render section="sublist" arguments="{id:id, parentId: element.data.uid, subpages:element.children}" />
+                            <f:render section="link" arguments="{id:id, element:element}" /><f:render section="button" arguments="{id:id, parentId:element.data.uid}" />
+                            <f:render section="sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
                         </f:then>
                         <f:else>
                             <f:render section="link" arguments="{id:id, element:element}" />
@@ -48,7 +48,7 @@
             <li class="{id}__element">
                 <f:if condition="{subpage.hasSubpages} && {subpage.children}">
                     <f:then>
-                        <f:render section="link" arguments="{id:id, element:subpage}" /> | Button
+                        <f:render section="link" arguments="{id:id, element:subpage}" /><f:render section="button" arguments="{id:id, parentId:subpage.data.uid}" />
                         <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
                     </f:then>
                     <f:else>
@@ -63,12 +63,24 @@
 <f:section name="link">
     <f:if condition="{element.current} || {element.active}">
         <f:then>
-            <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+            <f:if condition="{element.current}">
+                <f:then>
+                    <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                </f:then>
+                <f:else>
+                    <f:variable name="activeLabel" value="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.activeLink.label', arguments:{0:element.title})}" />
+                    <f:link.page pageUid="{element.data.uid}" class="{id}__link current" additionalAttributes="{aria-label:activeLabel}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
+                </f:else>
+            </f:if>
         </f:then>
         <f:else>
             <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
         </f:else>
     </f:if>
+</f:section>
+
+<f:section name="button">
+    <button class="cta" aria-controls="{id}-sublist-{parentId}"> > </button>
 </f:section>
 
 <f:section name="elementText">
