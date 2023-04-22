@@ -75,8 +75,8 @@
 				<target>%s - enthält den Link zur aktuellen Seite</target>
 			</trans-unit>
 			<trans-unit id="menu.button.label" resname="menu.button.label">
-				<source>Open submenu "%s"</source>
-				<target>Untermenü "%s" öffnen</target>
+				<source>Submenu "%s"</source>
+				<target>Untermenü "%s"</target>
 			</trans-unit>
 		</body>
 	</file>

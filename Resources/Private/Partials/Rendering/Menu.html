@@ -30,7 +30,7 @@
                     <f:if condition="{element.hasSubpages} && {element.children} && !{doNotRenderChildren}">
                         <f:then>
                             <div class="{id}__sub-container">
-                                <f:render section="link" arguments="{id:id, element:element}" /><f:render section="button" arguments="{id:id, element:element,parentId:element.data.uid}" />
+                                <f:render section="link" arguments="{id:id, element:element}" /><f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:element,parentId:element.data.uid}" />
                                 <f:render section="sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
                             </div>
                         </f:then>
@@ -52,7 +52,7 @@
                 <f:if condition="{subpage.hasSubpages} && {subpage.children}">
                     <f:then>
                         <div class="{id}__sub-container">
-                            <f:render section="link" arguments="{id:id, element:subpage}" /><f:render section="button" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
+                            <f:render section="link" arguments="{id:id, element:subpage}" /><f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
                             <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
                         </div>
                     </f:then>
@@ -82,10 +82,6 @@
             <f:link.page pageUid="{element.data.uid}" class="{id}__link"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
         </f:else>
     </f:if>
-</f:section>
-
-<f:section name="button">
-    <button class="cta cta--icon js-submenu-toggle" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.button.label', arguments:{0:element.title})}"><span class="cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.submenuIcon" /></span></button>
 </f:section>
 
 <f:section name="elementText">

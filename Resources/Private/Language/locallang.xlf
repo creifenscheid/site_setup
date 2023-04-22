@@ -56,7 +56,7 @@
 				<source>%s - contains current page link</source>
 			</trans-unit>
 			<trans-unit id="menu.button.label" resname="menu.button.label">
-				<source>Open submenu "%s"</source>
+				<source>Submenu "%s"</source>
 			</trans-unit>
 		</body>
 	</file>

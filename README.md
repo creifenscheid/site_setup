@@ -28,7 +28,9 @@ The extension sets the following configurations via typoscript:
 
 ### Templating / Frontend
 
-The extensions come a long with some ready-to-use partials, e.g. for menus, skip links, content rendering etc., always by providing the maximum amount of accessibility. 
+The extensions come a long with some ready-to-use partials, e.g. for menus, skip links, content rendering etc., always by providing the maximum amount of accessibility.
+Note that the submenus, which are rendered in the main menu (if "dontRenderChildren" flag is not set), are not initialized, they are just rendered with some basic classes.
+It's recommended to overwrite the toggle button partial with the needed classes and button content without removing the aria-attributes.
 
 Besides partials there are a some typoscript libraries to use, e.g. inline svg rendering or rendering of an "attention icon".
 
