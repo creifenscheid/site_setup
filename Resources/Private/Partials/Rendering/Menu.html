@@ -6,6 +6,7 @@
     - menu
     - label
     - additionalClasses (optional)
+    - doNotRenderChildren (optional)
 </f:comment>
 
 <nav id="{id}" aria-labelledby="header_{id}">
@@ -26,7 +27,7 @@
             </f:then>
             <f:else>
                 <li class="{id}__element">
-                    <f:if condition="{element.hasSubpages} && {element.children}">
+                    <f:if condition="{element.hasSubpages} && {element.children} && !{doNotRenderChildren}">
                         <f:then>
                             <div class="{id}__sub-container">
                                 <f:render section="link" arguments="{id:id, element:element}" /><f:render section="button" arguments="{id:id, element:element,parentId:element.data.uid}" />
