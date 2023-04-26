@@ -84,9 +84,9 @@
     </f:if>
 </f:section>
 
-<f:section name="elementText">
+<f:section name="elementText"><f:spaceless>
     <f:if condition="{element.navTitle}">
-        <f:then><f:format.html>{element.navTitle}</f:format.html></f:then>
-        <f:else><f:format.html>{element.title}</f:format.html></f:else>
+        <f:then><f:format.html parseFuncTSPath="lib.parseFunc_NoWrappingP">{element.navTitle}</f:format.html></f:then>
+        <f:else><f:format.html parseFuncTSPath="lib.parseFunc_NoWrappingP">{element.title}</f:format.html></f:else>
     </f:if>
-</f:section>
+</f:spaceless></f:section>

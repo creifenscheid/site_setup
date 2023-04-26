@@ -1,0 +1,4 @@
+lib.parseFunc_NoWrappingP < lib.parseFunc_RTE
+lib.parseFunc_NoWrappingP {
+  nonTypoTagStdWrap.encapsLines >
+}
