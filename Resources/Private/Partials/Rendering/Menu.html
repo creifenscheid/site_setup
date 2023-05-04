@@ -30,12 +30,12 @@
                     <f:if condition="{element.hasSubpages} && {element.children} && !{doNotRenderChildren}">
                         <f:then>
                             <div class="{id}__submenu submenu">
-                                <f:render section="link" arguments="{id:id, element:element, classes:' has-children'}" /><f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:element,parentId:element.data.uid}" />
-                                <f:render section="sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
+                                <f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:element,parentId:element.data.uid}" />
+                                <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children}" />
                             </div>
                         </f:then>
                         <f:else>
-                            <f:render section="link" arguments="{id:id, element:element}" />
+                            <f:render partial="Rendering/Menu/Link" arguments="{id:id, element:element}" />
                         </f:else>
                     </f:if>
                 </li>
@@ -44,49 +44,3 @@
     </f:for>
 </ul>
 </nav>
-
-<f:section name="sublist">
-    <ul id="{id}-sublist-{parentId}" class="submenu__list is-menu">
-        <f:for each="{subpages}" as="subpage">
-            <li class="{id}__element">
-                <f:if condition="{subpage.hasSubpages} && {subpage.children}">
-                    <f:then>
-                        <div class="{id}__submenu">
-                            <f:render section="link" arguments="{id:id, element:subpage, classes:' has-children'}" /><f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
-                            <f:render section="sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
-                        </div>
-                    </f:then>
-                    <f:else>
-                        <f:render section="link" arguments="{id:id, element:subpage}" />
-                    </f:else>
-                </f:if>
-            </li>
-        </f:for>
-    </ul>
-</f:section>
-
-<f:section name="link">
-    <f:if condition="{element.current} || {element.active}">
-        <f:then>
-            <f:if condition="{element.current}">
-                <f:then>
-                    <f:link.page pageUid="{element.data.uid}" class="{id}__link submenu__link current{classes}" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
-                </f:then>
-                <f:else>
-                    <f:variable name="activeLabel" value="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.activeLink.label', arguments:{0:element.title})}" />
-                    <f:link.page pageUid="{element.data.uid}" class="{id}__link submenu__link current{classes}" additionalAttributes="{aria-label:activeLabel}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
-                </f:else>
-            </f:if>
-        </f:then>
-        <f:else>
-            <f:link.page pageUid="{element.data.uid}" class="{id}__link submenu__link{classes}"><span class="text"><f:render section="elementText" arguments="{element:element}" /></span></f:link.page>
-        </f:else>
-    </f:if>
-</f:section>
-
-<f:section name="elementText"><f:spaceless>
-    <f:if condition="{element.navTitle}">
-        <f:then><f:format.html parseFuncTSPath="lib.parseFunc_NoWrappingP">{element.navTitle}</f:format.html></f:then>
-        <f:else><f:format.html parseFuncTSPath="lib.parseFunc_NoWrappingP">{element.title}</f:format.html></f:else>
-    </f:if>
-</f:spaceless></f:section>
