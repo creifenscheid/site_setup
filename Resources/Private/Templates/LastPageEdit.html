@@ -6,9 +6,10 @@
 
     <div class="tx-sitesetup-tstamp">
         <f:variable name="format" value="{f:translate(key:'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:dateformat')}" />
-        <f:variable name="date" value="{f:format.date(date:lastChange,format:format)}" />
+        <f:variable name="crDate" value="{f:format.date(date:crDate,format:format)}" />
+        <f:variable name="lastEdit" value="{f:format.date(date:lastChange,format:format)}" />
 
-        <p><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:date}" /></p>
+        <p><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:lastPageEdit.page.edit" arguments="{0:crDate,1:lastEdit}" /></p>
     </div>
 
 </f:section>

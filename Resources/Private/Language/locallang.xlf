@@ -24,10 +24,10 @@
 				<source>Last page edit</source>
 			</trans-unit>
 			<trans-unit id="lastPageEdit.description" resname="lastPageEdit.description">
-				<source>Inserts the date when the page was last edited.</source>
+				<source>Inserts the date when the page was created and last edited.</source>
 			</trans-unit>
 			<trans-unit id="lastPageEdit.page.edit" resname="lastPageEdit.page.edit">
-				<source>This page was last edited on %s.</source>
+				<source>The page was created on %s and last updated on %s.</source>
 			</trans-unit>
 
 			<trans-unit id="carousel.label" resname="carousel.label">

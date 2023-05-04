@@ -52,7 +52,7 @@ The extension implements the following content Elements in addition to the TYPO3
 
 #### Last page edit
 
-* rendering of the date and time, when the page or one of its content elements was edited at last
+* rendering of the creation and last modification date of the page
 * no configuration, the outputted sentence is hard coded 
 
 #### Carousel

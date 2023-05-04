@@ -18,6 +18,9 @@ tt_content {
     variables {
       lastChange = TEXT
       lastChange.value.data = page:SYS_LASTCHANGED
+
+      crDate = TEXT
+      crDate.value.data = page:crdate
     }
   }
 
