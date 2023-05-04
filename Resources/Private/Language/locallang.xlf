@@ -58,6 +58,9 @@
 			<trans-unit id="menu.button.label" resname="menu.button.label">
 				<source>Submenu "%s"</source>
 			</trans-unit>
+			<trans-unit id="menu.activeButton.label" resname="menu.activeButton.label">
+				<source>Submenu "%s" - contains current page link</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

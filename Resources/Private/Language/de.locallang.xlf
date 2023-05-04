@@ -78,6 +78,10 @@
 				<source>Submenu "%s"</source>
 				<target>Untermenü "%s"</target>
 			</trans-unit>
+			<trans-unit id="menu.activeButton.label" resname="menu.activeButton.label">
+				<source>Submenu "%s" - contains current page link</source>
+				<target>Untermenü "%s" - enthält den Link zur aktuellen Seite</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

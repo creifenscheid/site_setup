@@ -1,1 +1,11 @@
-<button class="{id}__toggle submenu__toggle" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.button.label', arguments:{0:element.title})}"><span class="text"><f:render partial="Rendering/Menu/LinkText" arguments="{element:element}" /></span></button>
+<f:if condition="element.active}">
+    <f:then>
+        <f:variable name="elementLabel" value="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.activeButton.label', arguments:{0:element.title})}" />
+    </f:then>
+    <f:else>
+        <f:variable name="elementLabel" value="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.button.label', arguments:{0:element.title})}" />
+    </f:else>
+</f:if>
+
+<button class="{id}__link {id}__toggle submenu__toggle js-toggle{f:if(condition:element.active, then:' current')}" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{elementLabel}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></button>
+
