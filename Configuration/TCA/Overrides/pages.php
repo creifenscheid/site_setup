@@ -60,8 +60,10 @@ call_user_func(function()
 
     $GLOBALS['TCA']['pages']['columns']['slug']['config']['generatorOptions'] = [
         'fields' => [
-            'nav_title', 
-            'title'
+            [
+                'nav_title', 
+                'title'
+            ]
         ],
         'prefixParentPageSlug' => true,
         'replacements' => [
