@@ -3,7 +3,7 @@
         <li class="{id}__element">
             <f:if condition="{subpage.hasSubpages} && {subpage.children}">
                 <f:then>
-                    <div class="{id}__submenu">
+                    <div class="{id}__submenu submenu">
                         <f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
                         <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
                     </div>
