@@ -1,11 +1,12 @@
 <ul id="{id}-sublist-{parentId}" class="submenu__list is-menu">
     <f:for each="{subpages}" as="subpage">
-        <li class="{id}__element">
+        <li class="{id}__element" data-level="{level}">
             <f:if condition="{subpage.hasSubpages} && {subpage.children}">
                 <f:then>
                     <div class="{id}__submenu submenu">
+                        <f:variable name="level" value="{level + 1}" />
                         <f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:subpage, parentId:subpage.data.uid}" />
-                        <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children}" />
+                        <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId: subpage.data.uid, subpages:subpage.children, level:level}" />
                     </div>
                 </f:then>
                 <f:else>
