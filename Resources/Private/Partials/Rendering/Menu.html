@@ -9,7 +9,7 @@
     - doNotRenderChildren (optional)
 </f:comment>
 
-<nav id="{id}" aria-labelledby="header_{id}">
+<nav id="{id}" aria-labelledby="header_{id}"{f:if(condition:navTagClasses, then: ' class="{navTagClasses}"')}>
     <f:if condition="{level}">
         <f:then>
             <f:variable name="headlineTag">h{level}</f:variable>
