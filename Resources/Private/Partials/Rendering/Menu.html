@@ -19,7 +19,7 @@
         </f:else>
     </f:if>
     <{headlineTag} id="header_{id}" class="sr-only">{label}</{headlineTag}>
-<ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
+<ul class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}" role="menu">
     <f:for each="{menu}" as="element">
         <f:if condition="{element.spacer}">
             <f:then>
