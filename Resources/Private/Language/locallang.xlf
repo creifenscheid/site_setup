@@ -52,9 +52,6 @@
 				<source>stop carousel</source>
 			</trans-unit>
 
-			<trans-unit id="menu.activeLink.label" resname="menu.activeLink.label">
-				<source>%s - contains current page link</source>
-			</trans-unit>
 			<trans-unit id="menu.button.label" resname="menu.button.label">
 				<source>Submenu "%s"</source>
 			</trans-unit>
