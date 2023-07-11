@@ -13,8 +13,8 @@
 	},
 	"minimum-stability" : "stable",
 	"authors" : [{
-			"name" : "C. Reifenscheid",
-			"email" : "christian.reifenscheid.2112@gmail.com"
+			"name" : "Christian Reifenscheid",
+			"email" : "dev@christian-reifenscheid.de"
 		}
 	],
 	"extra": {
