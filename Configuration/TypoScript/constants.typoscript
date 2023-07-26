@@ -57,7 +57,7 @@ plugin.tx_sitesetup {
       statusBarStyle =
     }
 
-    # customsubcategory=webapp=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.carousel
+    # customsubcategory=carousel=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.carousel
     carousel {
       # cat=Site setup/carousel/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.carousel.prevIcon
       prevIcon = EXT:site_setup/Resources/Public/Icons/Carousel/Prev.svg
