@@ -19,34 +19,35 @@
                 <f:case value="4"><h4 id="header_{id}" class="sr-only">{label}</h4></f:case>
                 <f:case value="5"><h5 id="header_{id}" class="sr-only">{label}</h5></f:case>
                 <f:case value="6"><h6 id="header_{id}" class="sr-only">{label}</h6></f:case>
-</f:switch>
+            </f:switch>
         </f:then>
         <f:else>
             <h2 id="header_{id}" class="sr-only">{label}</h2>
         </f:else>
     </f:if>
-<ul id="{id}-mainlist" class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
-    <f:for each="{menu}" as="element">
-        <f:if condition="{element.spacer}">
-            <f:then>
-                <li class="{id}__element menu-divider" data-level="1"><hr class="divider divider--menu" /></li>
-            </f:then>
-            <f:else>
-                <li class="{id}__element" data-level="1">
-                    <f:if condition="{element.hasSubpages} && {element.children} && !{doNotRenderChildren}">
-                        <f:then>
-                            <div class="{id}__submenu submenu">
-                                <f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:element,parentId:element.data.uid}" />
-                                <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children, level:2}" />
-                            </div>
-                        </f:then>
-                        <f:else>
-                            <f:render partial="Rendering/Menu/Link" arguments="{id:id, element:element}" />
-                        </f:else>
-                    </f:if>
-                </li>
-            </f:else>
-        </f:if>
-    </f:for>
-</ul>
+
+    <ul id="{id}-mainlist" class="{id}{f:if(condition:additionalClasses, then: ' {additionalClasses}')}">
+        <f:for each="{menu}" as="element">
+            <f:if condition="{element.spacer}">
+                <f:then>
+                    <li class="{id}__element menu-divider" data-level="1"><hr class="divider divider--menu" /></li>
+                </f:then>
+                <f:else>
+                    <li class="{id}__element" data-level="1">
+                        <f:if condition="{element.hasSubpages} && {element.children} && !{doNotRenderChildren}">
+                            <f:then>
+                                <div class="{id}__submenu submenu">
+                                    <f:render partial="Rendering/Menu/ToggleButton" arguments="{id:id, element:element,parentId:element.data.uid}" />
+                                    <f:render partial="Rendering/Menu/Sublist" arguments="{id:id, parentId:element.data.uid, subpages:element.children, level:2}" />
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <f:render partial="Rendering/Menu/Link" arguments="{id:id, element:element}" />
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:else>
+            </f:if>
+        </f:for>
+    </ul>
 </nav>
