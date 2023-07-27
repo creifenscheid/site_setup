@@ -7,5 +7,5 @@
     </f:else>
 </f:if>
 
-<button role="menuitem" id="{id}-submenu-toggle-{parentId}" class="{id}-submenu-toggle {id}__link {id}__toggle submenu__toggle {f:if(condition:element.active, then:' current')}" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{elementLabel}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></button>
+<button id="{id}-submenu-toggle-{parentId}" class="{id}-submenu-toggle {id}__link {id}__toggle submenu__toggle {f:if(condition:element.active, then:' current')}" aria-controls="{id}-sublist-{parentId}" aria-expanded="false" aria-label="{elementLabel}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></button>
 
