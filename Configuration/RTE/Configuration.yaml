@@ -8,13 +8,14 @@ editor:
 
   config:
     toolbar:
-      - [ 'Link', 'Unlink', 'Abbr' ]
+      - [ 'Link', 'Unlink']
       - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
       - [ 'BulletedList', 'NumberedList']}
       - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', 'RemoveFormat' ]
       - [ 'Undo', 'Redo' ]
       - "/"
       - [ 'Language' ]
+      - [ 'Abbr'  ]
       - [ 'Format' ]
       - [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
       - [ 'HorizontalRule', 'Blockquote', 'SpecialChar']
