@@ -1,0 +1,33 @@
+<section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading" data-carousel="carousel-{data.uid}" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
+    <f:link.page pageUid="{data.pid}" section="skip-carousel-{data.uid}" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.skip" /></f:link.page>
+
+    <f:render partial="Header/All" arguments="{_all}" />
+
+    <ul id="carousel-{data.uid}-controls"class="carousel__controls icon-box__list">
+        <li class="icon-box__item">
+            <button id="carousel-{data.uid}-prev" class="icon-box__link cta cta--icon js-carousel-action" data-action="prev" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.prev')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.prevIcon}" /></span></button>
+        </li>
+        <li class="icon-box__item">
+            <button id="carousel-{data.uid}-next" class="icon-box__link cta cta--icon js-carousel-action" data-action="next" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.next')}"><span class="icon-box__image cta__icon svg--primary" aria-controls="carousel-{data.uid}"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.nextIcon}" /></span></button>
+        </li>
+
+        <f:if condition="{data.tx_sitesetup_carousel_autoslide}">
+            <li class="icon-box__item">
+                <button id="carousel-{data.uid}-play" class="icon-box__link cta cta--icon js-carousel-action" data-action="play" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.play')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.playIcon}" /></span></button>
+            </li>
+            <li class="icon-box__item">
+                <button id="carousel-{data.uid}-stop" class="icon-box__link cta cta--icon js-carousel-action" data-action="stop" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.stop')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.stopIcon}" /></span></button>
+            </li>
+        </f:if>
+    </ul>
+
+    <ul id="carousel-{data.uid}" class="carousel__container swiper-wrapper">
+        <f:for each="{files}" as="file">
+            <li class="carousel__element swiper-slide">
+                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
+            </li>
+        </f:for>
+    </ul>
+</section>
+
+<div id="skip-carousel-{data.uid}"></div>
