@@ -9,7 +9,15 @@
         <f:else>
             <f:if condition="{data.image_zoom}">
                 <f:then>
-                    <f:link.typolink parameter="{file.publicUrl}"
+                    <f:if condition="{file.publicUrl}">
+                        <f:then>
+                            <f:variable name="publicUrl" value="{file.publicUrl}"></f:variable>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="publicUrl" value="{file.originalResource.publicUrl}"></f:variable>
+                        </f:else>
+                    </f:if>
+                    <f:link.typolink parameter="{publicUrl}"
                         title="{file.title}" class="lightbox"
                         additionalAttributes="{data-group: 'gallery-{data.uid}', data-caption:file.description}">
                         <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
