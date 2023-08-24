@@ -32,44 +32,44 @@ TCEFORM {
         layout {
             types {
                 site-setup-2cols {
-                    removeItems = 3
                     altLabels {
                         0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
                         1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
                         2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
+                        3 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.same-height
                     }
                 }
 
                 site-setup-3cols {
-                    removeItems = 0,1,2,3
                     altLabels {
                         0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
                         1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
                         2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
+                        3 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.same-height
                     }
                 }
             }
         }
-      header_position{
-        types {
-          sitesetup_carousel {
-            disabled = 1
-          }
+        header_position{
+            types {
+                sitesetup_carousel {
+                    disabled = 1
+                }
+            }
         }
-      }
-      header_link{
-        types {
-          sitesetup_carousel {
-            disabled = 1
-          }
+        header_link{
+            types {
+                sitesetup_carousel {
+                    disabled = 1
+                }
+            }
         }
-      }
-      date{
-        types {
-          sitesetup_carousel {
-            disabled = 1
-          }
+        date{
+            types {
+                sitesetup_carousel {
+                    disabled = 1
+                }
+            }
         }
-      }
     }
 }

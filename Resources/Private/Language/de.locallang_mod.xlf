@@ -53,6 +53,10 @@
 				<source>No spacing</source>
 				<target>Kein Abstand</target>
 			</trans-unit>
+			<trans-unit id="content.same-height" resname="content.same-height">
+				<source>Same column height</source>
+				<target>Gleiche Spaltenhöhe</target>
+			</trans-unit>
 
 			<!-- CropVariants -->
 			<trans-unit id="cropvariants.mobile.title" resname="cropvariants.mobile.title">
