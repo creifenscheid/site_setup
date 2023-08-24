@@ -24,7 +24,7 @@
     <ul id="carousel-{data.uid}" class="carousel__container swiper-wrapper">
         <f:for each="{files}" as="file">
             <li class="carousel__element swiper-slide">
-                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
+                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings,dimensions:dimensions}" />
             </li>
         </f:for>
     </ul>
