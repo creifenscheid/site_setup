@@ -7,11 +7,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 })
 
 function initCarousel () {
-  const swiperContainer = '.carousel'
+  const swiperContainer = '.carousel';
   document.querySelectorAll(swiperContainer).forEach.call(document.querySelectorAll(swiperContainer), function (carousel, index, arr) {
-    const slidesPerView = carousel.getAttribute('data-slides-to-show')
-    const duration = carousel.getAttribute('data-duration')
-    const autoslide = carousel.getAttribute('data-autoslide')
+    const slidesPerView = carousel.getAttribute('data-slides-to-show');
+    const duration = carousel.getAttribute('data-duration');
+    const autoslide = carousel.getAttribute('data-autoslide');
 
     let carouselOptions = {
       slidesPerView: 1,
@@ -29,7 +29,8 @@ function initCarousel () {
 
       on: {
         init: function () {
-          adjustCarouselElementVisibility(this)
+          adjustCarouselElementVisibility(this);
+          toggleCarouselControls(this);
         }
       }
     }
@@ -38,24 +39,29 @@ function initCarousel () {
       carouselOptions.autoplay = {
         duration: duration,
         pauseOnMouseEnter: true
-      }
+      };
+
     }
 
-    const swiper = new Swiper('.carousel', carouselOptions)
-    const carouselId = swiper.el.dataset.carousel
+    const swiper = new Swiper('.carousel', carouselOptions);
+    const carouselId = swiper.el.dataset.carousel;
 
     swiper.on('slideChange', function () {
-      document.getElementById(carouselId + '-prev').removeAttribute('disabled')
-      document.getElementById(carouselId + '-next').removeAttribute('disabled')
+      document.getElementById(carouselId + '-prev').removeAttribute('disabled');
+      document.getElementById(carouselId + '-next').removeAttribute('disabled');
 
       if (swiper.isBeginning) {
-        document.getElementById(carouselId + '-prev').setAttribute('disabled', true)
+        document.getElementById(carouselId + '-prev').setAttribute('disabled', true);
       }
       if (swiper.isEnd) {
-        document.getElementById(carouselId + '-next').setAttribute('disabled', true)
+        document.getElementById(carouselId + '-next').setAttribute('disabled', true);
       }
 
       adjustCarouselElementVisibility(swiper)
+    })
+
+    swiper.on('breakpoint', function () {
+      toggleCarouselControls(this);
     })
 
     // get carousel controller
@@ -66,14 +72,14 @@ function initCarousel () {
         case 'prev':
 
           if (swiper.isBeginning) {
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
           }
 
           actionElement.addEventListener('click', function () {
-            swiper.slidePrev()
+            swiper.slidePrev();
 
             if (swiper.isBeginning) {
-              document.getElementById(carouselId + '-next').focus()
+              document.getElementById(carouselId + '-next').focus();
             }
           })
 
@@ -82,17 +88,17 @@ function initCarousel () {
         case 'play':
 
           if (swiper.autoplay.running) {
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
           }
 
           actionElement.addEventListener('click', function () {
-            swiper.autoplay.start()
+            swiper.autoplay.start();
 
             // disable play
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
             // enable stop
-            document.getElementById(carouselId + '-stop').removeAttribute('disabled')
-            document.getElementById(carouselId + '-stop').focus()
+            document.getElementById(carouselId + '-stop').removeAttribute('disabled');
+            document.getElementById(carouselId + '-stop').focus();
           })
 
           break;
@@ -100,17 +106,17 @@ function initCarousel () {
         case 'stop':
 
           if (swiper.autoplay.paused) {
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
           }
 
           actionElement.addEventListener('click', function () {
-            swiper.autoplay.stop()
+            swiper.autoplay.stop();
 
             // disable stop
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
             // enable stop
-            document.getElementById(carouselId + '-play').removeAttribute('disabled')
-            document.getElementById(carouselId + '-play').focus()
+            document.getElementById(carouselId + '-play').removeAttribute('disabled');
+            document.getElementById(carouselId + '-play').focus();
           })
 
           break;
@@ -118,14 +124,14 @@ function initCarousel () {
         case 'next':
 
           if (swiper.isEnd) {
-            actionElement.setAttribute('disabled', true)
+            actionElement.setAttribute('disabled', true);
           }
 
           actionElement.addEventListener('click', function () {
-            swiper.slideNext()
+            swiper.slideNext();
 
             if (swiper.isEnd) {
-              document.getElementById(carouselId + '-prev').focus()
+              document.getElementById(carouselId + '-prev').focus();
             }
           })
 
@@ -138,11 +144,23 @@ function initCarousel () {
 function adjustCarouselElementVisibility(swiper) {
   swiper.slides.forEach.call(swiper.slides, function (slide, index, arr) {
     if (slide.classList.contains('swiper-slide-visible')) {
-      slide.removeAttribute('aria-hidden')
+      slide.removeAttribute('aria-hidden');
     } else {
-      slide.setAttribute('aria-hidden', true)
+      slide.setAttribute('aria-hidden', true);
     }
   })
+}
+
+function toggleCarouselControls(swiper)
+{
+  const carouselId = swiper.el.dataset.carousel;
+  let carouselControls = document.getElementById(carouselId + '-controls');
+
+  if (!swiper.isLocked || (swiper.allowSlidePrev === false && swiper.allowSlideNext === false)) {
+    carouselControls.style.display = 'none';
+  } else {
+    carouselControls.removeAttribute('style');
+  }
 }
 
 function initLightbox () {
@@ -155,5 +173,5 @@ function initLightbox () {
       nextButtonLabel: 'Nächstes Bild',
       closeButtonLabel: 'Dialogfenster schließen'
     }
-  })
+  });
 }
