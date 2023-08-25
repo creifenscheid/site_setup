@@ -30,7 +30,6 @@ function initCarousel () {
       on: {
         init: function () {
           adjustCarouselElementVisibility(this);
-          toggleCarouselControls(this);
         }
       }
     }
@@ -58,10 +57,6 @@ function initCarousel () {
       }
 
       adjustCarouselElementVisibility(swiper)
-    })
-
-    swiper.on('breakpoint', function () {
-      toggleCarouselControls(this);
     })
 
     // get carousel controller
@@ -149,18 +144,6 @@ function adjustCarouselElementVisibility(swiper) {
       slide.setAttribute('aria-hidden', true);
     }
   })
-}
-
-function toggleCarouselControls(swiper)
-{
-  const carouselId = swiper.el.dataset.carousel;
-  let carouselControls = document.getElementById(carouselId + '-controls');
-
-  if (!swiper.isLocked || (swiper.allowSlidePrev === false && swiper.allowSlideNext === false)) {
-    carouselControls.style.display = 'none';
-  } else {
-    carouselControls.removeAttribute('style');
-  }
 }
 
 function initLightbox () {
