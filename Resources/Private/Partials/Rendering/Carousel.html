@@ -3,7 +3,7 @@
 
     <f:render partial="Header/All" arguments="{_all}" />
 
-    <ul id="carousel-{data.uid}-controls"class="carousel__controls icon-box__list">
+    <ul id="carousel-{data.uid}-controls"class="carousel__controls icon-box__list{f:if(condition: '{data.tx_sitesetup_carousel_slides_to_show} == {f:count(subject:files)}',then:' is-hidden-tablet')}">
         <li class="icon-box__item">
             <button id="carousel-{data.uid}-prev" class="icon-box__link cta cta--icon js-carousel-action" data-action="prev" aria-label="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.prev')}" aria-controls="carousel-{data.uid}"><span class="icon-box__image cta__icon svg--primary"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:settings.prevIcon}" /></span></button>
         </li>

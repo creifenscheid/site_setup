@@ -60,80 +60,84 @@ function initCarousel () {
     })
 
     // get carousel controller
-    const carouselControls = document.getElementById(carouselId + '-controls').querySelectorAll('.js-carousel-action');
-    carouselControls.forEach.call(carouselControls, function (actionElement, index, arr) {
+    const carouselControls = document.getElementById(carouselId + '-controls');
 
-      switch (actionElement.dataset.action) {
-        case 'prev':
+    if (!carouselControls.classList.contains('is-hidden-desktop')) {
+      const carouselActions = carouselControls.querySelectorAll('.js-carousel-action');
+      carouselActions.forEach.call(carouselActions, function (actionElement, index, arr) {
 
-          if (swiper.isBeginning) {
-            actionElement.setAttribute('disabled', true);
-          }
-
-          actionElement.addEventListener('click', function () {
-            swiper.slidePrev();
+        switch (actionElement.dataset.action) {
+          case 'prev':
 
             if (swiper.isBeginning) {
-              document.getElementById(carouselId + '-next').focus();
+              actionElement.setAttribute('disabled', true);
             }
-          })
 
-          break;
+            actionElement.addEventListener('click', function () {
+              swiper.slidePrev();
 
-        case 'play':
+              if (swiper.isBeginning) {
+                document.getElementById(carouselId + '-next').focus();
+              }
+            })
 
-          if (swiper.autoplay.running) {
-            actionElement.setAttribute('disabled', true);
-          }
+            break;
 
-          actionElement.addEventListener('click', function () {
-            swiper.autoplay.start();
+          case 'play':
 
-            // disable play
-            actionElement.setAttribute('disabled', true);
-            // enable stop
-            document.getElementById(carouselId + '-stop').removeAttribute('disabled');
-            document.getElementById(carouselId + '-stop').focus();
-          })
+            if (swiper.autoplay.running) {
+              actionElement.setAttribute('disabled', true);
+            }
 
-          break;
+            actionElement.addEventListener('click', function () {
+              swiper.autoplay.start();
 
-        case 'stop':
+              // disable play
+              actionElement.setAttribute('disabled', true);
+              // enable stop
+              document.getElementById(carouselId + '-stop').removeAttribute('disabled');
+              document.getElementById(carouselId + '-stop').focus();
+            })
 
-          if (swiper.autoplay.paused) {
-            actionElement.setAttribute('disabled', true);
-          }
+            break;
 
-          actionElement.addEventListener('click', function () {
-            swiper.autoplay.stop();
+          case 'stop':
 
-            // disable stop
-            actionElement.setAttribute('disabled', true);
-            // enable stop
-            document.getElementById(carouselId + '-play').removeAttribute('disabled');
-            document.getElementById(carouselId + '-play').focus();
-          })
+            if (swiper.autoplay.paused) {
+              actionElement.setAttribute('disabled', true);
+            }
 
-          break;
+            actionElement.addEventListener('click', function () {
+              swiper.autoplay.stop();
 
-        case 'next':
+              // disable stop
+              actionElement.setAttribute('disabled', true);
+              // enable stop
+              document.getElementById(carouselId + '-play').removeAttribute('disabled');
+              document.getElementById(carouselId + '-play').focus();
+            })
 
-          if (swiper.isEnd) {
-            actionElement.setAttribute('disabled', true);
-          }
+            break;
 
-          actionElement.addEventListener('click', function () {
-            swiper.slideNext();
+          case 'next':
 
             if (swiper.isEnd) {
-              document.getElementById(carouselId + '-prev').focus();
+              actionElement.setAttribute('disabled', true);
             }
-          })
 
-          break;
-      }
-    })
-  })
+            actionElement.addEventListener('click', function () {
+              swiper.slideNext();
+
+              if (swiper.isEnd) {
+                document.getElementById(carouselId + '-prev').focus();
+              }
+            })
+
+            break;
+        }
+      });
+    }
+  });
 }
 
 function adjustCarouselElementVisibility(swiper) {
