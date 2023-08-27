@@ -9,8 +9,18 @@ mod.wizards.newContentElement.wizardItems {
                CType = sitesetup_toc
             }
          }
+
+         sitesetup_limitedpages {
+                iconIdentifier = actions-sort-amount-down
+                title = LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.label
+                description = LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = sitesetup_limitedpages
+                }
+            }
       }
-      show := addToList(sitesetup_toc)
+      show := addToList(sitesetup_toc, sitesetup_limitedpages)
    }
 
    special {

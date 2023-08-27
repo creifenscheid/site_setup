@@ -7,6 +7,7 @@ call_user_func(function () {
      * Extension key
      */
     $extensionKey = 'site_setup';
+    $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);
 
     /**
      * General tt_content extension
@@ -252,5 +253,37 @@ call_user_func(function () {
             )
                 ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
         );
+    }
+
+    /**
+     * CE: plugins
+     */
+
+    // configuration
+    $plugins = [
+        'LimitedPages' => [
+            'icon' => 'actions-sort-amount-down',
+            'flexform' => true
+        ],
+    ];
+
+    // registration
+    foreach ($plugins as $pluginName => $pluginConfig) {
+        $pluginSignature = strtolower($extensionName) . '_' . strtolower($pluginName);
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            $extensionName,
+            $pluginName,
+            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Plugins/locallang.xlf:' . strtolower($pluginName) . '.label',
+            $pluginConfig['icon'],
+        );
+
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,frame_class,space_before_class,space_after_class,sectionIndex,linkToTop,pages,recursive';
+
+        // FlexForm configuration
+        if (array_key_exists('flexform', $pluginConfig) && $pluginConfig['flexform'] === true) {
+            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
+        }
     }
 });

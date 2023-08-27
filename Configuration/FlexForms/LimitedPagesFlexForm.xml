@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:example/Resources/Private/Language/Backend.xlf:settings.registration.title</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.startingpoints>
+                        <label>LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.startingpoint</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <maxitems>50</maxitems>
+                            <size>3</size>
+                            <minitems>1</minitems>
+                            <suggestOptions>
+                                <default>
+                                    <addWhere>AND pages.doktype = 1</addWhere>
+                                </default>
+                            </suggestOptions>
+                        </config>
+                    </settings.startingpoints>
+                    <settings.orderBy>
+                        <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>crdate</default>
+                            <items>
+                                <numIndex index="0">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.crdate</numIndex>
+                                    <numIndex index="1">crdate</numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.tstamp</numIndex>
+                                    <numIndex index="1">tstamp</numIndex>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.sorting</numIndex>
+                                    <numIndex index="1">sorting</numIndex>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.title</numIndex>
+                                    <numIndex index="1">title</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.orderBy>
+                    <settings.orderDirection>
+                        <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderDirection</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>DESC</default>
+                            <items>
+                                <numIndex index="0">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderDirection.desc</numIndex>
+                                    <numIndex index="1">DESC</numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderDirection.asc</numIndex>
+                                    <numIndex index="1">ASC</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.orderDirection>
+                    <settings.limit>
+                        <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.limit</label>
+                        <config>
+                            <type>input</type>
+                            <default>1</default>
+                            <size>5</size>
+                            <eval>trim,int</eval>
+                        </config>
+                    </settings.limit>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

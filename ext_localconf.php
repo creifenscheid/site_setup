@@ -11,5 +11,12 @@ defined('TYPO3_MODE') || die();
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces'][\TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToLowerCamelCase($extKey)] = [
         'CReifenscheid\\' . \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extKey) . '\ViewHelpers',
     ];
-    
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extKey),
+        'LimitedPages',
+        [
+            \CReifenscheid\SiteSetup\Controller\PagesController::class => 'list'
+        ]
+    );
 })('site_setup');
