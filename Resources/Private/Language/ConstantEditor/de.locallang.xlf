@@ -44,6 +44,14 @@
 				<source>Logo: Path to logo file</source>
 				<target>Logo: Pfad zur Logo-Datei</target>
 			</trans-unit>
+			<trans-unit id="constantEditor.path.templateRootPath.limitedpages" resname="constantEditor.path.templateRootPath.limitedpages">
+				<source>TemplateRootPath - Plugin "Limited Pages": Path to template files</source>
+				<target>TemplateRootPath - Plugin "limitierte Seiten": Pfad zu Template-Dateien</target>
+			</trans-unit>
+			<trans-unit id="constantEditor.path.partialRootPath.limitedpages" resname="constantEditor.path.partialRootPath.limitedpages">
+				<source>PartialRootPath - Plugin "Limited Pages": Path to layout files</source>
+				<target>PartialRootPath - Plugin "limitierte Seiten": Pfad zu Partial-Dateien</target>
+			</trans-unit>
 
 			<!-- FILES -->
 			<trans-unit id="constantEditor.file.templateName" resname="constantEditor.file.templateName">

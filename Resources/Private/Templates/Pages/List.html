@@ -1,5 +1,16 @@
 <f:debug>{_all}</f:debug>
 
 <div id="c{ttContentData.uid}" class="frame">
-    
+    <f:if condition="{f:count(subject:pages)} > 1">
+        <f:then>
+            <ul>
+                <f:for each="{pages}" as="page">
+                    <li><f:link.xxx pageUid="{page.uid}">{page.title}</f:link.xxx></li>
+                </f:for>
+            </ul>
+        </f:then>
+        <f:else>
+            <f:link.xxx pageUid="{page.uid}">{page.title}</f:link.xxx>
+        </f:else>
+    </f:if>
 </div>

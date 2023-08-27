@@ -25,6 +25,20 @@ plugin.tx_sitesetup {
   }
 }
 
+plugin.tx_sitesetup_limitedpages {
+  view {
+    templateRootPaths {
+      10 = EXT:site_setup/Resources/Private/Templates/
+      20 = {$plugin.tx_sitesetup_limitedpages.view.templateRootPath}
+    }
+
+    partialRootPaths {
+      10 = EXT:site_setup/Resources/Private/Partials/
+      20 = {$plugin.tx_sitesetup_limitedpages.view.partialRootPath}
+    }
+  }
+}
+
 @import 'EXT:site_setup/Configuration/TypoScript/Libraries/*.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Config/*.typoscript'
 @import 'EXT:site_setup/Configuration/TypoScript/Page/Page.typoscript'
