@@ -9,6 +9,9 @@
 			<trans-unit id="constantEditor.customsubcategory.path" resname="constantEditor.customsubcategory.path">
 				<source>Paths</source>
 			</trans-unit>
+			<trans-unit id="constantEditor.customsubcategory.path.plugins" resname="constantEditor.customsubcategory.path.plugins">
+				<source>Plugin paths</source>
+			</trans-unit>
 			<trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
 				<source>Configuration</source>
 			</trans-unit>
@@ -34,6 +37,12 @@
 			</trans-unit>
 			<trans-unit id="constantEditor.path.logoPath" resname="constantEditor.path.logoPath">
 				<source>Logo: Path to logo file</source>
+			</trans-unit>
+			<trans-unit id="constantEditor.path.templateRootPath.limitedpages" resname="constantEditor.path.templateRootPath.limitedpages">
+				<source>TemplateRootPath | Limited Pages: Path to template files</source>
+			</trans-unit>
+			<trans-unit id="constantEditor.path.partialRootPath.limitedpages" resname="constantEditor.path.partialRootPath.limitedpages">
+				<source>PartialRootPath | Limited Pages: Path to layout files</source>
 			</trans-unit>
 
 			<!-- FILES -->

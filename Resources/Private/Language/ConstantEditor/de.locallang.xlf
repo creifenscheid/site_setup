@@ -10,6 +10,10 @@
 				<source>Paths</source>
 				<target>Pfade</target>
 			</trans-unit>
+			<trans-unit id="constantEditor.customsubcategory.path.plugins" resname="constantEditor.customsubcategory.path.plugins">
+				<source>Plugin paths</source>
+				<source>Plugin-Pfade</source>
+			</trans-unit>
 			<trans-unit id="constantEditor.customsubcategory.config" resname="constantEditor.customsubcategory.config">
 				<source>Configuration</source>
 				<target>Konfiguration</target>
@@ -45,12 +49,12 @@
 				<target>Logo: Pfad zur Logo-Datei</target>
 			</trans-unit>
 			<trans-unit id="constantEditor.path.templateRootPath.limitedpages" resname="constantEditor.path.templateRootPath.limitedpages">
-				<source>TemplateRootPath - Plugin "Limited Pages": Path to template files</source>
-				<target>TemplateRootPath - Plugin "limitierte Seiten": Pfad zu Template-Dateien</target>
+				<source>TemplateRootPath | Limited Pages: Path to template files</source>
+				<target>TemplateRootPath | limitierte Seiten: Pfad zu Template-Dateien</target>
 			</trans-unit>
 			<trans-unit id="constantEditor.path.partialRootPath.limitedpages" resname="constantEditor.path.partialRootPath.limitedpages">
-				<source>PartialRootPath - Plugin "Limited Pages": Path to layout files</source>
-				<target>PartialRootPath - Plugin "limitierte Seiten": Pfad zu Partial-Dateien</target>
+				<source>PartialRootPath - | Limited Pages: Path to layout files</source>
+				<target>PartialRootPath - | limitierte Seiten: Pfad zu Partial-Dateien</target>
 			</trans-unit>
 
 			<!-- FILES -->
