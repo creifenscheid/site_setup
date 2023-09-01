@@ -2,15 +2,15 @@
   <f:then>
     <f:if condition="{element.current}">
       <f:then>
-        <f:link.page pageUid="{element.data.uid}" class="{id}__link current {id}-menu-element" additionalAttributes="{aria-current:'page'}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
+        <f:link.page pageUid="{element.data.uid}" class="{id}__link current {id}-menu-element" additionalAttributes="{aria-current:'page'}" data="{level:level}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
       </f:then>
       <f:else>
         <f:variable name="activeLabel" value="{f:translate(key: 'LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:menu.activeLink.label', arguments:{0:element.title})}" />
-        <f:link.page pageUid="{element.data.uid}" class="{id}__link current {id}-menu-element" additionalAttributes="{aria-label:activeLabel}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
+        <f:link.page pageUid="{element.data.uid}" class="{id}__link current {id}-menu-element" additionalAttributes="{aria-label:activeLabel}" data="{level:level}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
       </f:else>
     </f:if>
   </f:then>
   <f:else>
-    <f:link.page pageUid="{element.data.uid}" class="{id}__link {id}-menu-element"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
+    <f:link.page pageUid="{element.data.uid}" class="{id}__link {id}-menu-element" data="{level:level}"><span class="text"><f:render partial="Rendering/Menu/ElementText" arguments="{element:element}" /></span></f:link.page>
   </f:else>
 </f:if>
