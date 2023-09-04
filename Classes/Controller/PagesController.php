@@ -77,14 +77,14 @@ class PagesController extends ActionController
     public function listAction(): ResponseInterface
     {
         $this->assignTtContentData();
-        
+
         $this->view->assignMultiple([
             'l10n' => self::L10N,
             'pages' => $this->getPages(),
         ]);
 
         return $this->htmlResponse();
-    }   
+    }
 
     private function getPages(): array
     {
@@ -92,12 +92,24 @@ class PagesController extends ActionController
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable($table);
 
         return $queryBuilder
-            ->select('*')
+            ->select($table . '.uid', $table . '.title', $table . '.description', 'cat.title AS category')
             ->from($table)
-            ->where(
-                $queryBuilder->expr()->in('pid', GeneralUtility::trimExplode(',', $this->settings['startingpoints']))
+            ->join(
+                $table,
+                'sys_category_record_mm',
+                'mm',
+                $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->quoteIdentifier($table . '.uid'))
             )
-            ->orderBy($this->settings['orderBy'],$this->settings['orderDirection'])
+            ->join(
+                'mm',
+                'sys_category',
+                'cat',
+                $queryBuilder->expr()->eq('cat.uid', $queryBuilder->quoteIdentifier('mm.uid_local'))
+            )
+            ->where(
+                $queryBuilder->expr()->in($table . '.pid', GeneralUtility::trimExplode(',', $this->settings['startingpoints']))
+            )
+            ->orderBy($table . '.' .$this->settings['orderBy'],$this->settings['orderDirection'])
             ->setMaxResults($this->settings['limit'])
             ->executeQuery()
             ->fetchAllAssociative();
