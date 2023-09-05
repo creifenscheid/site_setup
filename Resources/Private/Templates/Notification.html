@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+    <f:switch expression="{data.layout}">
+        <f:case value="1">
+            <f:variable name="severity" value="info"/>
+            <f:variable name="icon"><f:image src="{info}" alt=""/></f:variable>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="severity" value="warning"/>
+            <f:variable name="icon"><f:image src="{warning}" alt=""/></f:variable>
+        </f:defaultCase>
+    </f:switch>
+
+    <div class="notification notification--{severity}">
+        <strong>
+            <div class="notification__icon">
+                <f:format.html>{icon}</f:format.html>
+            </div>
+            <div class="notification__content">
+                <div class="notification__header">
+                    <f:render partial="Header/All" arguments="{_all}" />
+                </div>
+                <div class="notification__bodytext">
+                    {data.bodytext}
+                </div>
+            </div>
+        </strong>
+    </div>
+
+</f:section>
+
+<f:comment>
+    Override header section to get the basic wrapping without the header
+</f:comment>
+<f:section name="Header"></f:section>
+
+</html>

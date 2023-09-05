@@ -215,6 +215,67 @@ call_user_func(function () {
         ',
     ];
 
+    /**
+     * CE: warning box
+     */
+
+    // registration
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+        'tt_content',
+        'CType',
+        [
+            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:notification.label',
+            'sitesetup_notification',
+            'overlay-warning',
+            'special'
+        ],
+        'div',
+        'after'
+    );
+
+    // backend fields
+    $GLOBALS['TCA']['tt_content']['types']['sitesetup_notification'] = [
+        'showitem' => '
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,layout,header, header_layout,bodytext,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                --palette--;;hidden,
+                --palette--;;access,
+        ',
+    ];
+
+    /**
+     * CE: plugins
+     */
+
+    // configuration
+    $plugins = [
+        'LimitedPages' => [
+            'icon' => 'actions-sort-amount-down',
+            'flexform' => true
+        ],
+    ];
+
+    // registration
+    foreach ($plugins as $pluginName => $pluginConfig) {
+        $pluginSignature = strtolower($extensionName) . '_' . strtolower($pluginName);
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            $extensionName,
+            $pluginName,
+            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Plugins/locallang.xlf:' . strtolower($pluginName) . '.label',
+            $pluginConfig['icon'],
+        );
+
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,frame_class,space_before_class,space_after_class,sectionIndex,linkToTop,pages,recursive';
+
+        // FlexForm configuration
+        if (array_key_exists('flexform', $pluginConfig) && $pluginConfig['flexform'] === true) {
+            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
+        }
+    }
+
     // EXT:container registrations
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
         $cType = 'site-setup-2cols';
@@ -253,37 +314,5 @@ call_user_func(function () {
             )
                 ->setIcon('EXT:' . $extensionKey . '/Resources/Public/Icons/' . $cType . '.svg')
         );
-    }
-
-    /**
-     * CE: plugins
-     */
-
-    // configuration
-    $plugins = [
-        'LimitedPages' => [
-            'icon' => 'actions-sort-amount-down',
-            'flexform' => true
-        ],
-    ];
-
-    // registration
-    foreach ($plugins as $pluginName => $pluginConfig) {
-        $pluginSignature = strtolower($extensionName) . '_' . strtolower($pluginName);
-
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            $extensionName,
-            $pluginName,
-            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Plugins/locallang.xlf:' . strtolower($pluginName) . '.label',
-            $pluginConfig['icon'],
-        );
-
-        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,frame_class,space_before_class,space_after_class,sectionIndex,linkToTop,pages,recursive';
-
-        // FlexForm configuration
-        if (array_key_exists('flexform', $pluginConfig) && $pluginConfig['flexform'] === true) {
-            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
-        }
     }
 });

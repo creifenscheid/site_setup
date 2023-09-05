@@ -48,6 +48,14 @@ TCEFORM {
                         3 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.same-height
                     }
                 }
+
+                sitesetup_notification {
+                    removeItems = 2,3
+                    altLabels {
+                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.warning
+                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.info
+                    }
+                }
             }
         }
         header_position{

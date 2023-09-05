@@ -33,8 +33,16 @@ mod.wizards.newContentElement.wizardItems {
                CType = sitesetup_lastPageEdit
             }
          }
+         sitesetup_notification {
+            iconIdentifier = overlay-warning
+            title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.label
+            description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.description
+            tt_content_defValues {
+               CType = sitesetup_notification
+            }
+         }
       }
-      show := addToList(sitesetup_lastPageEdit)
+      show := addToList(sitesetup_lastPageEdit,sitesetup_notification)
    }
 
    common {

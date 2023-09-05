@@ -30,6 +30,19 @@
 				<source>The page was created on %s and last updated on %s.</source>
 			</trans-unit>
 
+			<trans-unit id="notification.label" resname="notification.label">
+				<source>Notification</source>
+			</trans-unit>
+			<trans-unit id="notification.description" resname="notification.description">
+				<source>Inserts a notification with configurable severity level.</source>
+			</trans-unit>
+			<trans-unit id="notification.layout.warning" resname="notification.layout.warning">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="notification.layout.info" resname="notification.layout.info">
+				<source>Information</source>
+			</trans-unit>
+
 			<trans-unit id="carousel.label" resname="carousel.label">
 				<source>Image carousel</source>
 			</trans-unit>

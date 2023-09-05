@@ -36,4 +36,17 @@ tt_content {
     }
     settings < plugin.tx_sitesetup.settings.carousel
   }
+
+  sitesetup_notification =< lib.contentElement
+  sitesetup_notification {
+    templateName = Notification
+
+    variables {
+      warning = TEXT
+      warning.value = {$plugin.tx_sitesetup.settings.attentionIcon}
+
+      info = TEXT
+      info.value = EXT:site_setup/Resources/Public/Icons/Info.svg
+    }
+  }
 }
