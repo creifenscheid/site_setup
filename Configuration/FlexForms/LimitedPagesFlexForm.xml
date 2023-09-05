@@ -16,11 +16,6 @@
                             <maxitems>50</maxitems>
                             <size>3</size>
                             <minitems>1</minitems>
-                            <suggestOptions>
-                                <default>
-                                    <addWhere>AND pages.doktype = 1</addWhere>
-                                </default>
-                            </suggestOptions>
                         </config>
                     </settings.startingpoints>
                     <settings.orderBy>
