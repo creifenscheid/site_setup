@@ -10,17 +10,15 @@
     </f:switch>
 
     <div class="notification notification--{severity}">
-        <strong>
-            <div class="notification__icon">
-                <span class="svg"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:'{iconFolder}{severity}.svg'}" /></span>
-            </div>
-            <div class="notification__content">
-                <div class="notification__header">
-                    <f:render partial="Header/All" arguments="{_all}" />
-                </div>
-                <div class="notification__bodytext">{data.bodytext}</div>
-            </div>
-        </strong>
+        <div class="notification__icon">
+            <span class="svg"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:'{iconFolder}{severity}.svg'}" /></span>
+        </div>
+        <div class="notification__content">
+            <strong>
+                <span class="notification__header">{data.header}</span>
+                <span class="notification__bodytext">{data.bodytext}</span>
+            </strong>
+        </div>
     </div>
 
 </f:section>
