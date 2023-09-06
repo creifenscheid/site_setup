@@ -52,7 +52,7 @@ TCEFORM {
                 sitesetup_notification {
                     removeItems = 2,3
                     altLabels {
-                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.warning
+                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.attention
                         1 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.info
                     }
                 }

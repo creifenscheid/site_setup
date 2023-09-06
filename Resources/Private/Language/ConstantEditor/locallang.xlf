@@ -38,6 +38,9 @@
 			<trans-unit id="constantEditor.path.logoPath" resname="constantEditor.path.logoPath">
 				<source>Logo: Path to logo file</source>
 			</trans-unit>
+			<trans-unit id="constantEditor.path.iconFolder" resname="constantEditor.path.iconFolder">
+				<source>Icon folder: Path to the folder where icons are stored.</source>
+			</trans-unit>
 			<trans-unit id="constantEditor.path.templateRootPath.limitedpages" resname="constantEditor.path.templateRootPath.limitedpages">
 				<source>TemplateRootPath | Limited Pages: Path to template files</source>
 			</trans-unit>

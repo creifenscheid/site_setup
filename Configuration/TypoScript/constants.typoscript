@@ -17,11 +17,14 @@ plugin.tx_sitesetup {
     # cat=Site setup/path/e; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.logoPath
     logoPath =
 
+    # cat=Site setup/path/f; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.iconFolder
+    iconFolder = EXT:site_setup/Resources/Public/Icons/
+
     # cat=Site setup/file/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.templateName
     templateName = Default
 
     # cat=Site setup/file/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.attentionIcon
-    attentionIcon = EXT:site_setup/Resources/Public/Icons/Attention.svg
+    attentionIcon = EXT:site_setup/Resources/Public/Icons/attention.svg
 
     # cat=Site setup/file/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.file.submenuIcon
     submenuIcon = EXT:site_setup/Resources/Public/Icons/Submenu.svg

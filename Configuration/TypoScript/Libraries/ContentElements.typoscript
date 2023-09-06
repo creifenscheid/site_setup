@@ -42,11 +42,8 @@ tt_content {
     templateName = Notification
 
     variables {
-      warning = TEXT
-      warning.value = {$plugin.tx_sitesetup.settings.attentionIcon}
-
-      info = TEXT
-      info.value = EXT:site_setup/Resources/Public/Icons/Info.svg
+      iconFolder = TEXT
+      iconFolder.value = {$plugin.tx_sitesetup.settings.iconFolder}
     }
   }
 }
