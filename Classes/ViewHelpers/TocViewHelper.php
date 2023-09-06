@@ -31,12 +31,12 @@ class TocViewHelper extends AbstractViewHelper
      *
      * @var array
      */
-    private $previousElementsByLevel = [];
+    private array $previousElementsByLevel = [];
 
     /**
      * Initialize arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('pageUid', 'int', 'Uid of the page to create ToC for.', true);
@@ -48,6 +48,8 @@ class TocViewHelper extends AbstractViewHelper
      * Returns an array with all headers of the page
      *
      * @return null|array
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function render() : ?array
     {
@@ -76,9 +78,9 @@ class TocViewHelper extends AbstractViewHelper
         } else {
             $whereExpressions[] = $queryBuilder->expr()->gte('header_layout', $queryBuilder->createNamedParameter($minLevel));
         }
-        
+
         $queryBuilder
-            ->select('uid', 'pid', 'header', 'header_layout')
+            ->select('uid', 'pid', 'header', 'header_layout', 'CType')
             ->from($table)
             ->where(...$whereExpressions)
             ->orderBy('sorting');
@@ -90,6 +92,11 @@ class TocViewHelper extends AbstractViewHelper
         $previousLevel = null;
         if (!empty($contentElements)) {
             foreach ($contentElements as $element) {
+
+                if (!$this->hasHeaderLayout($element['CType'])) {
+                    continue;
+                }
+
                 $currentLevel = $element['header_layout'] === '0' ? 2 : (int)$element['header_layout'];
 
                 if ($currentLevel === $minLevel) {
@@ -155,5 +162,33 @@ class TocViewHelper extends AbstractViewHelper
         }
 
         return $toc;
+    }
+
+    private function hasHeaderLayout(string $ctype): bool
+    {
+        $items = $this->getShowitemOfType($ctype);
+
+        if (str_contains($items, 'header_layout')) {
+            return true;
+        }
+
+        $pattern = '/--palette--;([^,;]*);headers/';
+        preg_match($pattern, $items, $result);
+        if ($result !== []) {
+            return true;
+        }
+
+        $pattern = '/--palette--;([^,;]*);header/';
+        preg_match($pattern, $items, $result);
+        if ($result !== []) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private function getShowitemOfType(string $ctype): string
+    {
+        return $GLOBALS['TCA']['tt_content']['types'][$ctype]['showitem'];
     }
 }
