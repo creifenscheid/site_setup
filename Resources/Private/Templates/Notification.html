@@ -12,7 +12,7 @@
     <div class="notification notification--{severity}">
         <strong>
             <div class="notification__icon">
-                <f:image src="{iconFolder}{severity}.svg"/>
+                <span class="svg"><f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src:'{iconFolder}{severity}.svg'}" /></span>
             </div>
             <div class="notification__content">
                 <div class="notification__header">
