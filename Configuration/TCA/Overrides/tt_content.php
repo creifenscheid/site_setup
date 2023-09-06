@@ -235,14 +235,25 @@ call_user_func(function () {
 
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_notification'] = [
+        'columnsOverrides' => [
+            'header_layout' => [
+                'config' => [
+                    'default' => 100,
+                ],
+            ],
+        ],
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,layout,header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.div_formlabel,bodytext,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,layout,
+                --palette--;;headerMinimal,
+                bodytext,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                 --palette--;;hidden,
                 --palette--;;access,
         ',
     ];
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headerMinimal', 'header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.div_formlabel,header_layout');
 
     /**
      * CE: plugins

@@ -72,6 +72,13 @@ TCEFORM {
                 }
             }
         }
+        header_layout{
+            types {
+              sitesetup_notification {
+                    keepItems = 100
+                }
+            }
+        }
         date{
             types {
                 sitesetup_carousel {
