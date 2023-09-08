@@ -143,9 +143,9 @@ function initCarousel () {
 function adjustCarouselElementVisibility(swiper) {
   swiper.slides.forEach.call(swiper.slides, function (slide, index, arr) {
     if (slide.classList.contains('swiper-slide-visible')) {
-      slide.classList.remove('is-hidden');
+      slide.classList.removeAttribute('aria-hidden');
     } else {
-      slide.classList.add('is-hidden');
+      slide.classList.setAttribute('aria-hidden',true);
     }
   })
 }
