@@ -1,7 +1,9 @@
-<section class="carousel swiper-container" aria-labelledby="c{data.uid}-heading" data-carousel="carousel-{data.uid}" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
+<section class="carousel swiper-container" aria-labelledby="{f:if(condition:headerId,then:headerId,else:'c{data.uid}-heading')}" data-carousel="carousel-{data.uid}" data-slides-to-show="{data.tx_sitesetup_carousel_slides_to_show}" data-duration="{data.tx_sitesetup_carousel_duration}000" data-autoslide="{data.tx_sitesetup_carousel_autoslide}">
     <f:link.page pageUid="{data.pid}" section="skip-carousel-{data.uid}" absolute="true" addQueryString="true" class="sr-only sr-only-focusable"><f:translate key="LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:carousel.skip" /></f:link.page>
 
-    <f:render partial="Header/All" arguments="{_all}" />
+    <f:if condition="!{headerId}">
+        <f:render partial="Header/All" arguments="{_all}" />
+    </f:if>
 
     <ul id="carousel-{data.uid}-controls"class="carousel__controls icon-box__list{f:if(condition: '{data.tx_sitesetup_carousel_slides_to_show} == {f:count(subject:files)}',then:' is-hidden-tablet')}">
         <li class="icon-box__item">
