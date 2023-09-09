@@ -25,12 +25,6 @@ function initCarousel () {
 
       keyboard: {
         enabled: true
-      },
-
-      on: {
-        init: function () {
-          adjustCarouselElementVisibility(this);
-        }
       }
     }
 
@@ -55,8 +49,6 @@ function initCarousel () {
       if (swiper.isEnd) {
         document.getElementById(carouselId + '-next').setAttribute('disabled', true);
       }
-
-      adjustCarouselElementVisibility(swiper)
     })
 
     // get carousel controller
@@ -65,7 +57,6 @@ function initCarousel () {
     if (!carouselControls.classList.contains('is-hidden-desktop')) {
       const carouselActions = carouselControls.querySelectorAll('.js-carousel-action');
       carouselActions.forEach.call(carouselActions, function (actionElement, index, arr) {
-
         switch (actionElement.dataset.action) {
           case 'prev':
 
@@ -138,16 +129,6 @@ function initCarousel () {
       });
     }
   });
-}
-
-function adjustCarouselElementVisibility(swiper) {
-  swiper.slides.forEach.call(swiper.slides, function (slide, index, arr) {
-    if (slide.classList.contains('swiper-slide-visible')) {
-      slide.classList.remove('is-hidden');
-    } else {
-      slide.classList.add('is-hidden');
-    }
-  })
 }
 
 function initLightbox () {
