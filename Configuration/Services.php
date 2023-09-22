@@ -10,7 +10,5 @@ return static function (ContainerConfigurator $containerConfigurator, ContainerB
         ->autowire()
         ->autoconfigure();
 
-    $services->load('CReifenscheid\\SiteSetup\\', __DIR__ . '/../Classes/')->exclude([
-        __DIR__ . '/../Classes/Domain/Model',
-    ]);
+    $services->load('CReifenscheid\\SiteSetup\\', __DIR__ . '/../Classes/');
 };
