@@ -9,10 +9,6 @@
 				<source>Content column</source>
 				<target>Inhaltsspalte</target>
 			</trans-unit>
-			<trans-unit id="backendlayouts.columns.content" resname="backendlayouts.columns.content">
-				<source>Content</source>
-				<target>Inhalt</target>
-			</trans-unit>
 			<trans-unit id="backendlayouts.columns.left" resname="backendlayouts.columns.left">
 				<source>Left</source>
 				<target>links</target>
