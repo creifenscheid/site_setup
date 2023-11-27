@@ -38,6 +38,9 @@
           <trans-unit id="limitedpages.flexform.limit" resname="limitedpages.flexform.limit">
               <source>Max amount of pages to show</source>
           </trans-unit>
+          <trans-unit id="limitedpages.flexform.listPage" resname="limitedpages.flexform.listPage">
+              <source>Page with list view of all pages</source>
+          </trans-unit>
       </body>
    </file>
 </xliff>

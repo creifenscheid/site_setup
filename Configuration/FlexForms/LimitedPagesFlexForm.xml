@@ -71,6 +71,15 @@
                             <eval>trim,int</eval>
                         </config>
                     </settings.limit>
+                    <settings.listPage>
+                        <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.listPage</label>
+                        <config>
+                            <type>input</type>
+                            <renderType>inputLink</renderType>
+                            <size>30</size>
+                            <eval>trim</eval>
+                        </config>
+                    </settings.listPage>
                 </el>
             </ROOT>
         </sDEF>

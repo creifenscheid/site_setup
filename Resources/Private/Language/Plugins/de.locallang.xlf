@@ -49,6 +49,10 @@
               <source>Max amount of pages to show</source>
               <target>Maximale Anzahl anzuzeigender Seiten</target>
           </trans-unit>
+          <trans-unit id="limitedpages.flexform.listPage" resname="limitedpages.flexform.listPage">
+              <source>Page with list view of all pages</source>
+              <target>Seiten mit der Listenansicht der Beiträge</target>
+          </trans-unit>
       </body>
    </file>
 </xliff>
