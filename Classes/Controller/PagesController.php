@@ -47,6 +47,7 @@ class PagesController extends ActionController
         'orderBy',
         'orderDirection',
         'limit',
+        'listPage',
     ];
 
     protected \TYPO3\CMS\Core\Database\ConnectionPool $connectionPool;
@@ -86,26 +87,18 @@ class PagesController extends ActionController
         return $this->htmlResponse();
     }
 
+    /**
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \Doctrine\DBAL\Driver\Exception
+     */
     private function getPages(): array
     {
         $table = 'pages';
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable($table);
 
         return $queryBuilder
-            ->select($table . '.uid', $table . '.title', $table . '.description', 'cat.title AS category')
+            ->select($table . '.uid', $table . '.title', $table . '.description')
             ->from($table)
-            ->join(
-                $table,
-                'sys_category_record_mm',
-                'mm',
-                $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->quoteIdentifier($table . '.uid'))
-            )
-            ->join(
-                'mm',
-                'sys_category',
-                'cat',
-                $queryBuilder->expr()->eq('cat.uid', $queryBuilder->quoteIdentifier('mm.uid_local'))
-            )
             ->where(
                 $queryBuilder->expr()->in($table . '.pid', GeneralUtility::trimExplode(',', $this->settings['startingpoints']))
             )
