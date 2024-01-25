@@ -17,4 +17,10 @@ defined('TYPO3') || die();
             \CReifenscheid\SiteSetup\Controller\PagesController::class => 'list'
         ]
     );
+
+    // RTE
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:site_setup/Configuration/RTE/Configuration.yaml';
+    $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets'][$extKey]
+        = 'EXT:' . $extKey . '/Resources/Public/Css/Abbreviation.css';
+
 })('site_setup');

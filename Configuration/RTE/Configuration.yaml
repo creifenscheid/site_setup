@@ -2,38 +2,28 @@ imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-  - { resource: "./Plugins.yaml" }
+  - { resource: "EXT:site_setup/Configuration/RTE/Plugins.yaml" }
 
 editor:
-
   config:
-    toolbar:
-      - [ 'Link', 'Unlink']
-      - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
-      - [ 'BulletedList', 'NumberedList']}
-      - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', 'RemoveFormat' ]
-      - [ 'Undo', 'Redo' ]
+    toolbarGroups:
+      - { name: a11y, groups: [ textPartLanguage, abbreviation ] }
+      - { name: links, groups: [ links ] }
+      - { name: paragraph, groups: [ align, list, indent ] }
+      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
       - "/"
-      - [ 'Language' ]
-      - [ 'Abbr'  ]
-      - [ 'Format' ]
-      - [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
-      - [ 'HorizontalRule', 'Blockquote', 'SpecialChar']
-      - [ 'Source', 'Maximize' ]
+      - { name: format, groups: [ format ] }
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: document, groups: [ mode ] }
 
-    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
-    resize_enabled: true
-    resize_dir: 'both'
-    uiColor: "#F8F8F8"
-    qtClass: 'content-table'
-
-    justifyClasses: ['align-left', 'align-center', 'align-right', 'align-justify']
+    justifyClasses:
+      - align-left
+      - align-center
+      - align-right
+      - align-justify
 
     extraPlugins:
       - justify
-      - wordcount
-      - abbr
-      - language
 
     removePlugins:
       - image
