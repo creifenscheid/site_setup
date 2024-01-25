@@ -51,7 +51,7 @@ call_user_func(function()
                 'allowedAspectRatios' => [
                     '1:1' => [
                         'title' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:cropvariants.ratios.1_1',
-                        'value' => 1 / 1
+                        'value' => 1
                     ]
                 ]
             ]
