@@ -184,6 +184,6 @@ class TocViewHelper extends AbstractViewHelper
 
     private function getShowitemOfType(string $ctype): string
     {
-        return $GLOBALS['TCA']['tt_content']['types'][$ctype]['showitem'];
+        return array_key_exists($ctype, $GLOBALS['TCA']['tt_content']['types']) ? $GLOBALS['TCA']['tt_content']['types'][$ctype]['showitem'] : '';
     }
 }

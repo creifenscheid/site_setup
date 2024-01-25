@@ -1,47 +1,57 @@
 page {
-	headerData {
-		
-		# BASE URL
-		10 = TEXT
-		10 {
-			data = site:base
-			dataWrap = <base href="|" />
-		}
-		
-		# FAVICON
-		20 = TEXT
-		20 {
-			if.isTrue = {$plugin.tx_sitesetup.settings.favicon}
-			value (
-				<link rel="shortcut icon" href="{$plugin.tx_sitesetup.settings.favicon}" type="image/svg+xml">
-			)
-		}
+  headerData {
 
+    # BASE URL
+    10 = TEXT
+    10 {
+      data = site:base
+      dataWrap = <base href="|" />
+    }
 
-		# WEB APP ICONS
-		30 = COA
-		30 {
-			if.isTrue = {$plugin.tx_sitesetup.settings.webapp.iconFolder}
-			
-			10 = TEXT
-			10.value = <link rel="apple-touch-icon" href="{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-iphone.png">
-			
-			20 = TEXT
-			20.value = <link rel="apple-touch-icon" sizes="152x152" href="{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-ipad.png">
-			
-			30 = TEXT
-			30.value = <link rel="apple-touch-icon" sizes="180x180" href="{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-iphone-retina.png">
-			
-			40 = TEXT
-			40.value = <link rel="apple-touch-icon" sizes="167x167" href="{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-ipad-retina.png">
-		}
-		
-		# TITLE TAG
-		40 = TEXT
-		40 {
-		    if.isTrue = {$plugin.tx_sitesetup.settings.titlePostfix}
-		    field = nav_title // title
-		    dataWrap = <title>|&nbsp;{$plugin.tx_sitesetup.settings.titlePostfix}</title>
-		}
-	}
+    # FAVICON
+    20 = TEXT
+    20 {
+      if.isTrue = {$plugin.tx_sitesetup.settings.favicon}
+      data = path:{$plugin.tx_sitesetup.settings.favicon}
+      wrap = <link rel="shortcut icon" href="|" type="image/svg+xml">
+    }
+
+    # WEB APP ICONS
+    30 = COA
+    30 {
+      if.isTrue = {$plugin.tx_sitesetup.settings.webapp.iconFolder}
+
+      10 = TEXT
+      10 {
+        wrap = <link rel="apple-touch-icon" href="|">
+        data = path:{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-iphone.png
+      }
+
+      20 = TEXT
+      20 {
+        wrap = <link rel="apple-touch-icon" sizes="152x152" href="|">
+        data = path:{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-ipad.png
+      }
+
+      30 = TEXT
+      30 {
+        wrap = <link rel="apple-touch-icon" sizes="180x180" href="|">
+        data = path:{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-iphone-retina.png
+      }
+
+      40 = TEXT
+      40 {
+        wrap = <link rel="apple-touch-icon" sizes="167x167" href="|">
+        data = path:{$plugin.tx_sitesetup.settings.webapp.iconFolder}/touch-icon-ipad-retina.png
+      }
+    }
+
+    # TITLE TAG
+    40 = TEXT
+    40 {
+      if.isTrue = {$plugin.tx_sitesetup.settings.titlePostfix}
+      field = nav_title // title
+      dataWrap = <title>|&nbsp;{$plugin.tx_sitesetup.settings.titlePostfix}</title>
+    }
+  }
 }
