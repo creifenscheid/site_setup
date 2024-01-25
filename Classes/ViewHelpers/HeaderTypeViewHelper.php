@@ -4,6 +4,8 @@ namespace CReifenscheid\SiteSetup\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
+use function preg_match;
+
 /**
  * Class HeaderTypeViewHelper
  *

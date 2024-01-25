@@ -6,6 +6,13 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
+use function array_key_exists;
+use function array_key_first;
+use function array_key_last;
+use function count;
+use function preg_match;
+use function str_contains;
+
 /**
  * A ViewHelper to create a table of content of the given page based on content elements. RTE headings are ignored.
  *
@@ -31,9 +38,6 @@ class TocViewHelper extends AbstractViewHelper
      */
     private array $previousElementsByLevel = [];
 
-    /**
-     * Initialize arguments
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -48,7 +52,7 @@ class TocViewHelper extends AbstractViewHelper
      * @throws \Doctrine\DBAL\Driver\Exception
      * @throws \Doctrine\DBAL\DBALException
      */
-    public function render() : ?array
+    public function render(): ?array
     {
         // VARS
         $pageUid = $this->arguments['pageUid'];
@@ -88,7 +92,6 @@ class TocViewHelper extends AbstractViewHelper
         // RESULT PROCESSING
         $previousLevel = null;
         foreach ($contentElements as $element) {
-
             if (!$this->hasHeaderLayout($element['CType'])) {
                 continue;
             }
@@ -96,7 +99,6 @@ class TocViewHelper extends AbstractViewHelper
             $currentLevel = $element['header_layout'] === '0' ? 2 : (int)$element['header_layout'];
 
             if ($currentLevel === $minLevel) {
-
                 /**
                  * There is already an element with this level in the storage.
                  * This has to be added to the toc, before it gets overwritten at the end of the loop
@@ -176,6 +178,7 @@ class TocViewHelper extends AbstractViewHelper
 
         $pattern = '/--palette--;([^,;]*);header/';
         preg_match($pattern, $items, $result);
+
         return $result !== [];
     }
 

@@ -29,10 +29,7 @@ class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTag
      */
     protected $tagName = 'a';
 
-    /**
-     * Initialize arguments
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('targetId', 'string', 'ID of the element to skip to', true);
@@ -41,28 +38,25 @@ class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTag
         $this->registerArgument('tabindex', 'integer', 'Index in tabing order');
     }
 
-    /**
-     * @return string Rendered link
-     */
-    public function render()
+    public function render(): string
     {
         // define tag attribute values
         $cssClasses = 'skip-button';
-        
+
         if($this->arguments['additionalClasses']) {
             $cssClasses .= ' '.$this->arguments['additionalClasses'];
         }
-        
+
         // assign tag attributes
         $this->tag->addAttribute('class', $cssClasses);
 
         if ($this->arguments['tabindex']) {
             $this->tag->addAttribute('tabindex', $this->arguments['tabindex']);
         }
-        
-        $uri = $_SERVER['REQUEST_URI'] != '/' ? $_SERVER['REQUEST_URI'] : '';
+
+        $uri = $_SERVER['REQUEST_URI'] !== '/' ? $_SERVER['REQUEST_URI'] : '';
         $this->tag->addAttribute('href', $uri . '#' . $this->arguments['targetId']);
-        
+
         if (!empty($this->renderChildren())) {
             $this->tag->setContent($this->renderChildren());
         } elseif (!empty($this->arguments['value'])) {
@@ -70,7 +64,7 @@ class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTag
         } else {
             $this->tag->setContent(LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:skipToContent'));
         }
-    
+
         $this->tag->forceClosingTag(true);
 
         return $this->tag->render();

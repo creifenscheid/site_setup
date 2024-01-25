@@ -3,9 +3,12 @@
 namespace CReifenscheid\SiteSetup\Controller;
 
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+
+use function in_array;
 
 /***************************************************************
  *
@@ -50,11 +53,11 @@ class PagesController extends ActionController
         'listPage',
     ];
 
-    protected \TYPO3\CMS\Core\Database\ConnectionPool $connectionPool;
+    protected ConnectionPool $connectionPool;
 
     protected ?ContentObjectRenderer $contentObject = null;
 
-    public function __construct(\TYPO3\CMS\Core\Database\ConnectionPool $connectionPool)
+    public function __construct(ConnectionPool $connectionPool)
     {
         $this->connectionPool = $connectionPool;
     }
@@ -64,7 +67,7 @@ class PagesController extends ActionController
         $settings = [];
 
         foreach ($this->settings as $key => $value) {
-            if (in_array($key, $this->requiredSettings)) {
+            if (in_array($key, $this->requiredSettings, true)) {
                 $settings[$key] = $value;
             }
         }
@@ -102,7 +105,7 @@ class PagesController extends ActionController
             ->where(
                 $queryBuilder->expr()->in($table . '.pid', GeneralUtility::trimExplode(',', $this->settings['startingpoints']))
             )
-            ->orderBy($table . '.' .$this->settings['orderBy'],$this->settings['orderDirection'])
+            ->orderBy($table . '.' . $this->settings['orderBy'], $this->settings['orderDirection'])
             ->setMaxResults($this->settings['limit'])
             ->executeQuery()
             ->fetchAllAssociative();

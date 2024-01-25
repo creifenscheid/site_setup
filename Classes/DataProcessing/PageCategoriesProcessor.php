@@ -2,8 +2,9 @@
 
 namespace CReifenscheid\SiteSetup\DataProcessing;
 
+use PDO;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\ContentObject\ContentDataProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -40,7 +41,7 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  * @package CReifenscheid\SiteSetup\DataProcessing
  * @author  C. Reifenscheid
  */
-class PageCategoriesProcessor implements \TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface
+class PageCategoriesProcessor implements DataProcessorInterface
 {
     /**
      * Returns categories of the current page
@@ -54,14 +55,14 @@ class PageCategoriesProcessor implements \TYPO3\CMS\Frontend\ContentObject\DataP
      * @throws \Doctrine\DBAL\DBALException
      * @throws \Doctrine\DBAL\Driver\Exception
      */
-    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) : array
+    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
         $as = $processorConfiguration['as'] ? : 'categories';
         $pageUid = $GLOBALS['TSFE']->id;
         $table = 'sys_category';
 
         // init querybuilder
-        $queryBuilder = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
 
         // set up querybuilder
         $processedData[$as] = $queryBuilder
@@ -72,7 +73,7 @@ class PageCategoriesProcessor implements \TYPO3\CMS\Frontend\ContentObject\DataP
                 'sys_category_record_mm',
                 'mm',
                 $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid'))
-            )->where($queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($pageUid, \PDO::PARAM_INT)))->executeQuery()
+            )->where($queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($pageUid, PDO::PARAM_INT)))->executeQuery()
             ->fetchAllAssociative();
 
         return $processedData;
