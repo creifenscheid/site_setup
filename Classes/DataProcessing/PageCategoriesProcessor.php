@@ -52,6 +52,7 @@ class PageCategoriesProcessor implements \TYPO3\CMS\Frontend\ContentObject\DataP
      *
      * @return array the processed data as key/value store
      * @throws \Doctrine\DBAL\DBALException
+     * @throws \Doctrine\DBAL\Driver\Exception
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) : array
     {
@@ -71,12 +72,8 @@ class PageCategoriesProcessor implements \TYPO3\CMS\Frontend\ContentObject\DataP
                 'sys_category_record_mm',
                 'mm',
                 $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid'))
-            )
-            ->where(
-                $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($pageUid, \PDO::PARAM_INT))
-            )
-            ->execute()
-            ->fetchAll();
+            )->where($queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($pageUid, \PDO::PARAM_INT)))->executeQuery()
+            ->fetchAllAssociative();
 
         return $processedData;
     }

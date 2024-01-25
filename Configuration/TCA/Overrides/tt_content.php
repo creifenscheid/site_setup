@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 call_user_func(function () {
     /**
@@ -160,10 +160,10 @@ call_user_func(function () {
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_slides_to_show',
             'config' => [
                 'default' => 1,
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 30,
                 'max' => 1,
-                'eval' => 'trim,int'
+                'eval' => 'trim'
             ]
         ],
         'tx_sitesetup_carousel_autoslide' => [
@@ -181,10 +181,10 @@ call_user_func(function () {
             'displayCond' => 'FIELD:tx_sitesetup_carousel_autoslide:=:1',
             'config' => [
                 'default' => '5',
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 30,
                 'max' => 2,
-                'eval' => 'trim,int'
+                'eval' => 'trim'
             ]
         ]
     ];
