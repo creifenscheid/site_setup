@@ -6,5 +6,5 @@ page = PAGE
 @import 'EXT:site_setup/Configuration/TypoScript/Page/Assets.typoscript'
 
 page {
-	10 < lib.template
+  10 < lib.template
 }

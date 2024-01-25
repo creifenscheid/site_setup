@@ -1,15 +1,15 @@
 lib.contentRendering < styles.content.get
 lib.contentRendering {
-    select.where = {#colPos}={field:colPos}
-    select.where.insertData = 1
+  select.where = {#colPos}={field:colPos}
+  select.where.insertData = 1
 }
 
 tt_content.site-setup-2cols < lib.boilerplates.container
 tt_content.site-setup-2cols {
-    templateName = 2Columns
+  templateName = 2Columns
 }
 
 tt_content.site-setup-3cols < lib.boilerplates.container
 tt_content.site-setup-3cols {
-    templateName = 3Columns
+  templateName = 3Columns
 }
