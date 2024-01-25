@@ -65,7 +65,7 @@ class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTag
         
         if (!empty($this->renderChildren())) {
             $this->tag->setContent($this->renderChildren());
-        } else if (!empty($this->arguments['value'])) {
+        } elseif (!empty($this->arguments['value'])) {
             $this->tag->setContent($this->arguments['value']);
         } else {
             $this->tag->setContent(LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:skipToContent'));

@@ -112,7 +112,7 @@ class TocViewHelper extends AbstractViewHelper
                      *
                      * The element is then stored in there and can be removed.
                      */
-                    for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
+                    for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; --$i) {
                         $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
                         $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                         unset($this->previousElementsByLevel[$i]);
@@ -128,7 +128,7 @@ class TocViewHelper extends AbstractViewHelper
                     $lastPreviousElementsKey = array_key_last($this->previousElementsByLevel);
 
                     // merge previous elements
-                    for ($i = $lastPreviousElementsKey; $i >= $currentLevel; $i--) {
+                    for ($i = $lastPreviousElementsKey; $i >= $currentLevel; --$i) {
                         $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
                         $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                         unset($this->previousElementsByLevel[$i]);
@@ -143,16 +143,17 @@ class TocViewHelper extends AbstractViewHelper
         }
 
         // get the last stored elements
-        if (!empty($this->previousElementsByLevel)) {
-            for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; $i--) {
+        if ($this->previousElementsByLevel !== []) {
+            for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; --$i) {
                 $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
                 $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                 unset($this->previousElementsByLevel[$i]);
             }
+
             $toc[$this->previousElementsByLevel[$minLevel]['uid']] = $this->previousElementsByLevel[$minLevel];
         }
 
-        if (empty($toc) || (count($toc) === 1 && !array_key_exists('subheader', $toc[array_key_first($toc)]))) {
+        if ($toc === [] || (count($toc) === 1 && !array_key_exists('subheader', $toc[array_key_first($toc)]))) {
             return null;
         }
 
@@ -175,11 +176,7 @@ class TocViewHelper extends AbstractViewHelper
 
         $pattern = '/--palette--;([^,;]*);header/';
         preg_match($pattern, $items, $result);
-        if ($result !== []) {
-            return true;
-        }
-
-        return false;
+        return $result !== [];
     }
 
     private function getShowitemOfType(string $ctype): string

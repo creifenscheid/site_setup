@@ -1,13 +1,11 @@
 <?php
 defined('TYPO3') || die();
 
-call_user_func(function()
-{
+call_user_func(static function () {
     /**
      * Extension key
      */
     $extensionKey = 'site_setup';
-    
     $GLOBALS['TCA']['pages']['types'][1]['columnsOverrides']['media']['config']['overrideChildTca']['columns']['crop']['config'] = [
         'cropVariants' => [
             'desktop' => [
@@ -57,7 +55,6 @@ call_user_func(function()
             ]
         ]
     ];
-
     $GLOBALS['TCA']['pages']['columns']['slug']['config']['generatorOptions'] = [
         'fields' => [
             [
@@ -70,7 +67,6 @@ call_user_func(function()
             '&shy;' => '',
         ]
     ];
-
     /**
      * Table extension
      */
@@ -105,18 +101,15 @@ call_user_func(function()
             ]
         ]
     ];
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'pages',
         $additionalColumns
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'pages',
         'tocSettings',
         'tx_sitesetup_toc_min,tx_sitesetup_toc_max'
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'pages',
         '--div--;LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tab.toc, tx_sitesetup_toc_disabled, --palette--;;tocSettings',
