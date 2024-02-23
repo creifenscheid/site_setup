@@ -38,7 +38,7 @@
 			</trans-unit>
 			<trans-unit id="lastPageEdit.page.edit" resname="lastPageEdit.page.edit">
 				<source>The page was created on %s and last updated on %s.</source>
-				<target>Die Seite wurde am %s erstellt und zuletzt am %s aktualisiert.</target>
+				<target>Diese Seite wurde am %s erstellt und zuletzt am %s aktualisiert.</target>
 			</trans-unit>
 
 			<trans-unit id="notification.label" resname="notification.label">
