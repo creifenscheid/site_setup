@@ -30,8 +30,8 @@
                                     <numIndex index="1">crdate</numIndex>
                                 </numIndex>
                                 <numIndex index="1">
-                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.tstamp</numIndex>
-                                    <numIndex index="1">tstamp</numIndex>
+                                    <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.SYS_LASTCHANGED</numIndex>
+                                    <numIndex index="1">SYS_LASTCHANGED</numIndex>
                                 </numIndex>
                                 <numIndex index="2">
                                     <numIndex index="0">LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.sorting</numIndex>

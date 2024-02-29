@@ -17,7 +17,7 @@
           <trans-unit id="limitedpages.flexform.orderBy.crdate" resname="limitedpages.flexform.orderBy.crdate">
               <source>Creation date</source>
           </trans-unit>
-          <trans-unit id="limitedpages.flexform.orderBy.tstamp" resname="limitedpages.flexform.orderBy.tstamp">
+          <trans-unit id="limitedpages.flexform.orderBy.SYS_LASTCHANGED" resname="limitedpages.flexform.orderBy.SYS_LASTCHANGED">
               <source>Last update</source>
           </trans-unit>
           <trans-unit id="limitedpages.flexform.orderBy.sorting" resname="limitedpages.flexform.orderBy.sorting">

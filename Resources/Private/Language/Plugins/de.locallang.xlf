@@ -21,7 +21,7 @@
               <source>Creation date</source>
               <target>Erstellungsdatum</target>
           </trans-unit>
-          <trans-unit id="limitedpages.flexform.orderBy.tstamp" resname="limitedpages.flexform.orderBy.tstamp">
+          <trans-unit id="limitedpages.flexform.orderBy.SYS_LASTCHANGED" resname="limitedpages.flexform.orderBy.SYS_LASTCHANGED">
               <source>Last update</source>
               <target>Letzte Aktualisierung</target>
           </trans-unit>
