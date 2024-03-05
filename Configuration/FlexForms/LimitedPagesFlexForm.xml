@@ -27,8 +27,8 @@
                                     <value>crdate</value>
                                 </numIndex>
                                 <numIndex index="1">
-                                    <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.tstamp</label>
-                                    <value>tstamp</value>
+                                    <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.SYS_LASTCHANGED</label>
+                                    <value>SYS_LASTCHANGED</value>
                                 </numIndex>
                                 <numIndex index="2">
                                     <label>LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.flexform.orderBy.sorting</label>

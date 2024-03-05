@@ -8,6 +8,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
+use function array_key_exists;
+
 /**
  * *************************************************************
  *
@@ -34,13 +36,6 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  * This copyright notice MUST APPEAR in all copies of the script!
  * *************************************************************
  */
-
-/**
- * Class PageCategoriesProcessor
- *
- * @package CReifenscheid\SiteSetup\DataProcessing
- * @author  C. Reifenscheid
- */
 class PageCategoriesProcessor implements DataProcessorInterface
 {
     /**
@@ -54,11 +49,16 @@ class PageCategoriesProcessor implements DataProcessorInterface
      * @return array the processed data as key/value store
      * @throws \Doctrine\DBAL\DBALException
      * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
-        $as = $processorConfiguration['as'] ? : 'categories';
-        $pageUid = $GLOBALS['TSFE']->id;
+        $as = array_key_exists('as', $processorConfiguration) ? : 'categories';
+
+        $request = $cObj->getRequest();
+        $routing = $request->getAttribute('routing');
+        $pageUid = $routing->getPageId();
+
         $table = 'sys_category';
 
         // init querybuilder

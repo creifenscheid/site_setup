@@ -22,7 +22,7 @@ use function str_contains;
  * Default
  * -------
  *
- * ::
+ * EXAMPLE::
  *    Create toc with all headings from h2 to h4
  *    <siteSetup:toc pageUid="666" minLevel="2" maxLevel="4" />
  *

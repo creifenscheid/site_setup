@@ -6,19 +6,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 use function preg_match;
 
-/**
- * Class HeaderTypeViewHelper
- *
- * This viewhelper returns the header type to use based on the header layout of the given content element.
- * E.g. the content element header_layout is set to 3, so a h3 header is rendered, the next header type has to be h4 without existing subheader or h5 with existing subheader. By returning this header type, hard-coded but well-structured headlines can be achieved.
- *
- * If the content elements header type is set to default or hidden, TYPO3s configured default header is used as calculation base.
- *
- * Examples
- * ========
- *
- * <namespace:headerType contentData='{dataArray}' />
- */
 class HeaderTypeViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void

@@ -63,7 +63,7 @@ final class BytesViewHelper extends AbstractViewHelper
         $this->registerArgument('decimals', 'int', 'The number of digits after the decimal point', false, 0);
         $this->registerArgument('decimalSeparator', 'string', 'The decimal point character', false, '.');
         $this->registerArgument('thousandsSeparator', 'string', 'The character for grouping the thousand digits', false, ',');
-        $this->registerArgument('units', 'string', 'comma separated list of available units, default is LocalizationUtility::translate(\'viewhelper.format.bytes.units\', \'fluid\')');
+        $this->registerArgument('units', 'string', "comma separated list of available units, default is LocalizationUtility::translate('viewhelper.format.bytes.units', 'fluid')");
         /**
          * SeppTodo: Added this argument
          */
@@ -80,6 +80,7 @@ final class BytesViewHelper extends AbstractViewHelper
         } else {
             $units = LocalizationUtility::translate('viewhelper.format.bytes.units', 'fluid');
         }
+
         $units = GeneralUtility::trimExplode(',', (string)$units, true);
 
         $value = $renderChildrenClosure();
@@ -87,9 +88,11 @@ final class BytesViewHelper extends AbstractViewHelper
         if (is_numeric($value)) {
             $value = (float)$value;
         }
+
         if (!is_int($value) && !is_float($value)) {
             $value = 0;
         }
+
         $bytes = max($value, 0);
         $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
         $pow = min($pow, count($units) - 1);
