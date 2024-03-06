@@ -1,5 +1,7 @@
 import { stringifyLanguageAttribute } from './utils.js';
-import {Core, UI, Utils} from "@typo3/ckeditor5-bundle.js";
+import * as UI from"@ckeditor/ckeditor5-ui";
+import * as Core from"@ckeditor/ckeditor5-core";
+import * as Utils from"@ckeditor/ckeditor5-utils"
 import L10n from "./l10n.js";
 
 export default class TextPartLanguageUI extends Core.Plugin {
@@ -24,7 +26,7 @@ export default class TextPartLanguageUI extends Core.Plugin {
             // Item definition with false `languageCode` will behave as remove lang button.
             itemDefinitions.add({
                 type: 'button',
-                model: new UI.Model({
+                model: new UI.ViewModel({
                     label: removeTitle,
                     languageCode: false,
                     withText: true
@@ -36,7 +38,7 @@ export default class TextPartLanguageUI extends Core.Plugin {
             for (const option of options) {
                 const def = {
                     type: 'button',
-                    model: new UI.Model({
+                    model: new UI.ViewModel({
                         label: option.title,
                         languageCode: option.languageCode,
                         role: 'menuitemradio',

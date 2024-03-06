@@ -1,4 +1,5 @@
-﻿import {Core, UI} from "@typo3/ckeditor5-bundle.js";
+﻿import * as UI from"@ckeditor/ckeditor5-ui";
+import * as Core from"@ckeditor/ckeditor5-core";
 import FormView from "./view.js";
 
 export default class AbbreviationUI extends Core.Plugin {

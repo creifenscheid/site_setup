@@ -1,4 +1,5 @@
-﻿import {Core, UI} from "@typo3/ckeditor5-bundle.js";
+﻿import * as UI from"@ckeditor/ckeditor5-ui";
+import * as Core from"@ckeditor/ckeditor5-core";
 import L10n from "./l10n.js";
 
 export default class FormView extends UI.View {

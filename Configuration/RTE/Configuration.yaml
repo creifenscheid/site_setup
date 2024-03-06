@@ -6,13 +6,13 @@ imports:
 editor:
   config:
     importModules:
-#      - '@creifenscheid/site-setup/plugins/abbreviation/plugin.js'
-#      - '@creifenscheid/site-setup/plugins/textpartlanguage/plugin.js'
+      - '@creifenscheid/site-setup/plugins/abbreviation/plugin.js'
+      - '@creifenscheid/site-setup/plugins/textpartlanguage/plugin.js'
 
     toolbar:
       items:
-#        - textPartLanguage
-#        - abbreviation
+        - textPartLanguage
+        - abbreviation
         - '|'
         - link
         - '|'

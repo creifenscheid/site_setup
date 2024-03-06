@@ -1,6 +1,6 @@
 import TextPartLanguageUI from "./components/ui.js";
 import TextPartLanguageEditing from "./components/edit.js";
-import {Core} from "@typo3/ckeditor5-bundle.js";
+import * as Core from"@ckeditor/ckeditor5-core";
 
 
 export default class TextPartLanguage extends Core.Plugin {

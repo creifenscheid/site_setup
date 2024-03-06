@@ -1,4 +1,4 @@
-﻿import {Core, UI} from "@typo3/ckeditor5-bundle.js";
+﻿import * as Core from"@ckeditor/ckeditor5-core";
 
 export default class AbbreviationEditing extends Core.Plugin {
     init () {

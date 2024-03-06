@@ -1,4 +1,4 @@
-import {Utils} from "@typo3/ckeditor5-bundle.js";
+import * as Utils from"@ckeditor/ckeditor5-utils";
 
 /**
  * Returns the language attribute value in a human-readable text format:

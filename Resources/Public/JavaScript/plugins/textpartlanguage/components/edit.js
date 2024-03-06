@@ -1,6 +1,6 @@
 import TextPartLanguageCommand from './command.js';
 import { stringifyLanguageAttribute, parseLanguageAttribute } from './utils.js';
-import {Core} from "@typo3/ckeditor5-bundle.js";
+import * as Core from"@ckeditor/ckeditor5-core";
 
 export default class TextPartLanguageEditing extends Core.Plugin {
 
