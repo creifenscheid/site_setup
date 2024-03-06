@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3') || die();
 
 call_user_func(static function () {
@@ -10,8 +11,8 @@ call_user_func(static function () {
      * Default TypoScript
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-       $extensionKey,
-       'Configuration/TypoScript',
-       'SiteSetup'
+        $extensionKey,
+        'Configuration/TypoScript',
+        'SiteSetup'
     );
 });

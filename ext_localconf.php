@@ -3,7 +3,6 @@
 defined('TYPO3') || die();
 
 (static function ($extKey) {
-
     // Register ViewHelper
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces'][\TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToLowerCamelCase($extKey)] = [
         'CReifenscheid\\' . \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extKey) . '\ViewHelpers',
@@ -12,7 +11,7 @@ defined('TYPO3') || die();
         \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extKey),
         'LimitedPages',
         [
-            \CReifenscheid\SiteSetup\Controller\PagesController::class => 'list'
+            \CReifenscheid\SiteSetup\Controller\PagesController::class => 'list',
         ]
     );
 
@@ -20,5 +19,4 @@ defined('TYPO3') || die();
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['siteSetup'] = 'EXT:site_setup/Configuration/RTE/Configuration.yaml';
     $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets'][$extKey]
         = 'EXT:' . $extKey . '/Resources/Public/Css/Abbreviation.css';
-
 })('site_setup');

@@ -53,7 +53,7 @@ class PageCategoriesProcessor implements DataProcessorInterface
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
-        $as = array_key_exists('as', $processorConfiguration) ? : 'categories';
+        $as = array_key_exists('as', $processorConfiguration) ?: 'categories';
 
         $request = $cObj->getRequest();
         $routing = $request->getAttribute('routing');

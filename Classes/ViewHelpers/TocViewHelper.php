@@ -29,7 +29,6 @@ use function str_contains;
  * Output::
  *
  *    {array}
- *
  */
 class TocViewHelper extends AbstractViewHelper
 {
@@ -68,7 +67,7 @@ class TocViewHelper extends AbstractViewHelper
             $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($pageUid)),
             $queryBuilder->expr()->neq('header', $queryBuilder->createNamedParameter('')),
             $queryBuilder->expr()->neq('header_layout', $queryBuilder->createNamedParameter(100)),
-            $queryBuilder->expr()->lte('header_layout', $queryBuilder->createNamedParameter($maxLevel))
+            $queryBuilder->expr()->lte('header_layout', $queryBuilder->createNamedParameter($maxLevel)),
         ];
 
         if ($minLevel <= 2) {
@@ -115,13 +114,13 @@ class TocViewHelper extends AbstractViewHelper
                      * The element is then stored in there and can be removed.
                      */
                     for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; --$i) {
-                        $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                        $uid = $this->previousElementsByLevel[$i]['uid'] ?: 0;
                         $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                         unset($this->previousElementsByLevel[$i]);
                     }
 
                     // add the stored element with the minimum level in the toc storage and removed it from the tmp storage
-                    $uid = $this->previousElementsByLevel[$currentLevel]['uid'] ? : 0;
+                    $uid = $this->previousElementsByLevel[$currentLevel]['uid'] ?: 0;
                     $toc[$uid] = $this->previousElementsByLevel[$currentLevel];
                     unset($this->previousElementsByLevel[$currentLevel]);
                 }
@@ -131,7 +130,7 @@ class TocViewHelper extends AbstractViewHelper
 
                     // merge previous elements
                     for ($i = $lastPreviousElementsKey; $i >= $currentLevel; --$i) {
-                        $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                        $uid = $this->previousElementsByLevel[$i]['uid'] ?: 0;
                         $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                         unset($this->previousElementsByLevel[$i]);
                     }
@@ -147,7 +146,7 @@ class TocViewHelper extends AbstractViewHelper
         // get the last stored elements
         if ($this->previousElementsByLevel !== []) {
             for ($i = array_key_last($this->previousElementsByLevel); $i > $minLevel; --$i) {
-                $uid = $this->previousElementsByLevel[$i]['uid'] ? : 0;
+                $uid = $this->previousElementsByLevel[$i]['uid'] ?: 0;
                 $this->previousElementsByLevel[($i - 1)]['subheader'][$uid] = $this->previousElementsByLevel[$i];
                 unset($this->previousElementsByLevel[$i]);
             }

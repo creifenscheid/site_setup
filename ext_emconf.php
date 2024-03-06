@@ -35,12 +35,12 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '12.4.0-12.4.99',
-            'container' => '2.1.0-2.9.99'
-        ]
+            'container' => '2.1.0-2.9.99',
+        ],
     ],
     'autoload' => [
         'psr-4' => [
-            'CReifenscheid\\SiteSetup\\' => 'Classes'
-        ]
-    ]
+            'CReifenscheid\\SiteSetup\\' => 'Classes',
+        ],
+    ],
 ];

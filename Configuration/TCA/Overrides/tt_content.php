@@ -19,9 +19,9 @@ call_user_func(static function () {
             'config' => [
                 'default' => 0,
                 'type' => 'check',
-                'renderType' => 'checkboxToggle'
-            ]
-        ]
+                'renderType' => 'checkboxToggle',
+            ],
+        ],
     ];
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
@@ -50,7 +50,7 @@ call_user_func(static function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:toc.label',
             'sitesetup_toc',
             'content-menu-pages',
-            'menu'
+            'menu',
         ],
         'subpages',
         'after'
@@ -63,8 +63,8 @@ call_user_func(static function () {
                 'default' => 2,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => []
-            ]
+                'items' => [],
+            ],
         ],
         'tx_sitesetup_toc_max' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_max',
@@ -72,9 +72,9 @@ call_user_func(static function () {
                 'default' => 6,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => []
-            ]
-        ]
+                'items' => [],
+            ],
+        ],
     ];
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
@@ -107,7 +107,7 @@ call_user_func(static function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:lastPageEdit.label',
             'sitesetup_lastPageEdit',
             'content-clock',
-            'special'
+            'special',
         ],
         'div',
         'after'
@@ -133,7 +133,7 @@ call_user_func(static function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:carousel.label',
             'sitesetup_carousel',
             'content-carousel-image',
-            'default'
+            'default',
         ],
         'image',
         'after'
@@ -147,8 +147,8 @@ call_user_func(static function () {
                 'type' => 'number',
                 'size' => 30,
                 'max' => 1,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'tx_sitesetup_carousel_autoslide' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_autoslide',
@@ -157,7 +157,7 @@ call_user_func(static function () {
                 'default' => 0,
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-            ]
+            ],
         ],
         'tx_sitesetup_carousel_duration' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_duration',
@@ -168,9 +168,9 @@ call_user_func(static function () {
                 'type' => 'number',
                 'size' => 30,
                 'max' => 2,
-                'eval' => 'trim'
-            ]
-        ]
+                'eval' => 'trim',
+            ],
+        ],
     ];
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
@@ -206,7 +206,7 @@ call_user_func(static function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:notification.label',
             'sitesetup_notification',
             'overlay-warning',
-            'special'
+            'special',
         ],
         'div',
         'after'
@@ -235,7 +235,7 @@ call_user_func(static function () {
     $plugins = [
         'LimitedPages' => [
             'icon' => 'actions-sort-amount-down',
-            'flexform' => true
+            'flexform' => true,
         ],
     ];
     // registration
@@ -267,8 +267,8 @@ call_user_func(static function () {
                 [
                     [
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
-                    ]
+                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203],
+                    ],
                 ]
             )
             )
@@ -286,8 +286,8 @@ call_user_func(static function () {
                     [
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.center', 'colPos' => 202],
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
-                    ]
+                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203],
+                    ],
                 ]
             )
             )
