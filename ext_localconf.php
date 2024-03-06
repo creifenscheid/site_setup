@@ -17,7 +17,7 @@ defined('TYPO3') || die();
     );
 
     // RTE
-    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:site_setup/Configuration/RTE/Configuration.yaml';
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['siteSetup'] = 'EXT:site_setup/Configuration/RTE/Configuration.yaml';
     $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets'][$extKey]
         = 'EXT:' . $extKey . '/Resources/Public/Css/Abbreviation.css';
 

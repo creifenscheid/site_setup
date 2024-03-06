@@ -2,35 +2,57 @@ imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-  - { resource: "EXT:site_setup/Configuration/RTE/Plugins.yaml" }
 
 editor:
   config:
-    toolbarGroups:
-      - { name: a11y, groups: [ textPartLanguage, abbreviation ] }
-      - { name: links, groups: [ links ] }
-      - { name: paragraph, groups: [ align, list, indent ] }
-      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
-      - "/"
-      - { name: format, groups: [ format ] }
-      - { name: basicstyles, groups: [ basicstyles ] }
-      - { name: document, groups: [ mode ] }
+    importModules:
+#      - '@creifenscheid/site-setup/plugins/abbreviation/plugin.js'
+#      - '@creifenscheid/site-setup/plugins/textpartlanguage/plugin.js'
 
-    justifyClasses:
-      - align-left
-      - align-center
-      - align-right
-      - align-justify
+    toolbar:
+      items:
+#        - textPartLanguage
+#        - abbreviation
+        - '|'
+        - link
+        - '|'
+        - alignment
+        - bulletedList
+        - numberedList
+        - indent
+        - outdent
+        - '|'
+        - clipboard
+        - removeFormat
+        - undo
+        - redo
+        # line break
+        - '-'
+        - heading
+        - '|'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - '|'
+        - softhyphen
+        - '|'
+        - sourceEditing
 
-    extraPlugins:
-      - justify
+    alignment:
+      options:
+        - { name: 'left', className: 'align-left' }
+        - { name: 'center', className: 'align-center' }
+        - { name: 'right', className: 'align-right' }
+        - { name: 'justify', className: 'align-justify' }
 
-    removePlugins:
-      - image
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
 
-    format_tags: "p"
-
-processing:
-  allowTags:
-    - s
-    - u
+    language:
+      textPartLanguage:
+        # EXAMPLE - {title: 'arabic', languageCode: 'ar', textDirection: 'rtl'}
+        - { title: 'english', languageCode: 'en' }
