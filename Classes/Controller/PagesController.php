@@ -2,6 +2,8 @@
 
 namespace CReifenscheid\SiteSetup\Controller;
 
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use Doctrine\DBAL\Driver\Exception;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -53,13 +55,10 @@ class PagesController extends ActionController
         'listPage',
     ];
 
-    protected ConnectionPool $connectionPool;
-
     protected ?ContentObjectRenderer $contentObject = null;
 
-    public function __construct(ConnectionPool $connectionPool)
+    public function __construct(protected ConnectionPool $connectionPool)
     {
-        $this->connectionPool = $connectionPool;
     }
 
     public function initializeListAction(): void
@@ -76,7 +75,7 @@ class PagesController extends ActionController
     }
 
     /**
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @throws InvalidQueryException
      */
     public function listAction(): ResponseInterface
     {
@@ -92,7 +91,7 @@ class PagesController extends ActionController
 
     /**
      * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     private function getPages(): array
     {
@@ -113,7 +112,7 @@ class PagesController extends ActionController
 
     private function assignTtContentData(): void
     {
-        $contentObject = $this->configurationManager->getContentObject();
+        $contentObject = $this->request->getAttribute('currentContentObject');
         $this->view->assign('ttContentData', $contentObject->data);
     }
 }

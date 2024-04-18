@@ -2,6 +2,7 @@
 
 namespace CReifenscheid\SiteSetup\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -21,7 +22,7 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  *
  *    <a class="skip-button my-class" href="#elementId">Label</a>
  */
-class SkipButtonViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper
+class SkipButtonViewHelper extends AbstractTagBasedViewHelper
 {
     /**
      * @var string

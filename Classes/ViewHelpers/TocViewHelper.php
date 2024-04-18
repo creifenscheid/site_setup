@@ -2,6 +2,7 @@
 
 namespace CReifenscheid\SiteSetup\ViewHelpers;
 
+use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -48,7 +49,7 @@ class TocViewHelper extends AbstractViewHelper
     /**
      * Returns an array with all headers of the page
      *
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      * @throws \Doctrine\DBAL\DBALException
      */
     public function render(): ?array

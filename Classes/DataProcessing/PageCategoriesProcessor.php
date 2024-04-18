@@ -2,6 +2,8 @@
 
 namespace CReifenscheid\SiteSetup\DataProcessing;
 
+use Doctrine\DBAL\Driver\Exception;
+use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 use PDO;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -48,8 +50,8 @@ class PageCategoriesProcessor implements DataProcessorInterface
      *
      * @return array the processed data as key/value store
      * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
-     * @throws \TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException
+     * @throws Exception
+     * @throws ContentRenderingException
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
