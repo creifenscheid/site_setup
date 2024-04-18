@@ -2,45 +2,57 @@ imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-  - { resource: "./Plugins.yaml" }
 
 editor:
-
   config:
+    importModules:
+      - '@creifenscheid/site-setup/plugins/abbreviation/plugin.js'
+      - '@creifenscheid/site-setup/plugins/textpartlanguage/plugin.js'
+
     toolbar:
-      - [ 'Link', 'Unlink']
-      - [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight' ]
-      - [ 'BulletedList', 'NumberedList']}
-      - [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', 'RemoveFormat' ]
-      - [ 'Undo', 'Redo' ]
-      - "/"
-      - [ 'Language' ]
-      - [ 'Abbr'  ]
-      - [ 'Format' ]
-      - [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
-      - [ 'HorizontalRule', 'Blockquote', 'SpecialChar']
-      - [ 'Source', 'Maximize' ]
+      items:
+        - textPartLanguage
+        - abbreviation
+        - '|'
+        - link
+        - '|'
+        - alignment
+        - bulletedList
+        - numberedList
+        - indent
+        - outdent
+        - '|'
+        - clipboard
+        - removeFormat
+        - undo
+        - redo
+        # line break
+        - '-'
+        - heading
+        - '|'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - subscript
+        - superscript
+        - '|'
+        - softhyphen
+        - '|'
+        - sourceEditing
 
-    contentsCss: ["EXT:rte_ckeditor/Resources/Public/Css/contents.css"]
-    resize_enabled: true
-    resize_dir: 'both'
-    uiColor: "#F8F8F8"
-    qtClass: 'content-table'
+    alignment:
+      options:
+        - { name: 'left', className: 'align-left' }
+        - { name: 'center', className: 'align-center' }
+        - { name: 'right', className: 'align-right' }
+        - { name: 'justify', className: 'align-justify' }
 
-    justifyClasses: ['align-left', 'align-center', 'align-right', 'align-justify']
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
 
-    extraPlugins:
-      - justify
-      - wordcount
-      - abbr
-      - language
-
-    removePlugins:
-      - image
-
-    format_tags: "p"
-
-processing:
-  allowTags:
-    - s
-    - u
+    language:
+      textPartLanguage:
+        # EXAMPLE - {title: 'arabic', languageCode: 'ar', textDirection: 'rtl'}
+        - { title: 'english', languageCode: 'en' }

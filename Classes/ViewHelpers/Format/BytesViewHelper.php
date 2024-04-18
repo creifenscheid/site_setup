@@ -46,7 +46,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderS
  * ``123 KB``
  * Depending on the value of ``{fileSize}``.
  */
-class BytesViewHelper extends AbstractViewHelper
+final class BytesViewHelper extends AbstractViewHelper
 {
     use CompileWithContentArgumentAndRenderStatic;
 
@@ -57,25 +57,13 @@ class BytesViewHelper extends AbstractViewHelper
      */
     protected $escapeChildren = false;
 
-    /**
-     * SeppTodo: Added this property
-     */
-    /**
-     * @var bool
-     */
-    protected $escapeOutput = false;
-
-    /**
-     * Initialize ViewHelper arguments
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('value', 'int', 'The incoming data to convert, or NULL if VH children should be used');
         $this->registerArgument('decimals', 'int', 'The number of digits after the decimal point', false, 0);
         $this->registerArgument('decimalSeparator', 'string', 'The decimal point character', false, '.');
         $this->registerArgument('thousandsSeparator', 'string', 'The character for grouping the thousand digits', false, ',');
-        $this->registerArgument('units', 'string', "comma separated list of available units, default is LocalizationUtility::translate('viewhelper.format.bytes.units', 'fluid')");
-
+        $this->registerArgument('units', 'string', 'comma separated list of available units, default is LocalizationUtility::translate(\'viewhelper.format.bytes.units\', \'fluid\')');
         /**
          * SeppTodo: Added this argument
          */
@@ -83,31 +71,25 @@ class BytesViewHelper extends AbstractViewHelper
     }
 
     /**
-     * Render the supplied byte count as a human readable string.
-     *
-     *
-     * @return string Formatted byte count
+     * Render the supplied byte count as a human-readable string.
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
         if ($arguments['units'] !== null) {
             $units = $arguments['units'];
         } else {
             $units = LocalizationUtility::translate('viewhelper.format.bytes.units', 'fluid');
         }
-
-        $units = GeneralUtility::trimExplode(',', $units, true);
+        $units = GeneralUtility::trimExplode(',', (string)$units, true);
 
         $value = $renderChildrenClosure();
 
         if (is_numeric($value)) {
             $value = (float)$value;
         }
-
         if (!is_int($value) && !is_float($value)) {
             $value = 0;
         }
-
         $bytes = max($value, 0);
         $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
         $pow = min($pow, count($units) - 1);
@@ -120,11 +102,19 @@ class BytesViewHelper extends AbstractViewHelper
             '%s %s',
             number_format(
                 round($bytes, 4 * $arguments['decimals']),
-                $arguments['decimals'],
+                (int)$arguments['decimals'],
                 $arguments['decimalSeparator'],
                 $arguments['thousandsSeparator']
             ),
             $arguments['abbrWrap'] ? '<abbr title="' . LocalizationUtility::translate('LLL:EXT:site_setup/Resources/Private/Language/locallang_bytes.xlf:bytes.long.' . $units[$pow]) . '">' . $units[$pow] . '</abbr>' : $units[$pow]
         );
+    }
+
+    /**
+     * Explicitly set argument name to be used as content.
+     */
+    public function resolveContentArgumentName(): string
+    {
+        return 'value';
     }
 }

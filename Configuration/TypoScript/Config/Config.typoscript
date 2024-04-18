@@ -1,11 +1,11 @@
 config {
-	noPageTitle = 2
-	spamProtectEmailAddresses = -2	
+  noPageTitle = 2
+  spamProtectEmailAddresses = -2
 }
 
 [applicationContext == "Development"]
-	config {
-		contentObjectExceptionHandler = 1
-		no_cache = 1
-	}
+  config {
+    contentObjectExceptionHandler = 1
+    no_cache = 1
+  }
 [END]

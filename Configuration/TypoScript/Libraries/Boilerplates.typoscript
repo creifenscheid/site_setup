@@ -1,36 +1,38 @@
-lib.boilerplates.fluidtemplate  = FLUIDTEMPLATE
+lib.boilerplates.fluidtemplate = FLUIDTEMPLATE
 lib.boilerplates.fluidtemplate {
-     layoutRootPaths < plugin.tx_sitesetup.view.layoutRootPaths
-     templateRootPaths < plugin.tx_sitesetup.view.templateRootPaths
-     partialRootPaths < plugin.tx_sitesetup.view.partialRootPaths
+  layoutRootPaths < plugin.tx_sitesetup.view.layoutRootPaths
+  templateRootPaths < plugin.tx_sitesetup.view.templateRootPaths
+  partialRootPaths < plugin.tx_sitesetup.view.partialRootPaths
 }
 
 lib.boilerplates.menuProcessor = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 lib.boilerplates.menuProcessor {
-    special = directory
-    levels = 2
-    expandAll = 1
-    includeSpacer = 1
-    as = menu
-    titleField = nav_title // title
+  special = directory
+  levels = 2
+  expandAll = 1
+  includeSpacer = 1
+  as = menu
+  titleField = nav_title // title
 }
 
 lib.boilerplates.fileProcessor = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 lib.boilerplates.fileProcessor {
-     as = media
-     references.fieldName = media
-     references.table = pages
+  as = media
+  references.fieldName = media
+  references.table = pages
 }
 
 lib.boilerplates.container < lib.contentElement
 lib.boilerplates.container {
-    templateRootPaths {
-        10 = EXT:site_setup/Resources/Private/Templates/
-    }
-    partialRootPaths {
-        10 = EXT:site_setup/Resources/Private/Partials/
-    }
-    dataProcessing {
-        100 = B13\Container\DataProcessing\ContainerProcessor
-    }
+  templateRootPaths {
+    10 = EXT:site_setup/Resources/Private/Templates/
+  }
+
+  partialRootPaths {
+    10 = EXT:site_setup/Resources/Private/Partials/
+  }
+
+  dataProcessing {
+    100 = B13\Container\DataProcessing\ContainerProcessor
+  }
 }

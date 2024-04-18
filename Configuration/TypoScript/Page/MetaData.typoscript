@@ -1,46 +1,46 @@
 page {
-	meta {
-	
-		# VIEWPORT
-		viewport = width=device-width, initial-scale=1.0
-		
-		# DESCRIPTION
-		description.data = page:description
-		description.ifEmpty.data = levelfield :-1, description, slide
-		
-        # LAST MODIFIED
-        last-modified.data = page:SYS_LASTCHANGED
-        last-modified.date = c
-        
-        # WEB APP CONFIGURATION
-        apple-mobile-web-app-capable = yes
-        mobile-web-app-capable = yes
-		apple-mobile-web-app-status-bar-style = black-translucent
-	}
+  meta {
+
+    # VIEWPORT
+    viewport = width=device-width, initial-scale=1.0
+
+    # DESCRIPTION
+    description.data = page:description
+    description.ifEmpty.data = levelfield :-1, description, slide
+
+    # LAST MODIFIED
+    last-modified.data = page:SYS_LASTCHANGED
+    last-modified.date = c
+
+    # WEB APP CONFIGURATION
+    apple-mobile-web-app-capable = yes
+    mobile-web-app-capable = yes
+    apple-mobile-web-app-status-bar-style = black-translucent
+  }
 }
 
-["{$plugin.tx_sitesetup.settings.webapp.statusBarStyle}" != ""] 
+["{$plugin.tx_sitesetup.settings.webapp.statusBarStyle}" != ""]
 
-page {
-	meta {
-		apple-mobile-web-app-status-bar-style = {$plugin.tx_sitesetup.settings.webapp.statusBarStyle}
-	}
-}
+  page {
+    meta {
+      apple-mobile-web-app-status-bar-style = {$plugin.tx_sitesetup.settings.webapp.statusBarStyle}
+    }
+  }
 
 
-["{$plugin.tx_sitesetup.settings.webapp.appTitle}" != ""] 
+["{$plugin.tx_sitesetup.settings.webapp.appTitle}" != ""]
 
-page {
-	meta {
-		apple-mobile-web-app-title = {$plugin.tx_sitesetup.settings.webapp.appTitle}
-	}
-}
+  page {
+    meta {
+      apple-mobile-web-app-title = {$plugin.tx_sitesetup.settings.webapp.appTitle}
+    }
+  }
 
 
 [applicationContext == "Development"]
-	page {
-		meta {
-			robots = noindex, nofollow
-		}
-	}
+  page {
+    meta {
+      robots = noindex, nofollow
+    }
+  }
 [END]

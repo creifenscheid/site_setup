@@ -1,14 +1,13 @@
 <?php
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
-call_user_func(function () {
+call_user_func(static function () {
     /**
      * Extension key
      */
     $extensionKey = 'site_setup';
     $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);
-
     /**
      * General tt_content extension
      */
@@ -20,34 +19,29 @@ call_user_func(function () {
             'config' => [
                 'default' => 0,
                 'type' => 'check',
-                'renderType' => 'checkboxToggle'
-            ]
-        ]
+                'renderType' => 'checkboxToggle',
+            ],
+        ],
     ];
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $ttContentFields
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'headers',
         'tx_sitesetup_header_sr_only,--linebreak--',
         'after:header_layout'
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'header',
         'tx_sitesetup_header_sr_only,--linebreak--',
         'after:header_layout'
     );
-
     /**
      * CE: table of contents
      */
-
     // registration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
@@ -56,12 +50,11 @@ call_user_func(function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:toc.label',
             'sitesetup_toc',
             'content-menu-pages',
-            'menu'
+            'menu',
         ],
         'subpages',
         'after'
     );
-
     // table extension
     $tocColumns = [
         'tx_sitesetup_toc_min' => [
@@ -70,8 +63,8 @@ call_user_func(function () {
                 'default' => 2,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => []
-            ]
+                'items' => [],
+            ],
         ],
         'tx_sitesetup_toc_max' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc_max',
@@ -79,22 +72,19 @@ call_user_func(function () {
                 'default' => 6,
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => []
-            ]
-        ]
+                'items' => [],
+            ],
+        ],
     ];
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $tocColumns
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'tocSettings',
         'tx_sitesetup_toc_min,tx_sitesetup_toc_max'
     );
-
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_toc'] = [
         'showitem' => '
@@ -106,11 +96,9 @@ call_user_func(function () {
          --palette--;;access,
       ',
     ];
-
     /**
      * CE: last page edit
      */
-
     // registration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
@@ -119,12 +107,11 @@ call_user_func(function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:lastPageEdit.label',
             'sitesetup_lastPageEdit',
             'content-clock',
-            'special'
+            'special',
         ],
         'div',
         'after'
     );
-
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_lastPageEdit'] = [
         'showitem' => '
@@ -135,11 +122,9 @@ call_user_func(function () {
                 --palette--;;access,
         ',
     ];
-
     /**
      * CE: carousel
      */
-
     // registration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
@@ -148,23 +133,22 @@ call_user_func(function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:carousel.label',
             'sitesetup_carousel',
             'content-carousel-image',
-            'default'
+            'default',
         ],
         'image',
         'after'
     );
-
     // table extension
     $carouselColumns = [
         'tx_sitesetup_carousel_slides_to_show' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_slides_to_show',
             'config' => [
                 'default' => 1,
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 30,
                 'max' => 1,
-                'eval' => 'trim,int'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'tx_sitesetup_carousel_autoslide' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_autoslide',
@@ -173,7 +157,7 @@ call_user_func(function () {
                 'default' => 0,
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-            ]
+            ],
         ],
         'tx_sitesetup_carousel_duration' => [
             'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/TCA/locallang_ttcontent.xlf:tx_sitesetup_carousel_duration',
@@ -181,25 +165,22 @@ call_user_func(function () {
             'displayCond' => 'FIELD:tx_sitesetup_carousel_autoslide:=:1',
             'config' => [
                 'default' => '5',
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 30,
                 'max' => 2,
-                'eval' => 'trim,int'
-            ]
-        ]
+                'eval' => 'trim',
+            ],
+        ],
     ];
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $carouselColumns
     );
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'carouselSettings',
         'tx_sitesetup_carousel_autoslide,tx_sitesetup_carousel_duration'
     );
-
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_carousel'] = [
         'showitem' => '
@@ -214,11 +195,9 @@ call_user_func(function () {
                 --palette--;;access,
         ',
     ];
-
     /**
      * CE: warning box
      */
-
     // registration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
@@ -227,12 +206,11 @@ call_user_func(function () {
             'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:notification.label',
             'sitesetup_notification',
             'overlay-warning',
-            'special'
+            'special',
         ],
         'div',
         'after'
     );
-
     // backend fields
     $GLOBALS['TCA']['tt_content']['types']['sitesetup_notification'] = [
         'columnsOverrides' => [
@@ -250,19 +228,16 @@ call_user_func(function () {
                 --palette--;;access,
         ',
     ];
-
     /**
      * CE: plugins
      */
-
     // configuration
     $plugins = [
         'LimitedPages' => [
             'icon' => 'actions-sort-amount-down',
-            'flexform' => true
+            'flexform' => true,
         ],
     ];
-
     // registration
     foreach ($plugins as $pluginName => $pluginConfig) {
         $pluginSignature = strtolower($extensionName) . '_' . strtolower($pluginName);
@@ -275,12 +250,9 @@ call_user_func(function () {
         );
 
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,frame_class,space_before_class,space_after_class,sectionIndex,linkToTop,pages,recursive';
-
         // FlexForm configuration
-        if (array_key_exists('flexform', $pluginConfig) && $pluginConfig['flexform'] === true) {
-            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
-        }
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
     }
 
     // EXT:container registrations
@@ -295,8 +267,8 @@ call_user_func(function () {
                 [
                     [
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
-                    ]
+                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203],
+                    ],
                 ]
             )
             )
@@ -314,8 +286,8 @@ call_user_func(function () {
                     [
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.left', 'colPos' => 201],
                         ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.center', 'colPos' => 202],
-                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203]
-                    ]
+                        ['name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xlf:backendlayouts.columns.right', 'colPos' => 203],
+                    ],
                 ]
             )
             )

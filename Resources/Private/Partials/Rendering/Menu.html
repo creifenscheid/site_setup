@@ -7,9 +7,10 @@
     - label
     - additionalClasses (optional)
     - doNotRenderChildren (optional)
+    - tabindex (optional)
 </f:comment>
 
-<nav id="{id}" aria-labelledby="header_{id}"{f:if(condition:navTagClasses, then: ' class="{navTagClasses}"')}>
+<nav id="{id}" aria-labelledby="header_{id}"{f:if(condition:navTagClasses, then: ' class="{navTagClasses}"')}{f:if(condition:tabindex, then: ' tabindex="{tabindex}"')}>
     <f:if condition="{level}">
         <f:then>
             <f:switch expression="{level}">

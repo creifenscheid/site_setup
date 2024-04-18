@@ -2,10 +2,15 @@
 
 namespace CReifenscheid\SiteSetup\Controller;
 
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use Doctrine\DBAL\Driver\Exception;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+
+use function in_array;
 
 /***************************************************************
  *
@@ -50,13 +55,10 @@ class PagesController extends ActionController
         'listPage',
     ];
 
-    protected \TYPO3\CMS\Core\Database\ConnectionPool $connectionPool;
-
     protected ?ContentObjectRenderer $contentObject = null;
 
-    public function __construct(\TYPO3\CMS\Core\Database\ConnectionPool $connectionPool)
+    public function __construct(protected ConnectionPool $connectionPool)
     {
-        $this->connectionPool = $connectionPool;
     }
 
     public function initializeListAction(): void
@@ -64,7 +66,7 @@ class PagesController extends ActionController
         $settings = [];
 
         foreach ($this->settings as $key => $value) {
-            if (in_array($key, $this->requiredSettings)) {
+            if (in_array($key, $this->requiredSettings, true)) {
                 $settings[$key] = $value;
             }
         }
@@ -73,7 +75,7 @@ class PagesController extends ActionController
     }
 
     /**
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @throws InvalidQueryException
      */
     public function listAction(): ResponseInterface
     {
@@ -89,7 +91,7 @@ class PagesController extends ActionController
 
     /**
      * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     private function getPages(): array
     {
@@ -102,7 +104,7 @@ class PagesController extends ActionController
             ->where(
                 $queryBuilder->expr()->in($table . '.pid', GeneralUtility::trimExplode(',', $this->settings['startingpoints']))
             )
-            ->orderBy($table . '.' .$this->settings['orderBy'],$this->settings['orderDirection'])
+            ->orderBy($table . '.' . $this->settings['orderBy'], $this->settings['orderDirection'])
             ->setMaxResults($this->settings['limit'])
             ->executeQuery()
             ->fetchAllAssociative();
@@ -110,7 +112,7 @@ class PagesController extends ActionController
 
     private function assignTtContentData(): void
     {
-        $contentObject = $this->configurationManager->getContentObject();
+        $contentObject = $this->request->getAttribute('currentContentObject');
         $this->view->assign('ttContentData', $contentObject->data);
     }
 }

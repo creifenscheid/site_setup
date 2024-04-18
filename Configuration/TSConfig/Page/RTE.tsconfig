@@ -1,9 +1,9 @@
 RTE {
-    default.preset = default
+    default.preset = siteSetup
     config {
         tt_content.bodytext {
-            preset = full
-            types.text.preset = full
+            preset = siteSetup
+            types.text.preset = siteSetup
         }
     }
 }

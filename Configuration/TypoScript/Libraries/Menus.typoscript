@@ -1,12 +1,12 @@
 lib.languageMenu < lib.boilerplates.fluidtemplate
 lib.languageMenu {
-    if.isTrue = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
-    templateName = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
-    
-    10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-    10 {
-        if.isTrue = {$plugin.tx_sitesetup.settings.languageIds}
-        languages = {$plugin.tx_sitesetup.settings.languageIds}
-        as = languagenavigation
-    }
+  if.isTrue = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
+  templateName = {$plugin.tx_sitesetup.settings.languageMenuTemplateName}
+
+  10 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+  10 {
+    if.isTrue = {$plugin.tx_sitesetup.settings.languageIds}
+    languages = {$plugin.tx_sitesetup.settings.languageIds}
+    as = languagenavigation
+  }
 }

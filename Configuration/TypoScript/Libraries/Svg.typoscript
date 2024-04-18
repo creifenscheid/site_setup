@@ -1,17 +1,17 @@
 lib.inlineSvg = SVG
 lib.inlineSvg {
-	renderMode = inline
-    src.field = src
+  renderMode = inline
+  src.field = src
 }
 
 lib.attentionIcon = SVG
 lib.attentionIcon {
-    renderMode = inline
-    src = {$plugin.tx_sitesetup.settings.attentionIcon}
+  renderMode = inline
+  src = {$plugin.tx_sitesetup.settings.attentionIcon}
 }
 
 lib.submenuIcon = SVG
 lib.submenuIcon {
-    renderMode = inline
-    src = {$plugin.tx_sitesetup.settings.submenuIcon}
+  renderMode = inline
+  src = {$plugin.tx_sitesetup.settings.submenuIcon}
 }
