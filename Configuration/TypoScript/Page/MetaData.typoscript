@@ -37,7 +37,7 @@ page {
   }
 
 
-[applicationContext == "Development"]
+[applicationContext == "Development" || applicationContext == "Testing"]
   page {
     meta {
       robots = noindex, nofollow
