@@ -30,12 +30,13 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Basic site setup',
     'category' => 'template',
     'author' => 'Christian Reifenscheid',
-    'version' => '12.0.0',
+    'version' => '12.1.0',
     'state' => 'stable',
     'constraints' => [
         'depends' => [
             'typo3' => '12.4.0-12.4.99',
             'container' => '2.1.0-2.9.99',
+            'rte_ckeditor_textpartlanguage' => '12.0.0-12.9.99',
         ],
     ],
     'autoload' => [
