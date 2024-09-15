@@ -7,7 +7,7 @@ editor:
   config:
     importModules:
       - '@creifenscheid/site-setup/plugins/abbreviation/plugin.js'
-      - '@creifenscheid/rte-ckeditor-textpartlanguage/plugin.js'
+      - { module: '@ckeditor/ckeditor5-language', exports: [ 'TextPartLanguage' ] }
 
     toolbar:
       items:
