@@ -6,7 +6,6 @@
 	"require" : {
 		"typo3/cms-core" : ">12.4.7 <=12.4.99",
 		"typo3/cms-rte-ckeditor" : ">12.4.7 <=12.4.99",
-		"b13/container" : "^2.1",
 		"ext-pdo": "*"
 	},
 	"autoload" : {

@@ -36,7 +36,6 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '12.4.8-12.4.99',
             'rte_ckeditor' => '12.4.8-12.4.99',
-            'container' => '2.1.0-2.9.99',
         ],
     ],
     'autoload' => [
