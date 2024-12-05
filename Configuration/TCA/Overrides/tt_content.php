@@ -5,9 +5,6 @@ defined('TYPO3') || die();
 $extensionKey = 'site_setup';
 $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);
     
-/**
- * General tt_content extension
- */
 // table extension
 $ttContentFields = [
     'tx_sitesetup_header_sr_only' => [
@@ -37,65 +34,6 @@ $ttContentFields = [
     'tx_sitesetup_header_sr_only,--linebreak--',
     'after:header_layout'
 );
-
-/**
- * CE: table of contents
- */
-// registration
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-    'tt_content',
-    'CType',
-    [
-        $l10n . 'label',
-        'toc',
-        'content-menu-pages',
-        'menu',
-    ],
-    'subpages',
-    'after'
-);
-
-// table extension
-$tocColumns = [
-    'tx_toc_min' => [
-        'label' => $l10n . 'tx_toc_min',
-        'config' => [
-            'default' => 2,
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [],
-        ],
-    ],
-    'tx_toc_max' => [
-        'label' => $l10n . 'tx_toc_max',
-        'config' => [
-            'default' => 6,
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [],
-        ],
-    ],
-];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
-    'tt_content',
-    $tocColumns
-);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-    'tt_content',
-    'tocSettings',
-    'tx_toc_min,tx_toc_max'
-    );
-// backend fields
-$GLOBALS['TCA']['tt_content']['types']['toc'] = [
-    'showitem' => '
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-            --palette--;;tocSettings,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-            --palette--;;hidden,
-            --palette--;;access,
-    ',
-];
 
 /**
  * CE: last page edit
