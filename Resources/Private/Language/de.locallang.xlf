@@ -9,20 +9,6 @@
 				<source>d/m/Y</source>
 				<target>d.m.Y</target>
 			</trans-unit>
-			<trans-unit id="toc.label" resname="toc.label">
-				<source>Table of contents</source>
-				<target>Inhaltsverzeichnis</target>
-			</trans-unit>
-			<trans-unit id="toc.description" resname="toc.description">
-				<source>Inserts a table of contents based on the header of every content element.</source>
-				<target>Fügt ein Inhaltsverzeichnis basierend auf den Überschriften eines jeden Inhaltselementes aus
-					ein.
-				</target>
-			</trans-unit>
-			<trans-unit id="toc.skip" resname="toc.skip">
-				<source>Skip table of contents</source>
-				<target>Inhaltsverzeichnis überspringen</target>
-			</trans-unit>
 			<trans-unit id="skipToContent" resname="skipToContent">
 				<source>Skip to content</source>
 				<target>zum Inhalt springen</target>

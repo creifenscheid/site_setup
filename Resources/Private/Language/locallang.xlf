@@ -7,15 +7,6 @@
 			<trans-unit id="dateformat" resname="dateformat">
 				<source>d/m/Y</source>
 			</trans-unit>
-			<trans-unit id="toc.label" resname="toc.label">
-				<source>Table of contents</source>
-			</trans-unit>
-			<trans-unit id="toc.description" resname="toc.description">
-				<source>Inserts a table of contents based on the header of every content element.</source>
-			</trans-unit>
-			<trans-unit id="toc.skip" resname="toc.skip">
-				<source>Skip table of contents</source>
-			</trans-unit>
 			<trans-unit id="skipToContent" resname="skipToContent">
 				<source>Skip to content</source>
 			</trans-unit>
