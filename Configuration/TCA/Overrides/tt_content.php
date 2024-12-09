@@ -3,7 +3,6 @@
 defined('TYPO3') || die();
 
 $extensionKey = 'site_setup';
-$extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);
     
 // table extension
 $ttContentFields = [

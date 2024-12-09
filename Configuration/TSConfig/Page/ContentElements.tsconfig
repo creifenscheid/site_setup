@@ -1,19 +1,4 @@
 mod.wizards.newContentElement.wizardItems {
-   menu {
-      elements {
-         sitesetup_limitedpages {
-                iconIdentifier = actions-sort-amount-down
-                title = LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.label
-                description = LLL:EXT:site_setup/Resources/Private/Language/Plugins/locallang.xlf:limitedpages.description
-                tt_content_defValues {
-                    CType = list
-                    list_type = sitesetup_limitedpages
-                }
-            }
-      }
-      show := addToList(sitesetup_limitedpages)
-   }
-
    special {
       elements {
          sitesetup_lastPageEdit {
