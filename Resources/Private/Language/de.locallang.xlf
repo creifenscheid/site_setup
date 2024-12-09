@@ -28,19 +28,6 @@
 				<target>zum Inhalt springen</target>
 			</trans-unit>
 
-			<trans-unit id="lastPageEdit.label" resname="lastPageEdit.label">
-				<source>Last page edit</source>
-				<target>Letzte Seitenbearbeitung</target>
-			</trans-unit>
-			<trans-unit id="lastPageEdit.description" resname="lastPageEdit.description">
-				<source>Inserts the date when the page was created and last edited.</source>
-				<target>Fügt das Datum ein, an dem die Seite erstellt und zuletzt bearbeitet wurde.</target>
-			</trans-unit>
-			<trans-unit id="lastPageEdit.page.edit" resname="lastPageEdit.page.edit">
-				<source>The page was created on %s and last updated on %s.</source>
-				<target>Diese Seite wurde am %s erstellt und zuletzt am %s aktualisiert.</target>
-			</trans-unit>
-
 			<trans-unit id="notification.label" resname="notification.label">
 				<source>Notification</source>
 				<target>Hinweis</target>

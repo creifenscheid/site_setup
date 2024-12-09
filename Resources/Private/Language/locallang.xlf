@@ -20,16 +20,6 @@
 				<source>Skip to content</source>
 			</trans-unit>
 
-			<trans-unit id="lastPageEdit.label" resname="lastPageEdit.label">
-				<source>Last page edit</source>
-			</trans-unit>
-			<trans-unit id="lastPageEdit.description" resname="lastPageEdit.description">
-				<source>Inserts the date when the page was created and last edited.</source>
-			</trans-unit>
-			<trans-unit id="lastPageEdit.page.edit" resname="lastPageEdit.page.edit">
-				<source>The page was created on %s and last updated on %s.</source>
-			</trans-unit>
-
 			<trans-unit id="notification.label" resname="notification.label">
 				<source>Notification</source>
 			</trans-unit>
