@@ -8,27 +8,6 @@
 			<trans-unit id="backendlayouts.contentOnly" resname="backendlayouts.contentOnly">
 				<source>Content column</source>
 			</trans-unit>
-			<trans-unit id="backendlayouts.columns.left" resname="backendlayouts.columns.left">
-				<source>Left</source>
-			</trans-unit>
-			<trans-unit id="backendlayouts.columns.center" resname="backendlayouts.columns.center">
-				<source>Center</source>
-			</trans-unit>
-			<trans-unit id="backendlayouts.columns.right" resname="backendlayouts.columns.right">
-				<source>Right</source>
-			</trans-unit>
-			<trans-unit id="content.site-setup-2cols" resname="content.site-setup-2cols">
-				<source>2 Columns</source>
-			</trans-unit>
-			<trans-unit id="content.site-setup-2cols.description" resname="content.site-setup-2cols.description">
-				<source>Content container with 2 columns</source>
-			</trans-unit>
-			<trans-unit id="content.site-setup-3cols" resname="content.site-setup-3cols">
-				<source>3 Columns</source>
-			</trans-unit>
-			<trans-unit id="content.site-setup-3cols.description" resname="content.site-setup-3cols.description">
-				<source>Content container with 3 columns</source>
-			</trans-unit>
 			<trans-unit id="content.spacing.default" resname="content.spacing.default">
 				<source>Default spacing</source>
 			</trans-unit>
