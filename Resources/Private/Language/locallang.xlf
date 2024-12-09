@@ -11,19 +11,6 @@
 				<source>Skip to content</source>
 			</trans-unit>
 
-			<trans-unit id="notification.label" resname="notification.label">
-				<source>Notification</source>
-			</trans-unit>
-			<trans-unit id="notification.description" resname="notification.description">
-				<source>Inserts a notification with configurable severity level.</source>
-			</trans-unit>
-			<trans-unit id="notification.layout.attention" resname="notification.layout.attention">
-				<source>Attention</source>
-			</trans-unit>
-			<trans-unit id="notification.layout.info" resname="notification.layout.info">
-				<source>Information</source>
-			</trans-unit>
-
 			<trans-unit id="carousel.label" resname="carousel.label">
 				<source>Image carousel</source>
 			</trans-unit>

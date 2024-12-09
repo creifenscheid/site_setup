@@ -14,23 +14,6 @@
 				<target>zum Inhalt springen</target>
 			</trans-unit>
 
-			<trans-unit id="notification.label" resname="notification.label">
-				<source>Notification</source>
-				<target>Hinweis</target>
-			</trans-unit>
-			<trans-unit id="notification.description" resname="notification.description">
-				<source>Inserts a notification with configurable severity level.</source>
-				<target>Fügt eine Meldung mit konfigurierbaren Schweregrad ein.</target>
-			</trans-unit>
-			<trans-unit id="notification.layout.attention" resname="notification.layout.attention">
-				<source>Attention</source>
-				<target>Warnung</target>
-			</trans-unit>
-			<trans-unit id="notification.layout.info" resname="notification.layout.info">
-				<source>Information</source>
-				<target>Information</target>
-			</trans-unit>
-
 			<trans-unit id="carousel.label" resname="carousel.label">
 				<source>Image carousel</source>
 				<target>Bildkarussell</target>

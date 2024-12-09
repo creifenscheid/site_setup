@@ -110,40 +110,6 @@ $GLOBALS['TCA']['tt_content']['types']['sitesetup_carousel'] = [
 ];
 
 /**
- * CE: warning box
- */
-// registration
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-    'tt_content',
-    'CType',
-    [
-        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf:notification.label',
-        'sitesetup_notification',
-        'overlay-warning',
-        'special',
-    ],
-    'div',
-    'after'
-);
-// backend fields
-$GLOBALS['TCA']['tt_content']['types']['sitesetup_notification'] = [
-    'columnsOverrides' => [
-        'header_layout' => [
-            'config' => [
-                'default' => 100,
-            ],
-        ],
-    ],
-    'showitem' => '
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,layout,header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.div_formlabel,bodytext,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, --palette--;;language,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-            --palette--;;hidden,
-            --palette--;;access,
-    ',
-];
-
-/**
  * CE: plugins
  */
 // configuration
