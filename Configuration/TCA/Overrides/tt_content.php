@@ -35,33 +35,6 @@ $ttContentFields = [
     'after:header_layout'
 );
 
-/**
- * CE: plugins
- */
-// configuration
-$plugins = [
-    'LimitedPages' => [
-        'icon' => 'actions-sort-amount-down',
-        'flexform' => true,
-    ],
-];
-
-// registration
-foreach ($plugins as $pluginName => $pluginConfig) {
-    $pluginSignature = strtolower($extensionName) . '_' . strtolower($pluginName);
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-        $extensionName,
-        $pluginName,
-        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Plugins/locallang.xlf:' . strtolower($pluginName) . '.label',
-            $pluginConfig['icon'],
-    );
-
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,frame_class,space_before_class,space_after_class,sectionIndex,linkToTop,pages,recursive';
-    // FlexForm configuration
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . 'FlexForm.xml');
-}
-
 // EXT:container registrations
 if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
     $cType = 'site-setup-2cols';
