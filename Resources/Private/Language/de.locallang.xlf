@@ -14,35 +14,6 @@
 				<target>zum Inhalt springen</target>
 			</trans-unit>
 
-			<trans-unit id="carousel.label" resname="carousel.label">
-				<source>Image carousel</source>
-				<target>Bildkarussell</target>
-			</trans-unit>
-			<trans-unit id="carousel.description" resname="carousel.description">
-				<source>Inserts a carousel of chosen images.</source>
-				<target>Fügt ein Karussell mit ausgewählten Bildern ein.</target>
-			</trans-unit>
-			<trans-unit id="carousel.skip" resname="carousel.skip">
-				<source>Skip carousel</source>
-				<target>Bildkarussell überspringen</target>
-			</trans-unit>
-			<trans-unit id="carousel.prev" resname="carousel.prev">
-				<source>previous image</source>
-				<target>vorheriges Bild</target>
-			</trans-unit>
-			<trans-unit id="carousel.next" resname="carousel.next">
-				<source>next image</source>
-				<target>nächstes Bild</target>
-			</trans-unit>
-			<trans-unit id="carousel.play" resname="carousel.play">
-				<source>start carousel</source>
-				<target>Karussell starten</target>
-			</trans-unit>
-			<trans-unit id="carousel.stop" resname="carousel.stop">
-				<source>stop carousel</source>
-				<target>Karussell anhalten</target>
-			</trans-unit>
-
 			<trans-unit id="menu.button.label" resname="menu.button.label">
 				<source>Submenu "%s"</source>
 				<target>Untermenü "%s"</target>
