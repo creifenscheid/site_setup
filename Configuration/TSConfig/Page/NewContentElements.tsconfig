@@ -1,18 +1,4 @@
 mod.wizards.newContentElement.wizardItems {
-   special {
-      elements {
-         sitesetup_notification {
-            iconIdentifier = overlay-warning
-            title = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.label
-            description = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.description
-            tt_content_defValues {
-               CType = sitesetup_notification
-            }
-         }
-      }
-      show := addToList(sitesetup_notification)
-   }
-
    common {
       elements {
          sitesetup_carousel {
