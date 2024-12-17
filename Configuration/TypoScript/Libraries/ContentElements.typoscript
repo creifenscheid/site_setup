@@ -6,20 +6,6 @@ lib.contentElement {
 }
 
 tt_content {
-  sitesetup_carousel =< lib.contentElement
-  sitesetup_carousel {
-    templateName = Carousel
-
-    dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-      10 {
-        references.fieldName = image
-      }
-    }
-
-    settings < plugin.tx_sitesetup.settings.carousel
-  }
-
   sitesetup_notification =< lib.contentElement
   sitesetup_notification {
     templateName = Notification
