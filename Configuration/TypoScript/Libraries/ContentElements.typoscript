@@ -1,18 +1,3 @@
 lib.contentElement {
-  templateRootPaths.10 = EXT:site_setup/Resources/Private/Templates/
-  partialRootPaths.10 = EXT:site_setup/Resources/Private/Partials/
-
   settings.srOnlyClass = {$plugin.tx_sitesetup.settings.srOnlyClass}
-}
-
-tt_content {
-  sitesetup_notification =< lib.contentElement
-  sitesetup_notification {
-    templateName = Notification
-
-    variables {
-      iconFolder = TEXT
-      iconFolder.value = {$plugin.tx_sitesetup.settings.iconFolder}
-    }
-  }
 }
