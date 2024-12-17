@@ -1,89 +1,8 @@
-tmp.headerTypes {
-    1 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.1
-    2 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.2
-    3 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.3
-    4 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.4
-    5 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.5
-    6 = LLL:EXT:site_setup/Resources/Private/Language/TCA/locallang_pages.xlf:tx_sitesetup_toc.level.6
-}
-
 TCEFORM {
     pages {
         description {
             config {
                 max = 120
-            }
-        }
-        tx_sitesetup_toc_min {
-            addItems < tmp.headerTypes
-        }
-        tx_sitesetup_toc_max {
-            addItems < tmp.headerTypes
-        }
-    }
-
-    tt_content {
-        tx_sitesetup_toc_min {
-            addItems < tmp.headerTypes
-        }
-        tx_sitesetup_toc_max {
-            addItems < tmp.headerTypes
-        }
-        layout {
-            types {
-                site-setup-2cols {
-                    altLabels {
-                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
-                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
-                        2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
-                        3 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.same-height
-                    }
-                }
-
-                site-setup-3cols {
-                    altLabels {
-                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.default
-                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.half
-                        2 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.spacing.none
-                        3 = LLL:EXT:site_setup/Resources/Private/Language/locallang_mod.xlf:content.same-height
-                    }
-                }
-
-                sitesetup_notification {
-                    removeItems = 2,3
-                    altLabels {
-                        0 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.attention
-                        1 = LLL:EXT:site_setup/Resources/Private/Language/locallang.xlf:notification.layout.info
-                    }
-                }
-            }
-        }
-        header_position{
-            types {
-                sitesetup_carousel {
-                    disabled = 1
-                }
-            }
-        }
-        header_link{
-            types {
-                sitesetup_carousel {
-                    disabled = 1
-                }
-            }
-        }
-        header_layout{
-            types {
-              sitesetup_notification {
-                    keepItems = 100
-                }
-            }
-        }
-        date{
-            types {
-                sitesetup_carousel {
-                    disabled = 1
-                }
             }
         }
     }
