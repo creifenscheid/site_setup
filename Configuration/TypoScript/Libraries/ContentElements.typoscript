@@ -6,19 +6,6 @@ lib.contentElement {
 }
 
 tt_content {
-  sitesetup_lastPageEdit =< lib.contentElement
-  sitesetup_lastPageEdit {
-    templateName = LastPageEdit
-
-    variables {
-      lastChange = TEXT
-      lastChange.value.data = page:SYS_LASTCHANGED
-
-      crDate = TEXT
-      crDate.value.data = page:crdate
-    }
-  }
-
   sitesetup_carousel =< lib.contentElement
   sitesetup_carousel {
     templateName = Carousel
