@@ -6,11 +6,6 @@ lib.contentElement {
 }
 
 tt_content {
-  sitesetup_toc =< lib.contentElement
-  sitesetup_toc {
-    templateName = Toc
-  }
-
   sitesetup_lastPageEdit =< lib.contentElement
   sitesetup_lastPageEdit {
     templateName = LastPageEdit

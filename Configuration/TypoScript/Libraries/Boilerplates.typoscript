@@ -21,18 +21,3 @@ lib.boilerplates.fileProcessor {
   references.fieldName = media
   references.table = pages
 }
-
-lib.boilerplates.container < lib.contentElement
-lib.boilerplates.container {
-  templateRootPaths {
-    10 = EXT:site_setup/Resources/Private/Templates/
-  }
-
-  partialRootPaths {
-    10 = EXT:site_setup/Resources/Private/Partials/
-  }
-
-  dataProcessing {
-    100 = B13\Container\DataProcessing\ContainerProcessor
-  }
-}
