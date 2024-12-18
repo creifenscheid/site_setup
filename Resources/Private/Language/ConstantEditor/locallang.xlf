@@ -49,9 +49,6 @@
 			<trans-unit id="constantEditor.file.templateName" resname="constantEditor.file.templateName">
 				<source>Template: Name of the template to use for page rendering</source>
 			</trans-unit>
-			<trans-unit id="constantEditor.file.attentionIcon" resname="constantEditor.file.attentionIcon">
-				<source>Attention icon: Path to the attention icon which shall be used in this installation</source>
-			</trans-unit>
 			<trans-unit id="constantEditor.file.submenuIcon" resname="constantEditor.file.submenuIcon">
 				<source>Submenu icon: Path to the icon of submenu buttons</source>
 			</trans-unit>
