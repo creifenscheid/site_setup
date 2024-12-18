@@ -18,9 +18,6 @@
 			<trans-unit id="constantEditor.customsubcategory.webapp" resname="constantEditor.customsubcategory.webapp">
 				<source>Web app configuration</source>
 			</trans-unit>
-			<trans-unit id="constantEditor.customsubcategory.carousel" resname="constantEditor.customsubcategory.carousel">
-				<source>Carousel configuration</source>
-			</trans-unit>
 
 			<!-- PATHS -->
 			<trans-unit id="constantEditor.path.templateRootPath" resname="constantEditor.path.templateRootPath">
@@ -91,20 +88,6 @@
 			</trans-unit>
 			<trans-unit id="constantEditor.webapp.statusBarStyle" resname="constantEditor.webapp.statusBarStyle">
 				<source>Statusbar style: Style configuration for the iOS status bar</source>
-			</trans-unit>
-
-			<!-- CAROUSEL -->
-			<trans-unit id="constantEditor.carousel.prevIcon" resname="constantEditor.carousel.prevIcon">
-				<source>Icon "previous": Path to icon file to use for button "previous slide"</source>
-			</trans-unit>
-			<trans-unit id="constantEditor.carousel.nextIcon" resname="constantEditor.carousel.nextIcon">
-				<source>Icon "next": Path to icon file to use for button "next slide"</source>
-			</trans-unit>
-			<trans-unit id="constantEditor.carousel.playIcon" resname="constantEditor.carousel.playIcon">
-				<source>Icon "play": Path to icon file to use for button "play"</source>
-			</trans-unit>
-			<trans-unit id="constantEditor.carousel.stopIcon" resname="constantEditor.carousel.stopIcon">
-				<source>Icon "stop": Path to icon file to use for button "stop"</source>
 			</trans-unit>
 		</body>
 	</file>
