@@ -55,17 +55,3 @@ plugin.tx_sitesetup {
     }
   }
 }
-
-
-
-
-plugin.tx_sitesetup_limitedpages {
-  view {
-    # customsubcategory=pluginpath=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.customsubcategory.path.plugins
-    # cat=Site setup/pluginpath/a; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.templateRootPath.limitedpages
-    templateRootPath = EXT:site_setup/Resources/Private/Templates/
-
-    # cat=Site setup/pluginpath/b; type=string; label=LLL:EXT:site_setup/Resources/Private/Language/ConstantEditor/locallang.xlf:constantEditor.path.partialRootPath.limitedpages
-    partialRootPath = EXT:site_setup/Resources/Private/Partials/
-  }
-}
