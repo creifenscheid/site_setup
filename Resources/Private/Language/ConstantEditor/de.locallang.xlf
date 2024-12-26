@@ -44,10 +44,6 @@
 				<source>Logo: Path to logo file</source>
 				<target>Logo: Pfad zur Logo-Datei</target>
 			</trans-unit>
-			<trans-unit id="constantEditor.path.iconFolder" resname="constantEditor.path.iconFolder">
-				<source>Icon folder: Path to the folder where icons are stored.</source>
-				<target>Icon-Ordner: Pfad zu dem Ordner, in dem Icons gespeichert sind.</target>
-			</trans-unit>
 			<trans-unit id="constantEditor.path.templateRootPath.limitedpages" resname="constantEditor.path.templateRootPath.limitedpages">
 				<source>TemplateRootPath | Limited Pages: Path to template files</source>
 				<target>TemplateRootPath | limitierte Seiten: Pfad zu Template-Dateien</target>
