@@ -1,11 +1,9 @@
 page {
   includeCSSLibs {
     parvus = EXT:site_setup/Resources/Public/Libraries/Parvus/dist/css/parvus.min.css
-    carousel = EXT:site_setup/Resources/Public/Libraries/Swiper/swiper-bundle.css
   }
 
   includeJSFooterlibs {
     parvus = EXT:site_setup/Resources/Public/Libraries/Parvus/dist/js/parvus.min.js
-    carousel = EXT:site_setup/Resources/Public/Libraries/Swiper/swiper-bundle.js
   }
 }
