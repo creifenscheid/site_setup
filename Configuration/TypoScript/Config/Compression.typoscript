@@ -4,3 +4,12 @@ config {
   compressJs = 1
   concatenateJs = 1
 }
+
+[applicationContext == "Development"]
+  config {
+    compressCss = 0
+    concatenateCss = 0
+    compressJs = 0
+    concatenateJs = 0
+  }
+[END]
